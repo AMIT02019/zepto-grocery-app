@@ -1,4 +1,4 @@
-// Zepto Clone Interactive Core Logic
+// Zepto Clone Interactive Core Logic with SPA Router
 (function () {
   'use strict';
 
@@ -64,6 +64,9 @@
 
   // --- Cart Drawer UI ---
   function openCartDrawer() {
+    const existing = document.getElementById('zeptoCartOverlay');
+    if (existing) existing.remove();
+
     const drawerOverlay = document.createElement('div');
     drawerOverlay.className = 'zepto-drawer-overlay';
     drawerOverlay.id = 'zeptoCartOverlay';
@@ -108,7 +111,6 @@
               `).join('')}
             </div>
 
-            <!-- Bill Summary -->
             <div style="margin-top: 1.5rem; background: #f9fafb; padding: 1rem; border-radius: 0.5rem; border: 1px solid #e5e7eb;">
               <h4 style="font-size: 0.9rem; font-weight: 700; color: #111827; margin: 0 0 0.75rem 0;">Bill Details</h4>
               <div style="display: flex; justify-content: space-between; font-size: 0.85rem; color: #4b5563; margin-bottom: 0.35rem;">
@@ -144,7 +146,6 @@
 
     document.body.appendChild(drawerOverlay);
 
-    // Event listeners inside drawer
     drawerOverlay.addEventListener('click', (e) => {
       if (e.target === drawerOverlay || e.target.id === 'closeCartBtn' || e.target.id === 'cartShopNow') {
         drawerOverlay.remove();
@@ -157,7 +158,6 @@
         if (state.cart[id]) {
           state.cart[id].quantity += 1;
           saveCart();
-          drawerOverlay.remove();
           openCartDrawer();
         }
       });
@@ -172,7 +172,6 @@
             delete state.cart[id];
           }
           saveCart();
-          drawerOverlay.remove();
           openCartDrawer();
         }
       });
@@ -189,6 +188,9 @@
 
   // --- Product Quick View Modal ---
   function openProductModal(prod) {
+    const existing = document.getElementById('productQuickViewModal');
+    if (existing) existing.remove();
+
     const modal = document.createElement('div');
     modal.className = 'zepto-modal-overlay';
     modal.id = 'productQuickViewModal';
@@ -240,7 +242,12 @@
     document.body.appendChild(modal);
 
     modal.addEventListener('click', (e) => {
-      if (e.target === modal || e.target.id === 'closeProdModal') modal.remove();
+      if (e.target === modal || e.target.id === 'closeProdModal') {
+        modal.remove();
+        if (window.location.pathname.includes('/pn/')) {
+          history.pushState(null, '', '/');
+        }
+      }
     });
 
     const addBtn = modal.querySelector('#modalAddBtn');
@@ -249,7 +256,6 @@
         state.cart[prod.id] = { ...prod, quantity: 1 };
         saveCart();
         showToast(`Added ${prod.name} to cart`);
-        modal.remove();
         openProductModal(prod);
       });
     }
@@ -259,7 +265,6 @@
       modalPlus.addEventListener('click', () => {
         state.cart[prod.id].quantity += 1;
         saveCart();
-        modal.remove();
         openProductModal(prod);
       });
     }
@@ -272,7 +277,6 @@
           delete state.cart[prod.id];
         }
         saveCart();
-        modal.remove();
         openProductModal(prod);
       });
     }
@@ -286,8 +290,107 @@
     }
   }
 
+  // --- Category Showcase View ---
+  function showCategoryView(catTitle, filterKeywords) {
+    const existing = document.getElementById('zeptoCatModal');
+    if (existing) existing.remove();
+
+    const matchedProducts = state.products.filter(p => {
+      const text = (p.name + ' ' + p.brand + ' ' + p.desc).toLowerCase();
+      return filterKeywords.some(kw => text.includes(kw.toLowerCase()));
+    });
+
+    const displayProducts = matchedProducts.length > 0 ? matchedProducts : state.products.slice(0, 12);
+
+    const modal = document.createElement('div');
+    modal.className = 'zepto-modal-overlay';
+    modal.id = 'zeptoCatModal';
+
+    modal.innerHTML = `
+      <div class="zepto-modal-card" style="max-width: 860px; width: 95%; max-height: 90vh;">
+        <div style="padding: 1.25rem 1.5rem; border-bottom: 1px solid #e5e7eb; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; background: white; z-index: 10;">
+          <div>
+            <h2 style="margin: 0; font-size: 1.25rem; font-weight: 800; color: #111827;">${catTitle}</h2>
+            <p style="margin: 4px 0 0 0; font-size: 0.85rem; color: #6b7280;">Showing ${displayProducts.length} instant-delivery products</p>
+          </div>
+          <button id="closeCatModal" style="background: none; border: none; font-size: 1.5rem; cursor: pointer; color: #6b7280; padding: 4px;">✕</button>
+        </div>
+        <div style="padding: 1.5rem; display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 1rem;">
+          ${displayProducts.map(p => `
+            <div class="cat-prod-card" data-prod-id="${p.id}" style="border: 1px solid #e5e7eb; border-radius: 0.5rem; padding: 0.85rem; display: flex; flex-direction: column; justify-content: space-between; cursor: pointer; background: white; transition: box-shadow 0.2s;">
+              <div style="text-align: center; margin-bottom: 0.75rem;">
+                <img src="${p.image}" alt="${p.name}" style="height: 110px; width: 100%; object-fit: contain;" />
+              </div>
+              <div>
+                <p style="margin: 0 0 4px 0; font-size: 0.75rem; text-transform: uppercase; color: #9ca3af; font-weight: 700;">${p.brand}</p>
+                <h4 style="margin: 0 0 8px 0; font-size: 0.85rem; font-weight: 600; color: #1f2937; line-height: 1.3; height: 34px; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;">${p.name}</h4>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+                  <span style="font-weight: 800; font-size: 1rem; color: #111827;">₹${p.price}</span>
+                  <button class="cat-quick-add" data-prod-id="${p.id}" style="background: #ff3269; color: white; border: none; padding: 4px 12px; border-radius: 4px; font-weight: 700; font-size: 0.8rem; cursor: pointer;">ADD</button>
+                </div>
+              </div>
+            </div>
+          `).join('')}
+        </div>
+      </div>
+    `;
+
+    document.body.appendChild(modal);
+
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal || e.target.id === 'closeCatModal') {
+        modal.remove();
+        if (window.location.pathname.includes('/cn/') || window.location.pathname.includes('/category/')) {
+          history.pushState(null, '', '/');
+        }
+      }
+    });
+
+    modal.querySelectorAll('.cat-prod-card').forEach(card => {
+      card.addEventListener('click', (e) => {
+        if (e.target.classList.contains('cat-quick-add')) return;
+        const pid = card.dataset.prodId;
+        const prod = state.products.find(x => x.id === pid);
+        if (prod) openProductModal(prod);
+      });
+    });
+
+    modal.querySelectorAll('.cat-quick-add').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const pid = btn.dataset.prodId;
+        const prod = state.products.find(x => x.id === pid);
+        if (prod) {
+          state.cart[prod.id] = state.cart[prod.id] ? { ...prod, quantity: state.cart[prod.id].quantity + 1 } : { ...prod, quantity: 1 };
+          saveCart();
+          showToast(`Added ${prod.name}`);
+        }
+      });
+    });
+  }
+
+  // --- SPA Route Handler ---
+  function handleRoute() {
+    const path = window.location.pathname;
+    if (path.includes('/search')) {
+      openSearchModal();
+    } else if (path.includes('/pn/')) {
+      const prod = state.products.find(p => p.url && (p.url.includes(path) || path.includes(p.url))) || state.products[0];
+      if (prod) openProductModal(prod);
+    } else if (path.includes('/cn/') || path.includes('/category/')) {
+      const parts = path.split('/').filter(Boolean);
+      const catSlug = parts[1] || parts[0] || 'Groceries';
+      const catTitle = catSlug.split('-').map(s => s.charAt(0).toUpperCase() + s.slice(1)).join(' ');
+      const keywords = catSlug.split('-');
+      showCategoryView(catTitle, keywords);
+    }
+  }
+
   // --- Search Overlay / Live Search ---
   function openSearchModal() {
+    const existing = document.getElementById('zeptoSearchModal');
+    if (existing) existing.remove();
+
     const modal = document.createElement('div');
     modal.className = 'zepto-modal-overlay';
     modal.id = 'zeptoSearchModal';
@@ -378,12 +481,20 @@
     });
 
     modal.addEventListener('click', (e) => {
-      if (e.target === modal || e.target.id === 'closeSearchModal') modal.remove();
+      if (e.target === modal || e.target.id === 'closeSearchModal') {
+        modal.remove();
+        if (window.location.pathname.includes('/search')) {
+          history.pushState(null, '', '/');
+        }
+      }
     });
   }
 
   // --- Location Selector Modal ---
   function openLocationModal() {
+    const existing = document.getElementById('zeptoLocationModal');
+    if (existing) existing.remove();
+
     const modal = document.createElement('div');
     modal.className = 'zepto-modal-overlay';
     modal.id = 'zeptoLocationModal';
@@ -440,6 +551,9 @@
 
   // --- Auth / Login Modal ---
   function openLoginModal() {
+    const existing = document.getElementById('zeptoLoginModal');
+    if (existing) existing.remove();
+
     const modal = document.createElement('div');
     modal.className = 'zepto-modal-overlay';
     modal.id = 'zeptoLoginModal';
@@ -490,12 +604,14 @@
 
   // --- Checkout Modal ---
   function openCheckoutModal() {
+    const existing = document.getElementById('zeptoCheckoutModal');
+    if (existing) existing.remove();
+
     const modal = document.createElement('div');
     modal.className = 'zepto-modal-overlay';
     modal.id = 'zeptoCheckoutModal';
 
     const total = getCartTotal() + 4;
-    const count = getCartCount();
 
     modal.innerHTML = `
       <div class="zepto-modal-card" style="max-width: 480px;">
@@ -624,6 +740,7 @@
     if (searchAnchor) {
       searchAnchor.addEventListener('click', (e) => {
         e.preventDefault();
+        history.pushState(null, '', '/search');
         openSearchModal();
       });
     }
@@ -646,14 +763,13 @@
       });
     }
 
-    // 5. Product "ADD" buttons and Product Card click to preview
+    // 5. Product "ADD" buttons
     allButtons.forEach(b => {
       if (b.textContent.trim().toUpperCase() === 'ADD') {
         b.addEventListener('click', (e) => {
           e.preventDefault();
           e.stopPropagation();
 
-          // Find product card container
           const card = b.closest('a') || b.closest('div');
           const href = card && card.getAttribute ? card.getAttribute('href') : '';
           
@@ -662,7 +778,6 @@
             prod = state.products.find(p => p.url && (p.url.includes(href) || href.includes(p.url)));
           }
           if (!prod) {
-            // Find by name in card text
             const text = card ? card.textContent : '';
             prod = state.products.find(p => text.includes(p.name));
           }
@@ -686,32 +801,33 @@
       }
     });
 
-    // 6. Click on product card to open Quick View Modal
+    // 6. Click on product card to open Quick View Modal with URL pushState
     document.querySelectorAll('a[href*="/pn/"]').forEach(a => {
       a.addEventListener('click', (e) => {
-        // If they clicked the ADD button, handled above
         if (e.target.closest('button')) return;
         e.preventDefault();
         const href = a.getAttribute('href');
         const prod = state.products.find(p => p.url && p.url.includes(href));
         if (prod) {
+          history.pushState(null, '', href);
           openProductModal(prod);
         }
       });
     });
 
-    // 7. Category links filter or preview
+    // 7. Category links filter or preview with URL pushState
     document.querySelectorAll('a[href*="/cn/"], a[href*="/category/"]').forEach(a => {
       a.addEventListener('click', (e) => {
         e.preventDefault();
+        const href = a.getAttribute('href');
         const catName = a.textContent.trim();
-        showToast(`Navigating to ${catName || 'Category'}`);
-        // Scroll to matching section or show category modal
-        const targetHeading = Array.from(document.querySelectorAll('h3, h4')).find(h => h.textContent.trim().toLowerCase() === catName.toLowerCase());
-        if (targetHeading) {
-          targetHeading.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        }
+        history.pushState(null, '', href);
+        handleRoute();
       });
+    });
+
+    window.addEventListener('popstate', () => {
+      handleRoute();
     });
   }
 
@@ -722,6 +838,7 @@
     updateUserUI();
     updateCartUI();
     attachPageListeners();
+    handleRoute();
   });
 
 })();
