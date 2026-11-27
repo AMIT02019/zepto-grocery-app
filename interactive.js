@@ -787,7 +787,7 @@
               name: 'Zepto Grocery Item',
               brand: 'Zepto',
               price: 199,
-              image: 'assets/images/img-001.svg',
+              image: '/assets/images/img-001.svg',
               rating: 4.8,
               reviews: 520,
               desc: 'Freshly packed grocery product delivered in 10 minutes.'
