@@ -108,7 +108,43 @@
     // Pharmacy
     { url: '/pn/dolo-650-paracetamol-tablets/pvid/pharm-1', name: 'Paracetamol 650mg Fever & Pain Relief (15 Tabs)', brand: 'Micro Labs', price: 32, mrp: 35, weight: '1 strip (15 tabs)', image: '/assets/images/img-011.png', rating: 4.9, reviews: 15200, desc: 'Fast-acting fever and pain relief tablets.', section: 'Pharmacy' },
     { url: '/pn/dettol-antiseptic-liquid-250ml/pvid/pharm-2', name: 'Dettol Antiseptic Disinfectant Liquid', brand: 'Dettol', price: 135, mrp: 152, weight: '250 ml', image: '/assets/images/img-011.png', rating: 4.9, reviews: 9800, desc: 'Trusted first-aid antiseptic liquid for cuts, scratches, and disinfection.', section: 'Pharmacy' },
-    { url: '/pn/ors-electrolyte-hydration-pack/pvid/pharm-3', name: 'Electral ORS Hydration Powder Sachet (Pack of 5)', brand: 'FDC', price: 98, mrp: 110, weight: '5 x 21.8 g', image: '/assets/images/img-011.png', rating: 4.8, reviews: 4300, desc: 'WHO-recommended oral rehydration salts for instant hydration.', section: 'Pharmacy' }
+    { url: '/pn/ors-electrolyte-hydration-pack/pvid/pharm-3', name: 'Electral ORS Hydration Powder Sachet (Pack of 5)', brand: 'FDC', price: 98, mrp: 110, weight: '5 x 21.8 g', image: '/assets/images/img-011.png', rating: 4.8, reviews: 4300, desc: 'WHO-recommended oral rehydration salts for instant hydration.', section: 'Pharmacy' },
+    // Dairy, Bread & Eggs
+    { url: '/pn/amul-taaza-toned-milk/pvid/dairy-1', name: 'Amul Taaza Toned Fresh Milk', brand: 'Amul', price: 27, mrp: 28, weight: '500 ml', image: '/assets/images/img-014.webp', rating: 4.9, reviews: 28400, desc: 'Pasteurized toned fresh milk, rich in calcium and protein.', section: 'Dairy, Bread & Eggs' },
+    { url: '/pn/amul-pasteurised-butter/pvid/dairy-2', name: 'Amul Pasteurised Salted Butter', brand: 'Amul', price: 60, mrp: 60, weight: '100 g', image: '/assets/images/img-014.webp', rating: 4.9, reviews: 19200, desc: 'Utterly butterly delicious salted table butter.', section: 'Dairy, Bread & Eggs' },
+    { url: '/pn/modern-100-whole-wheat-bread/pvid/dairy-3', name: 'Modern 100% Whole Wheat Brown Bread', brand: 'Modern', price: 50, mrp: 55, weight: '400 g', image: '/assets/images/img-014.webp', rating: 4.6, reviews: 6400, desc: 'Soft, fiber-rich whole wheat bread baked daily.', section: 'Dairy, Bread & Eggs' },
+    { url: '/pn/farm-fresh-white-eggs-6pcs/pvid/dairy-4', name: 'Farm Fresh Classic White Eggs', brand: 'Eggoz', price: 64, mrp: 75, weight: '6 pcs', image: '/assets/images/img-014.webp', rating: 4.7, reviews: 11200, desc: 'Antibiotic-free, protein-rich farm fresh white eggs.', section: 'Dairy, Bread & Eggs' },
+    { url: '/pn/amul-malai-fresh-paneer/pvid/dairy-5', name: 'Amul Fresh Malai Paneer Block', brand: 'Amul', price: 92, mrp: 95, weight: '200 g', image: '/assets/images/img-014.webp', rating: 4.8, reviews: 14500, desc: 'Soft and creamy cottage cheese block for curries and tikka.', section: 'Dairy, Bread & Eggs' },
+    // Meats, Fish & Eggs
+    { url: '/pn/fresh-chicken-curry-cut/pvid/meat-1', name: 'Fresh Chicken Curry Cut (Skinless)', brand: 'Licious', price: 179, mrp: 215, weight: '500 g', image: '/assets/images/img-016.webp', rating: 4.8, reviews: 7600, desc: 'Tender, antibiotic-residue-free skinless chicken curry cut.', section: 'Meats, Fish & Eggs' },
+    { url: '/pn/fresh-chicken-breast-boneless/pvid/meat-2', name: 'Chicken Breast Boneless Fillet', brand: 'Licious', price: 249, mrp: 289, weight: '450 g', image: '/assets/images/img-016.webp', rating: 4.8, reviews: 5200, desc: 'Lean, high-protein boneless chicken breast fillets.', section: 'Meats, Fish & Eggs' },
+    { url: '/pn/fresh-rohu-bengali-cut/pvid/meat-3', name: 'Freshwater Rohu Bengali Cut', brand: 'FreshToHome', price: 269, mrp: 310, weight: '500 g', image: '/assets/images/img-016.webp', rating: 4.6, reviews: 2100, desc: 'Cleaned and neatly cut Rohu fish steaks.', section: 'Meats, Fish & Eggs' },
+    // Breakfast & Sauces
+    { url: '/pn/kelloggs-corn-flakes-original/pvid/brk-1', name: "Kellogg's Corn Flakes Original", brand: "Kellogg's", price: 195, mrp: 215, weight: '475 g', image: '/assets/images/img-018.webp', rating: 4.8, reviews: 8900, desc: 'Crispy golden corn flakes enriched with iron and B vitamins.', section: 'Breakfast & Sauces' },
+    { url: '/pn/kissan-fresh-tomato-ketchup/pvid/brk-2', name: 'Kissan Fresh Tomato Ketchup', brand: 'Kissan', price: 115, mrp: 135, weight: '850 g', image: '/assets/images/img-018.webp', rating: 4.8, reviews: 14100, desc: 'Made with 100% real juicy tomatoes.', section: 'Breakfast & Sauces' },
+    { url: '/pn/pintola-all-natural-peanut-butter/pvid/brk-3', name: 'Pintola All Natural Crunchy Peanut Butter', brand: 'Pintola', price: 165, mrp: 199, weight: '350 g', image: '/assets/images/img-018.webp', rating: 4.7, reviews: 6700, desc: '100% roasted peanuts with zero added sugar or oil.', section: 'Breakfast & Sauces' },
+    // Packaged Food
+    { url: '/pn/maggi-2-minute-masala-noodles/pvid/pkg-1', name: 'MAGGI 2-Minute Masala Instant Noodles', brand: 'Maggi', price: 56, mrp: 60, weight: '280 g (Pack of 4)', image: '/assets/images/img-019.webp', rating: 4.9, reviews: 32500, desc: "India's favourite masala instant noodles ready in 2 minutes.", section: 'Packaged Food' },
+    { url: '/pn/knorr-classic-thick-tomato-soup/pvid/pkg-2', name: 'Knorr Classic Thick Tomato Soup', brand: 'Knorr', price: 65, mrp: 75, weight: '53 g', image: '/assets/images/img-019.webp', rating: 4.6, reviews: 4200, desc: 'Rich and tangy restaurant-style tomato soup.', section: 'Packaged Food' },
+    // Tea, Coffee & More
+    { url: '/pn/brooke-bond-red-label-tea/pvid/tea-1', name: 'Brooke Bond Red Label Leaf Tea', brand: 'Red Label', price: 245, mrp: 280, weight: '500 g', image: '/assets/images/img-021.webp', rating: 4.8, reviews: 16400, desc: 'Rich, aromatic Assam leaf tea for a refreshing cup.', section: 'Tea, Coffee & More' },
+    { url: '/pn/nescafe-classic-instant-coffee/pvid/tea-2', name: 'Nescafe Classic Instant Coffee Jar', brand: 'Nescafe', price: 335, mrp: 375, weight: '90 g', image: '/assets/images/img-021.webp', rating: 4.8, reviews: 19200, desc: '100% pure instant coffee with bold aroma.', section: 'Tea, Coffee & More' },
+    { url: '/pn/blue-tokai-attikan-estate-coffee/pvid/tea-3', name: 'Blue Tokai Attikan Estate Roast Coffee', brand: 'Blue Tokai', price: 480, mrp: 540, weight: '250 g', image: '/assets/images/img-021.webp', rating: 4.9, reviews: 2100, desc: 'Medium-dark roast specialty Arabica coffee.', section: 'Tea, Coffee & More' },
+    // Ice Creams & More
+    { url: '/pn/hocco-belgian-chocolate-cone/pvid/ice-1', name: 'Hocco Belgian Chocolate Crunch Cone', brand: 'Hocco', price: 60, mrp: 70, weight: '110 ml', image: '/assets/images/img-022.webp', rating: 4.8, reviews: 3400, desc: 'Creamy Belgian chocolate ice cream in a crispy wafer cone.', section: 'Ice Creams & More' },
+    { url: '/pn/amul-real-milk-vanilla-tub/pvid/ice-2', name: 'Amul Real Milk Classic Vanilla Tub', brand: 'Amul', price: 195, mrp: 220, weight: '1 L', image: '/assets/images/img-022.webp', rating: 4.7, reviews: 7800, desc: 'Rich dairy ice cream made with real milk and vanilla.', section: 'Ice Creams & More' },
+    // Frozen Food
+    { url: '/pn/mccain-french-fries-frozen/pvid/frz-1', name: 'McCain Classic French Fries', brand: 'McCain', price: 135, mrp: 155, weight: '420 g', image: '/assets/images/img-023.webp', rating: 4.8, reviews: 9500, desc: 'Crispy golden potato fries ready in 3 minutes.', section: 'Frozen Food' },
+    { url: '/pn/safal-frozen-green-peas/pvid/frz-2', name: 'Safal Frozen Sweet Green Peas', brand: 'Safal', price: 115, mrp: 130, weight: '500 g', image: '/assets/images/img-023.webp', rating: 4.7, reviews: 6100, desc: 'Farm-fresh tender green peas individually quick frozen.', section: 'Frozen Food' },
+    // Sweet Cravings
+    { url: '/pn/cadbury-dairy-milk-silk-chocolate/pvid/swt-1', name: 'Cadbury Dairy Milk Silk Chocolate Bar', brand: 'Cadbury', price: 175, mrp: 190, weight: '150 g', image: '/assets/images/img-024.webp', rating: 4.9, reviews: 24100, desc: 'Smooth, creamy, melt-in-mouth Dairy Milk Silk chocolate.', section: 'Sweet Cravings' },
+    { url: '/pn/haldirams-gulab-jamun-tin/pvid/swt-2', name: "Haldiram's Gulab Jamun Tin", brand: "Haldiram's", price: 245, mrp: 270, weight: '1 kg', image: '/assets/images/img-024.webp', rating: 4.8, reviews: 8700, desc: 'Soft traditional milk-solid dumplings soaked in cardamom syrup.', section: 'Sweet Cravings' },
+    // Biscuits
+    { url: '/pn/cadbury-oreo-chocolate-creme-biscuit/pvid/bis-1', name: 'Cadbury Oreo Vanilla Creme Biscuits', brand: 'Oreo', price: 35, mrp: 40, weight: '120 g', image: '/assets/images/img-027.webp', rating: 4.8, reviews: 18500, desc: 'Twist, lick, and dunk chocolatey sandwich cookies.', section: 'Biscuits' },
+    { url: '/pn/britannia-good-day-cashew-cookies/pvid/bis-2', name: 'Britannia Good Day Cashew Cookies', brand: 'Britannia', price: 45, mrp: 50, weight: '200 g', image: '/assets/images/img-027.webp', rating: 4.7, reviews: 12900, desc: 'Crunchy butter cookies loaded with roasted cashews.', section: 'Biscuits' },
+    // Jewellery
+    { url: '/pn/zaveri-pearls-emerald-pendant-set/pvid/jew-1', name: 'Emerald Drop Gold-Plated Necklace & Earring Set', brand: 'Zepto Luxe', price: 799, mrp: 1499, weight: '1 Set', image: '/assets/images/img-029.webp', rating: 4.7, reviews: 420, desc: 'Elegant gold-plated pendant necklace with matching drop earrings.', section: 'Jewellery' },
+    { url: '/pn/classic-pearl-stud-earrings/pvid/jew-2', name: 'Minimalist Freshwater Pearl Studs', brand: 'Zepto Luxe', price: 399, mrp: 699, weight: '1 Pair', image: '/assets/images/img-029.webp', rating: 4.8, reviews: 310, desc: 'Timeless pearl stud earrings for everyday & festive wear.', section: 'Jewellery' }
   ];
 
   // --- Load Catalog from /catalog.json (with DOM fallback) ---
@@ -367,15 +403,59 @@
     if (viewCartBtn) viewCartBtn.addEventListener('click', openCartDrawer);
   }
 
+  const CATEGORY_SECTIONS = {
+    'fruits-vegetables': ['Fresh', 'Fruits & Vegetables'],
+    'fresh': ['Fresh', 'Fruits & Vegetables'],
+    'dairy-bread-eggs': ['Dairy, Bread & Eggs'],
+    'atta-rice-oil-dals': ['Rice', 'Dal & Pulses', 'Oils & Ghee'],
+    'meats-fish-eggs': ['Meats, Fish & Eggs'],
+    'masala-dry-fruits-more': ['Spices & Seasonings', 'Salt, Sugar & Jaggery'],
+    'breakfast-sauces': ['Breakfast & Sauces'],
+    'packaged-food': ['Packaged Food'],
+    'zepto-cafe': ['Cafe', 'Zepto Cafe'],
+    'cafe': ['Cafe', 'Zepto Cafe'],
+    'tea-coffee-more': ['Tea, Coffee & More'],
+    'ice-creams-more': ['Ice Creams & More'],
+    'frozen-food': ['Frozen Food'],
+    'sweet-cravings': ['Sweet Cravings'],
+    'cold-drinks-juices': ['Soft Drinks & Mixers'],
+    'munchies': ['Chips & Crisps', 'Namkeens'],
+    'biscuits': ['Biscuits'],
+    'apparel-lifestyle': ['Fashion', 'Apparel & Lifestyle'],
+    'fashion': ['Fashion', 'Apparel & Lifestyle'],
+    'jewellery': ['Jewellery'],
+    'beauty-personal-care': ['Beauty', 'Hair care'],
+    'skincare': ['Beauty'],
+    'makeup-beauty': ['Beauty'],
+    'beauty': ['Beauty', 'Hair care'],
+    'home': ['Laundry Care', 'Cleaning Essentials'],
+    'toys': ['Toys'],
+    'electronics': ['Electronics'],
+    'mobiles': ['Mobiles'],
+    'pharmacy': ['Pharmacy']
+  };
+
   // --- Full Category / Listing Page (PLP) ---
   function renderCategoryPage(title, filterTerms, activePath) {
-    const terms = (filterTerms || []).map(t => t.toLowerCase()).filter(t => t && t.length > 2 && !['and', 'more', 'all', 'the', 'for'].includes(t));
+    const slugMatch = Object.keys(CATEGORY_SECTIONS).find(k =>
+      (activePath && activePath.toLowerCase().includes(k)) ||
+      title.toLowerCase().replace(/[^a-z0-9]+/g, '-') === k
+    );
 
-    let matched = state.products.filter(p => {
-      if (terms.length === 0) return true;
-      const hay = `${p.name} ${p.brand} ${p.section} ${p.desc} ${p.url}`.toLowerCase();
-      return terms.some(t => hay.includes(t));
-    });
+    let matched = [];
+    if (slugMatch) {
+      const targetSections = CATEGORY_SECTIONS[slugMatch];
+      matched = state.products.filter(p => targetSections.includes(p.section));
+    }
+
+    if (matched.length === 0) {
+      const terms = (filterTerms || []).map(t => t.toLowerCase()).filter(t => t && t.length > 2 && !['and', 'more', 'all', 'the', 'for', 'categories'].includes(t));
+      matched = state.products.filter(p => {
+        if (terms.length === 0) return true;
+        const hay = `${p.name} ${p.brand} ${p.section} ${p.desc} ${p.url}`.toLowerCase();
+        return terms.some(t => hay.includes(t));
+      });
+    }
 
     if (matched.length === 0) {
       matched = [...state.products];
@@ -1003,7 +1083,16 @@
       const anchor = e.target.closest('a[href]');
       if (anchor) {
         const href = anchor.getAttribute('href');
-        if (!href || href.startsWith('#')) return;
+        if (!href) return;
+        if (href === '#') {
+          const txt = anchor.textContent.trim().toLowerCase();
+          if (txt.includes('cafe')) {
+            e.preventDefault();
+            navigateTo('/shop/cafe');
+          }
+          return;
+        }
+        if (href.startsWith('#')) return;
         // Keep external social links external
         if (href.startsWith('http') && !href.includes('zepto.com')) return;
 
