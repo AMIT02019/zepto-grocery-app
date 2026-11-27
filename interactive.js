@@ -74,6 +74,43 @@
     saveCart();
   }
 
+  const DEPARTMENT_PRODUCTS = [
+    // Cafe
+    { url: '/pn/zepto-cafe-vietnamese-cold-coffee/pvid/cafe-1', name: 'Vietnamese Cold Coffee', brand: 'Zepto Cafe', price: 149, mrp: 189, weight: '250 ml', image: '/assets/images/img-003.png', rating: 4.8, reviews: 2410, desc: 'Rich slow-brewed Vietnamese iced coffee with condensed milk, delivered chilled in 10 mins.', section: 'Cafe' },
+    { url: '/pn/zepto-cafe-butter-croissant/pvid/cafe-2', name: 'Classic Butter Croissant', brand: 'Zepto Cafe', price: 119, mrp: 149, weight: '1 pc (90 g)', image: '/assets/images/img-003.png', rating: 4.7, reviews: 1820, desc: 'Flaky, golden French-style butter croissant baked fresh.', section: 'Cafe' },
+    { url: '/pn/zepto-cafe-paneer-tikka-sandwich/pvid/cafe-3', name: 'Smoked Paneer Tikka Sandwich', brand: 'Zepto Cafe', price: 169, mrp: 199, weight: '180 g', image: '/assets/images/img-003.png', rating: 4.6, reviews: 980, desc: 'Grilled multigrain sandwich stuffed with spiced paneer tikka and mint mayo.', section: 'Cafe' },
+    { url: '/pn/zepto-cafe-belgian-chocolate-shake/pvid/cafe-4', name: 'Belgian Dark Chocolate Shake', brand: 'Zepto Cafe', price: 159, mrp: 199, weight: '300 ml', image: '/assets/images/img-003.png', rating: 4.8, reviews: 1540, desc: 'Thick and creamy Belgian dark chocolate milkshake.', section: 'Cafe' },
+    // Toys
+    { url: '/pn/lego-classic-creative-brick-box/pvid/toys-1', name: 'LEGO Classic Creative Brick Box', brand: 'LEGO', price: 1499, mrp: 1999, weight: '484 pcs', image: '/assets/images/img-005.png', rating: 4.9, reviews: 840, desc: 'Open-ended building set with colorful LEGO bricks for creative play.', section: 'Toys' },
+    { url: '/pn/hot-wheels-5-car-gift-pack/pvid/toys-2', name: 'Hot Wheels 5-Car Gift Pack', brand: 'Hot Wheels', price: 699, mrp: 899, weight: 'Pack of 5', image: '/assets/images/img-005.png', rating: 4.8, reviews: 1290, desc: 'Assorted 1:64 scale die-cast Hot Wheels racing cars.', section: 'Toys' },
+    { url: '/pn/uno-original-card-game/pvid/toys-3', name: 'UNO Original Playing Card Game', brand: 'Mattel', price: 149, mrp: 199, weight: '108 cards', image: '/assets/images/img-005.png', rating: 4.8, reviews: 5400, desc: 'Classic family card game for 2 to 10 players.', section: 'Toys' },
+    { url: '/pn/soft-plush-teddy-bear/pvid/toys-4', name: 'Super Soft Plush Teddy Bear', brand: 'Miniso', price: 499, mrp: 699, weight: '30 cm', image: '/assets/images/img-005.png', rating: 4.7, reviews: 620, desc: 'Huggable ultra-soft plush teddy bear for kids and gifting.', section: 'Toys' },
+    // Fresh
+    { url: '/pn/fresh-shimla-apples/pvid/fresh-1', name: 'Fresh Royal Gala Apples', brand: 'Zepto Fresh', price: 149, mrp: 190, weight: '500 g (3-4 pcs)', image: '/assets/images/img-006.png', rating: 4.7, reviews: 4210, desc: 'Crisp, naturally sweet farm-fresh apples handpicked daily.', section: 'Fresh' },
+    { url: '/pn/fresh-robusta-bananas/pvid/fresh-2', name: 'Fresh Robusta Bananas', brand: 'Zepto Fresh', price: 42, mrp: 55, weight: '500 g', image: '/assets/images/img-006.png', rating: 4.6, reviews: 6100, desc: 'Naturally ripened sweet bananas packed with potassium.', section: 'Fresh' },
+    { url: '/pn/fresh-hybrid-tomatoes/pvid/fresh-3', name: 'Farm Fresh Hybrid Tomatoes', brand: 'Zepto Fresh', price: 34, mrp: 45, weight: '500 g', image: '/assets/images/img-006.png', rating: 4.5, reviews: 8300, desc: 'Juicy red tomatoes sourced directly from local farms.', section: 'Fresh' },
+    { url: '/pn/fresh-coriander-leaves/pvid/fresh-4', name: 'Fresh Coriander Bunch (Dhania)', brand: 'Zepto Fresh', price: 19, mrp: 28, weight: '100 g', image: '/assets/images/img-006.png', rating: 4.6, reviews: 3900, desc: 'Aromatic fresh green coriander leaves.', section: 'Fresh' },
+    // Electronics
+    { url: '/pn/boat-airdopes-141-tws/pvid/elec-1', name: 'boAt Airdopes 141 Bluetooth TWS Earbuds', brand: 'boAt', price: 1099, mrp: 4490, weight: '42H Playtime', image: '/assets/images/img-007.png', rating: 4.5, reviews: 12400, desc: 'True wireless earbuds with ENx tech, ASAP charge, and IPX4 water resistance.', section: 'Electronics' },
+    { url: '/pn/portronics-konnect-usb-c-cable/pvid/elec-2', name: 'Portronics Konnect 60W Type-C Fast Cable', brand: 'Portronics', price: 199, mrp: 499, weight: '1.2 m', image: '/assets/images/img-007.png', rating: 4.6, reviews: 3100, desc: 'Braided fast-charging USB-C cable with 480Mbps data sync.', section: 'Electronics' },
+    { url: '/pn/mi-10000mah-power-bank/pvid/elec-3', name: 'Xiaomi 10000mAh 22.5W Fast Power Bank', brand: 'Xiaomi', price: 1299, mrp: 2199, weight: '10000 mAh', image: '/assets/images/img-007.png', rating: 4.7, reviews: 8900, desc: 'Compact dual-output fast charging power bank.', section: 'Electronics' },
+    // Mobiles
+    { url: '/pn/apple-iphone-17-128gb/pvid/mob-1', name: 'Apple iPhone 17 (128 GB, Midnight)', brand: 'Apple', price: 79900, mrp: 82900, weight: '128 GB', image: '/assets/images/img-008.png', rating: 4.9, reviews: 1420, desc: 'Latest Apple iPhone with Super Retina XDR display and A-series chip, delivered in minutes.', section: 'Mobiles' },
+    { url: '/pn/oneplus-13s-5g/pvid/mob-2', name: 'OnePlus 13s 5G (256 GB, Emerald)', brand: 'OnePlus', price: 54999, mrp: 59999, weight: '256 GB', image: '/assets/images/img-008.png', rating: 4.8, reviews: 890, desc: 'Flagship 5G smartphone with AMOLED 120Hz display and SuperVOOC charging.', section: 'Mobiles' },
+    { url: '/pn/realme-p4r-5g/pvid/mob-3', name: 'Realme P4r 5G (128 GB, Obsidian)', brand: 'Realme', price: 16999, mrp: 19999, weight: '128 GB', image: '/assets/images/img-008.png', rating: 4.6, reviews: 2150, desc: '5G smartphone with 5000mAh battery and 50MP AI camera.', section: 'Mobiles' },
+    // Beauty
+    { url: '/pn/minimalist-niacinamide-serum/pvid/beauty-1', name: 'Minimalist 10% Niacinamide Face Serum', brand: 'Minimalist', price: 569, mrp: 599, weight: '30 ml', image: '/assets/images/img-009.png', rating: 4.8, reviews: 6420, desc: 'Daily face serum with Zinc for oil control and barrier repair.', section: 'Beauty' },
+    { url: '/pn/lakme-9to5-primer-matte-lipstick/pvid/beauty-2', name: 'Lakme 9to5 Primer + Matte Lip Color', brand: 'Lakme', price: 425, mrp: 550, weight: '3.6 g', image: '/assets/images/img-009.png', rating: 4.6, reviews: 3200, desc: 'Long-lasting matte lipstick with built-in primer.', section: 'Beauty' },
+    { url: '/pn/dot-and-key-vitamin-c-sunscreen/pvid/beauty-3', name: 'Dot & Key Vitamin C + E Sunscreen SPF 50', brand: 'Dot & Key', price: 395, mrp: 495, weight: '50 g', image: '/assets/images/img-009.png', rating: 4.7, reviews: 4100, desc: 'Lightweight broad-spectrum SPF 50 PA+++ sunscreen with zero white cast.', section: 'Beauty' },
+    // Fashion
+    { url: '/pn/ramraj-cotton-classic-tee/pvid/fash-1', name: 'Classic 100% Cotton Crew Neck T-Shirt', brand: 'Ramraj Cotton', price: 449, mrp: 699, weight: 'Size L', image: '/assets/images/img-010.png', rating: 4.6, reviews: 780, desc: 'Breathable combed cotton everyday crew-neck t-shirt.', section: 'Fashion' },
+    { url: '/pn/miniso-canvas-tote-bag/pvid/fash-2', name: 'Minimalist Everyday Canvas Tote Bag', brand: 'Miniso', price: 599, mrp: 799, weight: '1 pc', image: '/assets/images/img-010.png', rating: 4.7, reviews: 510, desc: 'Durable, spacious canvas tote bag for daily essentials.', section: 'Fashion' },
+    // Pharmacy
+    { url: '/pn/dolo-650-paracetamol-tablets/pvid/pharm-1', name: 'Paracetamol 650mg Fever & Pain Relief (15 Tabs)', brand: 'Micro Labs', price: 32, mrp: 35, weight: '1 strip (15 tabs)', image: '/assets/images/img-011.png', rating: 4.9, reviews: 15200, desc: 'Fast-acting fever and pain relief tablets.', section: 'Pharmacy' },
+    { url: '/pn/dettol-antiseptic-liquid-250ml/pvid/pharm-2', name: 'Dettol Antiseptic Disinfectant Liquid', brand: 'Dettol', price: 135, mrp: 152, weight: '250 ml', image: '/assets/images/img-011.png', rating: 4.9, reviews: 9800, desc: 'Trusted first-aid antiseptic liquid for cuts, scratches, and disinfection.', section: 'Pharmacy' },
+    { url: '/pn/ors-electrolyte-hydration-pack/pvid/pharm-3', name: 'Electral ORS Hydration Powder Sachet (Pack of 5)', brand: 'FDC', price: 98, mrp: 110, weight: '5 x 21.8 g', image: '/assets/images/img-011.png', rating: 4.8, reviews: 4300, desc: 'WHO-recommended oral rehydration salts for instant hydration.', section: 'Pharmacy' }
+  ];
+
   // --- Load Catalog from /catalog.json (with DOM fallback) ---
   async function loadCatalog() {
     try {
@@ -84,6 +121,13 @@
         state.categories = data.categories || [];
       }
     } catch (e) {}
+
+    // Merge department products if not already present
+    DEPARTMENT_PRODUCTS.forEach(dp => {
+      if (!state.products.some(p => p.url === dp.url)) {
+        state.products.push(dp);
+      }
+    });
 
     if (state.products.length === 0) {
       // Fallback: parse DOM product links
@@ -163,10 +207,16 @@
   function setActiveMenuTab(label) {
     document.querySelectorAll('.__8pvtm').forEach(btn => {
       const txt = btn.textContent.trim().toLowerCase();
-      if (txt === label.toLowerCase()) {
+      const span = btn.querySelector('.c2zll');
+      const bar = btn.querySelector('.mh28o');
+      if (label && txt === label.toLowerCase()) {
         btn.classList.add('zp-tab-active');
+        if (span) span.style.color = '#9A16CA';
+        if (bar) { bar.style.opacity = '1'; bar.style.backgroundColor = '#9A16CA'; }
       } else {
         btn.classList.remove('zp-tab-active');
+        if (span) span.style.color = '#586274';
+        if (bar) { bar.style.opacity = '0'; }
       }
     });
   }

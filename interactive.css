@@ -323,8 +323,21 @@
 }
 
 /* Active menu tab highlight */
-.__8pvtm.zp-tab-active {
-  color: #7c3aed !important;
-  border-bottom: 2px solid #7c3aed !important;
+.__8pvtm {
+  cursor: pointer;
+}
+.__8pvtm.zp-tab-active .c2zll {
+  color: #9A16CA !important;
   font-weight: 700 !important;
+}
+.__8pvtm.zp-tab-active .mh28o {
+  opacity: 1 !important;
+  background-color: #9A16CA !important;
+}
+.__8pvtm:not(.zp-tab-active) .c2zll {
+  color: #586274 !important;
+  font-weight: 500 !important;
+}
+.__8pvtm:not(.zp-tab-active) .mh28o {
+  opacity: 0 !important;
 }
