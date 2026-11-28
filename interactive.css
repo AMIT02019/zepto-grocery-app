@@ -498,10 +498,23 @@ footer.RuYse {
 }
 .shills-slide-item img {
   width: 100%;
-  height: auto;
-  max-height: 420px;
+  height: 520px;
+  max-height: 560px;
   object-fit: cover;
+  object-position: center;
   display: block;
+}
+
+@media (max-width: 1200px) {
+  .shills-slide-item img {
+    height: 440px;
+  }
+}
+
+@media (max-width: 768px) {
+  .shills-slide-item img {
+    height: 280px;
+  }
 }
 .shills-slider-btn {
   position: absolute;
@@ -613,13 +626,15 @@ footer.RuYse {
   padding-bottom: 56.25%;
   height: 0;
 }
-.shills-video-box iframe {
+.shills-video-box iframe,
+.shills-video-box video {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   border: none;
+  object-fit: cover;
 }
 
 /* Customer Reviews / Testimonials */

@@ -450,19 +450,20 @@
     const videoSectionHtml = `
       <section class="shills-video-section">
         <div class="shills-video-box">
-          <iframe
-            src="https://www.youtube-nocookie.com/embed/videoseries?list=PLw-nQ4745j0zGf3_T5w6Yk1-y9k4B9g2A"
-            title="Shills Professional Nail Art Masterclasses"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen>
-          </iframe>
+          <video 
+            src="https://cdn.shopify.com/videos/c/o/v/190be95f8b55417ea0aa79af136773da.mp4" 
+            poster="https://cdn.shopify.com/s/files/1/0696/6476/8172/files/preview_images/190be95f8b55417ea0aa79af136773da.thumbnail.0000000000.jpg?v=1772784326"
+            controls 
+            playsinline 
+            preload="metadata">
+          </video>
         </div>
         <div>
           <span style="background: #f3e8ff; color: #7c3aed; font-size: 0.75rem; font-weight: 700; padding: 4px 10px; border-radius: 9999px; text-transform: uppercase; letter-spacing: 0.05em;">Studio Masterclasses</span>
           <h2 style="font-size: 1.65rem; font-weight: 900; color: #111827; margin: 0.6rem 0 0.85rem 0; line-height: 1.25;">How to Create 9D Cat Eye &amp; Builder Gel Extensions</h2>
           <p style="font-size: 0.9rem; color: #4b5563; line-height: 1.6; margin-bottom: 1.25rem;">Watch top Indian nail educators and salon technicians demonstrate step-by-step techniques using Shills UV/LED Gel Polishes, magnetic wands, and poly gels.</p>
           <div style="display: flex; flex-wrap: wrap; gap: 10px;">
-            <button type="button" data-spa-nav="/cn/cat-eye-kit" style="background: #111111; color: white; border: none; padding: 0.75rem 1.4rem; border-radius: 0.5rem; font-weight: 700; cursor: pointer; box-shadow: 0 4px 12px rgba(255,50,105,0.3);">Shop Featured Kit →</button>
+            <button type="button" data-spa-nav="/cn/cat-eye-kit" style="background: #111111; color: white; border: none; padding: 0.75rem 1.4rem; border-radius: 0.5rem; font-weight: 700; cursor: pointer; box-shadow: 0 4px 12px rgba(60,0,107,0.25);">Shop Featured Kit →</button>
             <a href="https://www.youtube.com/@ShillsProfessional.Official" target="_blank" rel="noopener" style="background: #f3f4f6; color: #111827; padding: 0.75rem 1.25rem; border-radius: 0.5rem; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">Watch on YouTube ↗</a>
           </div>
         </div>
@@ -1326,6 +1327,21 @@
       queueClose();
     });
 
+    window.closeMegaMenu = closeMegaMenu;
+
+    // Immediate dismissal and navigation when clicking any interactive link/card inside the mega menu
+    root.addEventListener('click', (e) => {
+      const clickTarget = e.target.closest('[data-spa-nav], a[href], button');
+      if (clickTarget) {
+        closeMegaMenu();
+        const url = clickTarget.getAttribute('data-spa-nav') || clickTarget.getAttribute('href');
+        if (url && !url.startsWith('http') && !url.startsWith('#')) {
+          e.preventDefault();
+          navigateTo(url);
+        }
+      }
+    });
+
     // Close on any outside click
     document.addEventListener('click', (e) => {
       if (!e.target.closest('#shillsMegaMenuRoot') && !e.target.closest('.__8pvtm')) {
@@ -1669,14 +1685,24 @@
   }
 
   function navigateTo(url, push = true) {
+    if (typeof window.closeMegaMenu === 'function') {
+      window.closeMegaMenu();
+    }
     const clean = (url || '/').replace(/^https?:\/\/[^/]+/, '') || '/';
     if (push && window.location.pathname + window.location.search !== clean) {
       history.pushState(null, '', clean);
     }
     handleRoute();
+    window.scrollTo({ top: 0, behavior: 'instant' });
   }
 
   function handleRoute() {
+    if (typeof window.closeMegaMenu === 'function') {
+      window.closeMegaMenu();
+    }
+    const root = document.getElementById('shillsMegaMenuRoot');
+    if (root) root.classList.remove('is-open');
+    document.querySelectorAll('.__8pvtm').forEach(b => b.classList.remove('has-mega-open'));
     const path = window.location.pathname;
     const params = new URLSearchParams(window.location.search);
 
