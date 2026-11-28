@@ -155,13 +155,13 @@
             <img src="${esc(p.image)}" alt="${esc(p.name)}" loading="lazy" />
           </div>
           <div class="shills-pro-badge">★ SALON PRO</div>
-          <h4 style="margin: 0 0 4px 0; font-size: 0.85rem; font-weight: 600; color: #1f2937; line-height: 1.3; height: 36px; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;">${esc(p.name)}</h4>
-          <p style="margin: 0 0 8px 0; font-size: 0.75rem; color: #6b7280; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${esc(p.weight)}</p>
+          <h4 style="margin: 0 0 4px 0; font-size: 0.82rem; font-weight: 500; color: #18181b; line-height: 1.4; height: 36px; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; letter-spacing: -0.01em;">${esc(p.name)}</h4>
+          <p style="margin: 0 0 8px 0; font-size: 0.72rem; color: #71717a; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${esc(p.weight)}</p>
         </div>
         <div style="display: flex; align-items: center; justify-content: space-between; margin-top: auto; padding-top: 6px;">
           <div>
-            <span style="font-weight: 800; font-size: 0.95rem; color: #111827;">₹${p.price}</span>
-            ${p.mrp > p.price ? `<span style="font-size: 0.75rem; color: #9ca3af; text-decoration: line-through; margin-left: 4px;">₹${p.mrp}</span>` : ''}
+            <span style="font-weight: 700; font-size: 0.92rem; color: #111111; letter-spacing: -0.01em;">₹${p.price}</span>
+            ${p.mrp > p.price ? `<span style="font-size: 0.72rem; color: #a1a1aa; text-decoration: line-through; margin-left: 4px;">₹${p.mrp}</span>` : ''}
           </div>
           <div class="zp-cta-slot" data-slot-url="${esc(p.url)}" data-full="0" style="display: contents;">
             ${renderCtaControl(p, false)}
@@ -229,29 +229,29 @@
         <div class="shills-trust-item">
           <div class="shills-trust-icon">💅</div>
           <div>
-            <h4 style="margin: 0; font-size: 0.9rem; font-weight: 700; color: #111827;">Salon-Grade Formulas</h4>
-            <p style="margin: 2px 0 0 0; font-size: 0.78rem; color: #6b7280;">Trusted by 5,000+ nail studios &amp; artists</p>
+            <h4 style="margin: 0; font-size: 0.85rem; font-weight: 600; color: #111111;">Salon-Grade Formulas</h4>
+            <p style="margin: 2px 0 0 0; font-size: 0.76rem; color: #71717a;">Trusted by 5,000+ nail studios &amp; artists</p>
           </div>
         </div>
         <div class="shills-trust-item">
           <div class="shills-trust-icon">📦</div>
           <div>
-            <h4 style="margin: 0; font-size: 0.9rem; font-weight: 700; color: #111827;">Pan-India Shipping</h4>
-            <p style="margin: 2px 0 0 0; font-size: 0.78rem; color: #6b7280;">Safe, insured dispatch to your doorstep or studio</p>
+            <h4 style="margin: 0; font-size: 0.85rem; font-weight: 600; color: #111111;">Pan-India Shipping</h4>
+            <p style="margin: 2px 0 0 0; font-size: 0.76rem; color: #71717a;">Safe, insured dispatch to your doorstep or studio</p>
           </div>
         </div>
         <div class="shills-trust-item">
           <div class="shills-trust-icon">✓</div>
           <div>
-            <h4 style="margin: 0; font-size: 0.9rem; font-weight: 700; color: #111827;">100% Genuine &amp; Toxin-Free</h4>
-            <p style="margin: 2px 0 0 0; font-size: 0.78rem; color: #6b7280;">Direct from official Shills inventory</p>
+            <h4 style="margin: 0; font-size: 0.85rem; font-weight: 600; color: #111111;">100% Genuine &amp; Toxin-Free</h4>
+            <p style="margin: 2px 0 0 0; font-size: 0.76rem; color: #71717a;">Direct from official Shills inventory</p>
           </div>
         </div>
         <div class="shills-trust-item">
           <div class="shills-trust-icon">💬</div>
           <div>
-            <h4 style="margin: 0; font-size: 0.9rem; font-weight: 700; color: #111827;">Dedicated Pro Support</h4>
-            <p style="margin: 2px 0 0 0; font-size: 0.78rem; color: #6b7280;">Expert help for artists &amp; salon owners</p>
+            <h4 style="margin: 0; font-size: 0.85rem; font-weight: 600; color: #111111;">Dedicated Pro Support</h4>
+            <p style="margin: 2px 0 0 0; font-size: 0.76rem; color: #71717a;">Expert help for artists &amp; salon owners</p>
           </div>
         </div>
       </div>
@@ -261,10 +261,10 @@
       <section style="margin-bottom: 2.25rem;">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
           <div>
-            <h2 style="margin: 0; font-size: 1.35rem; font-weight: 800; color: #111827;">Shop by Category</h2>
-            <p style="margin: 3px 0 0 0; font-size: 0.82rem; color: #6b7280;">Explore salon-grade nail care, extensions, accessories &amp; beauty</p>
+            <h2 style="margin: 0; font-size: 1.25rem; font-weight: 600; color: #111111; letter-spacing: -0.015em;">Shop by Category</h2>
+            <p style="margin: 3px 0 0 0; font-size: 0.8rem; color: #71717a;">Explore salon-grade nail care, extensions, accessories &amp; beauty</p>
           </div>
-          <a href="/cn/best-selling" data-spa-nav="/cn/best-selling" style="color: #3c006b; font-weight: 700; font-size: 0.875rem; text-decoration: none;">See All ›</a>
+          <a href="/cn/best-selling" data-spa-nav="/cn/best-selling" style="color: #3c006b; font-weight: 600; font-size: 0.82rem; text-decoration: none;">See All ›</a>
         </div>
         <div class="shills-cat-grid">
           ${state.categories.map(c => `
@@ -272,7 +272,7 @@
               <div class="shills-cat-img">
                 <img src="${esc(c.image)}" alt="${esc(c.name)}" loading="lazy" />
               </div>
-              <span style="font-size: 0.78rem; font-weight: 600; color: #1f2937; line-height: 1.25;">${esc(c.name)}</span>
+              <span style="font-size: 0.76rem; font-weight: 500; color: #18181b; line-height: 1.25;">${esc(c.name)}</span>
             </div>
           `).join('')}
         </div>
@@ -383,10 +383,10 @@
       <section class="shills-reels-section">
         <div class="shills-reels-header">
           <div>
-            <span style="color: #3c006b; font-weight: 800; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em;">Trending On Social</span>
-            <h2 style="font-size: 1.45rem; font-weight: 900; color: #111827; margin: 0.25rem 0 0 0;">Watch &amp; Buy Salon Looks</h2>
+            <span style="color: #3c006b; font-weight: 600; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em;">Trending On Social</span>
+            <h2 style="font-size: 1.25rem; font-weight: 600; color: #111111; margin: 0.25rem 0 0 0; letter-spacing: -0.015em;">Watch &amp; Buy Salon Looks</h2>
           </div>
-          <span style="font-size: 0.85rem; color: #6b7280; font-weight: 500;">Hover or click reel to play with sound</span>
+          <span style="font-size: 0.8rem; color: #71717a; font-weight: 400;">Hover or click reel to play with sound</span>
         </div>
         <div class="shills-reels-slider-wrapper">
           <button type="button" class="shills-reels-nav-btn shills-reels-prev" id="reelsPrev" aria-label="Previous Reels">‹</button>
@@ -424,10 +424,10 @@
         <section style="margin-bottom: 2.5rem;">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
             <div>
-              <h3 style="margin: 0; font-size: 1.25rem; font-weight: 800; color: #111827;">${esc(secName)}</h3>
-              <p style="margin: 2px 0 0 0; font-size: 0.8rem; color: #6b7280;">High-performance professional formulas</p>
+              <h3 style="margin: 0; font-size: 1.15rem; font-weight: 600; color: #111111; letter-spacing: -0.015em;">${esc(secName)}</h3>
+              <p style="margin: 2px 0 0 0; font-size: 0.78rem; color: #71717a;">High-performance professional formulas</p>
             </div>
-            <a href="${esc(secUrl)}" data-spa-nav="${esc(secUrl)}" style="color: #3c006b; font-weight: 700; font-size: 0.875rem; text-decoration: none;">View All (${state.products.filter(p => p.section === secName).length}) ›</a>
+            <a href="${esc(secUrl)}" data-spa-nav="${esc(secUrl)}" style="color: #3c006b; font-weight: 600; font-size: 0.82rem; text-decoration: none;">View All (${state.products.filter(p => p.section === secName).length}) ›</a>
           </div>
           <div class="zp-prod-grid">
             ${items.map(renderProductCard).join('')}
@@ -459,12 +459,12 @@
           </video>
         </div>
         <div>
-          <span style="background: #f3e8ff; color: #7c3aed; font-size: 0.75rem; font-weight: 700; padding: 4px 10px; border-radius: 9999px; text-transform: uppercase; letter-spacing: 0.05em;">Studio Masterclasses</span>
-          <h2 style="font-size: 1.65rem; font-weight: 900; color: #111827; margin: 0.6rem 0 0.85rem 0; line-height: 1.25;">How to Create 9D Cat Eye &amp; Builder Gel Extensions</h2>
-          <p style="font-size: 0.9rem; color: #4b5563; line-height: 1.6; margin-bottom: 1.25rem;">Watch top Indian nail educators and salon technicians demonstrate step-by-step techniques using Shills UV/LED Gel Polishes, magnetic wands, and poly gels.</p>
+          <span style="background: #fdf4ff; color: #701a75; font-size: 0.7rem; font-weight: 600; padding: 3px 9px; border-radius: 9999px; text-transform: uppercase; letter-spacing: 0.08em; border: 1px solid #f5d0fe;">Studio Masterclasses</span>
+          <h2 style="font-size: 1.35rem; font-weight: 600; color: #111111; margin: 0.5rem 0 0.75rem 0; line-height: 1.35; letter-spacing: -0.015em;">How to Create 9D Cat Eye &amp; Builder Gel Extensions</h2>
+          <p style="font-size: 0.84rem; color: #52525b; line-height: 1.6; margin-bottom: 1.25rem;">Watch top Indian nail educators and salon technicians demonstrate step-by-step techniques using Shills UV/LED Gel Polishes, magnetic wands, and poly gels.</p>
           <div style="display: flex; flex-wrap: wrap; gap: 10px;">
-            <button type="button" data-spa-nav="/cn/cat-eye-kit" style="background: #111111; color: white; border: none; padding: 0.75rem 1.4rem; border-radius: 0.5rem; font-weight: 700; cursor: pointer; box-shadow: 0 4px 12px rgba(60,0,107,0.25);">Shop Featured Kit →</button>
-            <a href="https://www.youtube.com/@ShillsProfessional.Official" target="_blank" rel="noopener" style="background: #f3f4f6; color: #111827; padding: 0.75rem 1.25rem; border-radius: 0.5rem; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">Watch on YouTube ↗</a>
+            <button type="button" data-spa-nav="/cn/cat-eye-kit" style="background: #111111; color: white; border: none; padding: 0.65rem 1.25rem; border-radius: 9999px; font-size: 0.8rem; font-weight: 600; cursor: pointer; letter-spacing: 0.02em;">Shop Featured Kit →</button>
+            <a href="https://www.youtube.com/@ShillsProfessional.Official" target="_blank" rel="noopener" style="background: #f4f4f5; color: #18181b; padding: 0.65rem 1.2rem; border-radius: 9999px; font-size: 0.8rem; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">Watch on YouTube ↗</a>
           </div>
         </div>
       </section>
@@ -505,23 +505,23 @@
     const reviewsHtml = `
       <section style="margin-bottom: 2.75rem;">
         <div style="text-align: center; max-width: 620px; margin: 0 auto 1.75rem auto;">
-          <span style="color: #7c3aed; font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em;">Artist Feedback</span>
-          <h2 style="font-size: 1.65rem; font-weight: 900; color: #111827; margin: 0.35rem 0 0.5rem 0;">Loved by 10,000+ Beauty Professionals</h2>
-          <p style="font-size: 0.88rem; color: #6b7280; margin: 0;">Real reviews from verified salon owners, nail technicians, and freelance artists across India.</p>
+          <span style="color: #701a75; font-weight: 600; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em;">Artist Feedback</span>
+          <h2 style="font-size: 1.35rem; font-weight: 600; color: #111111; margin: 0.35rem 0 0.5rem 0; letter-spacing: -0.015em;">Loved by 10,000+ Beauty Professionals</h2>
+          <p style="font-size: 0.82rem; color: #71717a; margin: 0;">Real reviews from verified salon owners, nail technicians, and freelance artists across India.</p>
         </div>
         <div class="shills-reviews-grid">
           ${reviews.map(r => `
             <div class="shills-review-card">
               <div>
-                <div style="color: #f59e0b; font-size: 1.1rem; margin-bottom: 6px;">${'★'.repeat(r.stars)}</div>
-                <h4 style="font-size: 0.95rem; font-weight: 700; color: #111827; margin: 0 0 6px 0;">"${esc(r.title)}"</h4>
-                <p style="font-size: 0.85rem; color: #4b5563; line-height: 1.5; margin: 0 0 1rem 0;">${esc(r.text)}</p>
+                <div style="color: #f59e0b; font-size: 0.95rem; margin-bottom: 6px;">${'★'.repeat(r.stars)}</div>
+                <h4 style="font-size: 0.88rem; font-weight: 600; color: #111111; margin: 0 0 6px 0;">"${esc(r.title)}"</h4>
+                <p style="font-size: 0.82rem; color: #52525b; line-height: 1.5; margin: 0 0 1rem 0;">${esc(r.text)}</p>
               </div>
               <div style="border-top: 1px solid #f3f4f6; padding-top: 0.75rem; display: flex; align-items: center; gap: 8px;">
-                <div style="width: 34px; height: 34px; border-radius: 50%; background: #f3e8ff; color: #7c3aed; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.85rem;">${r.name[0]}</div>
+                <div style="width: 32px; height: 32px; border-radius: 50%; background: #fdf4ff; color: #701a75; display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 0.8rem;">${r.name[0]}</div>
                 <div>
-                  <div style="font-size: 0.82rem; font-weight: 700; color: #111827;">${esc(r.name)}</div>
-                  <div style="font-size: 0.72rem; color: #6b7280;">${esc(r.role)}</div>
+                  <div style="font-size: 0.8rem; font-weight: 600; color: #111111;">${esc(r.name)}</div>
+                  <div style="font-size: 0.72rem; color: #71717a;">${esc(r.role)}</div>
                 </div>
               </div>
             </div>
@@ -1406,14 +1406,14 @@
         <span>›</span>
         <a href="${esc(catUrl)}" data-spa-nav="${esc(catUrl)}">${esc(prod.section)}</a>
         <span>›</span>
-        <span style="color: #111827; font-weight: 600;">${esc(prod.name)}</span>
+        <span style="color: #111111; font-weight: 500; font-size: 0.74rem;">${esc(prod.name)}</span>
       </nav>
 
       <div class="zp-pdp-grid">
         <div class="zp-pdp-gallery">
           <div class="zp-pdp-img-box">
-            ${discount > 0 ? `<span class="zp-discount-badge" style="top: 14px; left: 14px; font-size: 12px; padding: 4px 10px;">${discount}% OFF</span>` : ''}
-            <button type="button" id="pdpShareBtn" title="Copy Product Link" style="position: absolute; top: 14px; right: 14px; background: #ffffff; border: 1px solid #e5e7eb; border-radius: 9999px; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 2px 6px rgba(0,0,0,0.06);">🔗</button>
+            ${discount > 0 ? `<span class="zp-discount-badge" style="top: 14px; left: 14px; font-size: 11px; padding: 3px 8px;">${discount}% OFF</span>` : ''}
+            <button type="button" id="pdpShareBtn" title="Copy Product Link" style="position: absolute; top: 14px; right: 14px; background: #ffffff; border: 1px solid #e5e7eb; border-radius: 9999px; width: 34px; height: 34px; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 2px 6px rgba(0,0,0,0.04);">🔗</button>
             <img id="pdpMainImg" src="${esc(imgs[0])}" alt="${esc(prod.name)}" />
           </div>
 
@@ -1426,64 +1426,64 @@
           </div>
 
           <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.75rem; margin-top: 1rem;">
-            <div style="background: #faf8fc; border: 1px solid #ece9f2; border-radius: 0.5rem; padding: 0.65rem; text-align: center; font-size: 0.75rem; color: #374151; font-weight: 600;">✓ 100% Authentic Shills</div>
-            <div style="background: #faf8fc; border: 1px solid #ece9f2; border-radius: 0.5rem; padding: 0.65rem; text-align: center; font-size: 0.75rem; color: #374151; font-weight: 600;">↺ Certified Salon Grade</div>
+            <div style="background: #faf8fc; border: 1px solid #ece9f2; border-radius: 0.5rem; padding: 0.65rem; text-align: center; font-size: 0.74rem; color: #374151; font-weight: 500;">✓ 100% Authentic Shills</div>
+            <div style="background: #faf8fc; border: 1px solid #ece9f2; border-radius: 0.5rem; padding: 0.65rem; text-align: center; font-size: 0.74rem; color: #374151; font-weight: 500;">↺ Certified Salon Grade</div>
           </div>
         </div>
 
         <div>
           <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px;">
-            <a href="${esc(catUrl)}" data-spa-nav="${esc(catUrl)}" style="display: inline-block; font-size: 0.8rem; font-weight: 700; color: #7c3aed; text-transform: uppercase; letter-spacing: 0.05em; text-decoration: none;">${esc(prod.brand)} ›</a>
-            <span class="shills-pro-badge" style="margin: 0; font-size: 11px; padding: 4px 10px;">★ CERTIFIED SALON GRADE</span>
+            <a href="${esc(catUrl)}" data-spa-nav="${esc(catUrl)}" style="display: inline-block; font-size: 0.72rem; font-weight: 600; color: #701a75; text-transform: uppercase; letter-spacing: 0.08em; text-decoration: none;">${esc(prod.brand)} ›</a>
+            <span class="shills-pro-badge" style="margin: 0; font-size: 8.5px; padding: 3px 8px;">★ CERTIFIED SALON GRADE</span>
           </div>
 
-          <h1 style="font-size: 1.5rem; font-weight: 800; color: #111827; margin: 0 0 10px 0; line-height: 1.3;">${esc(prod.name)}</h1>
+          <h1 style="font-size: 1.35rem; font-weight: 600; color: #111111; margin: 0 0 10px 0; line-height: 1.38; letter-spacing: -0.015em;">${esc(prod.name)}</h1>
 
           <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 1rem;">
-            <span style="background: #ecfdf5; color: #059669; font-weight: 700; font-size: 0.85rem; padding: 3px 10px; border-radius: 6px;">★ ${prod.rating}</span>
-            <span style="font-size: 0.85rem; color: #6b7280;">(${Number(prod.reviews).toLocaleString()} verified ratings)</span>
+            <span style="background: #ecfdf5; color: #059669; font-weight: 600; font-size: 0.8rem; padding: 3px 9px; border-radius: 6px;">★ ${prod.rating}</span>
+            <span style="font-size: 0.8rem; color: #71717a;">(${Number(prod.reviews).toLocaleString()} verified ratings)</span>
           </div>
 
-          <p style="font-size: 0.78rem; font-weight: 700; color: #6b7280; text-transform: uppercase; margin: 0 0 8px 0;">Select Option / Variant</p>
+          <p style="font-size: 0.72rem; font-weight: 600; color: #71717a; text-transform: uppercase; letter-spacing: 0.06em; margin: 0 0 8px 0;">Select Option / Variant</p>
           <div class="zp-variant-row">
             ${variants.map((v, idx) => `
               <button type="button" class="zp-variant-pill ${idx === 0 ? 'active' : ''}" data-v-price="${v.price}" data-v-mrp="${v.mrp}">
-                <div style="font-size: 0.82rem; font-weight: 700; color: #111827;">${esc(v.label)}</div>
-                <div style="font-size: 0.78rem; color: #4b5563; margin-top: 2px;">
+                <div style="font-size: 0.78rem; font-weight: 600; color: #111111;">${esc(v.label)}</div>
+                <div style="font-size: 0.74rem; color: #52525b; margin-top: 2px;">
                   <strong>₹${v.price}</strong>
-                  ${v.mrp > v.price ? `<span style="text-decoration: line-through; color: #9ca3af; margin-left: 4px;">₹${v.mrp}</span>` : ''}
+                  ${v.mrp > v.price ? `<span style="text-decoration: line-through; color: #a1a1aa; margin-left: 4px;">₹${v.mrp}</span>` : ''}
                 </div>
               </button>
             `).join('')}
           </div>
 
-          <div style="border-top: 1px solid #f3f4f6; border-bottom: 1px solid #f3f4f6; padding: 1rem 0; margin-bottom: 1.25rem;">
+          <div style="border-top: 1px solid #f3f4f6; border-bottom: 1px solid #f3f4f6; padding: 0.9rem 0; margin-bottom: 1.25rem;">
             <div style="display: flex; align-items: baseline; gap: 10px;">
-              <span id="pdpPriceDisplay" style="font-size: 1.9rem; font-weight: 800; color: #111827;">₹${prod.price}</span>
-              <span id="pdpMrpDisplay" style="font-size: 1rem; color: #9ca3af; text-decoration: line-through; ${prod.mrp > prod.price ? '' : 'display:none;'}">MRP ₹${prod.mrp}</span>
-              ${savings > 0 ? `<span style="background: #dcfce7; color: #15803d; font-weight: 700; font-size: 0.8rem; padding: 2px 8px; border-radius: 4px;">Save ₹${savings} (${discount}% OFF)</span>` : ''}
+              <span id="pdpPriceDisplay" style="font-size: 1.55rem; font-weight: 700; color: #111111; letter-spacing: -0.01em;">₹${prod.price}</span>
+              <span id="pdpMrpDisplay" style="font-size: 0.9rem; color: #a1a1aa; text-decoration: line-through; ${prod.mrp > prod.price ? '' : 'display:none;'}">MRP ₹${prod.mrp}</span>
+              ${savings > 0 ? `<span style="background: #dcfce7; color: #15803d; font-weight: 600; font-size: 0.76rem; padding: 2px 8px; border-radius: 4px;">Save ₹${savings} (${discount}% OFF)</span>` : ''}
             </div>
-            <p style="margin: 4px 0 0 0; font-size: 0.75rem; color: #6b7280;">(Inclusive of all taxes)</p>
+            <p style="margin: 4px 0 0 0; font-size: 0.72rem; color: #71717a;">(Inclusive of all taxes)</p>
           </div>
 
           <div style="display: flex; gap: 12px; margin-bottom: 1.25rem;">
             <div class="zp-cta-slot" data-slot-url="${esc(prod.url)}" data-full="1" style="flex: 1; display: flex;">
               ${renderCtaControl(prod, true)}
             </div>
-            <button type="button" id="pdpOpenCartBtn" style="background: #f5f0ff; color: #3c006b; border: 1px solid #ddd6fe; padding: 0.85rem 1.25rem; border-radius: 0.5rem; font-weight: 700; cursor: pointer;">
+            <button type="button" id="pdpOpenCartBtn" style="background: #f5f0ff; color: #3c006b; border: 1px solid #ddd6fe; padding: 0.8rem 1.2rem; border-radius: 9999px; font-size: 0.8rem; font-weight: 600; cursor: pointer;">
               View Cart
             </button>
           </div>
 
           <div class="zp-offers-box">
-            <div style="font-size: 0.82rem; font-weight: 700; color: #4c1d95; margin-bottom: 4px;">🏷️ Shills Pro Offers</div>
-            <div style="font-size: 0.78rem; color: #5b21b6;">• Use code <strong>SHILLS10</strong> for flat 10% instant discount on orders above ₹999</div>
-            <div style="font-size: 0.78rem; color: #5b21b6; margin-top: 2px;">• Free express delivery unlocked on orders above ₹499</div>
+            <div style="font-size: 0.78rem; font-weight: 600; color: #4c1d95; margin-bottom: 4px; letter-spacing: 0.01em;">🏷️ Shills Pro Offers</div>
+            <div style="font-size: 0.76rem; color: #5b21b6;">• Use code <strong>SHILLS10</strong> for flat 10% instant discount on orders above ₹999</div>
+            <div style="font-size: 0.76rem; color: #5b21b6; margin-top: 2px;">• Free express delivery unlocked on orders above ₹499</div>
           </div>
 
           <div style="background: #faf9fc; border: 1px solid #ece9f2; border-radius: 0.75rem; padding: 1rem; margin-bottom: 1rem;">
-            <h3 style="margin: 0 0 0.65rem 0; font-size: 0.9rem; font-weight: 700; color: #111827;">Why shop Shills Professional?</h3>
-            <div style="display: flex; flex-direction: column; gap: 0.55rem; font-size: 0.82rem; color: #4b5563;">
+            <h3 style="margin: 0 0 0.65rem 0; font-size: 0.85rem; font-weight: 600; color: #111111;">Why shop Shills Professional?</h3>
+            <div style="display: flex; flex-direction: column; gap: 0.55rem; font-size: 0.8rem; color: #52525b;">
               <div><strong>💅 Salon-Grade Formulas:</strong> Trusted by professional nail artists and beauty salons across India.</div>
               <div><strong>✓ 100% Genuine Guarantee:</strong> Direct from Shills Professional official authorized inventory.</div>
               <div><strong>🛡️ Safe &amp; Toxin-Free:</strong> Formulated according to global professional cosmetic standards.</div>
@@ -1492,11 +1492,11 @@
 
           <details class="zp-accordion" open>
             <summary>Product Information <span>▾</span></summary>
-            <p style="margin: 0.65rem 0 0.75rem 0; font-size: 0.85rem; color: #4b5563; line-height: 1.5;">${esc(prod.desc)}</p>
-            <div style="display: grid; grid-template-columns: 140px 1fr; gap: 6px 12px; font-size: 0.82rem; padding-top: 0.5rem;">
-              <span style="color: #6b7280;">Brand</span><span style="font-weight: 600; color: #111827;">${esc(prod.brand)}</span>
-              <span style="color: #6b7280;">Option</span><span style="font-weight: 600; color: #111827;">${esc(prod.weight)}</span>
-              <span style="color: #6b7280;">Category</span><span style="font-weight: 600; color: #111827;">${esc(prod.section)}</span>
+            <p style="margin: 0.65rem 0 0.75rem 0; font-size: 0.82rem; color: #52525b; line-height: 1.55;">${esc(prod.desc)}</p>
+            <div style="display: grid; grid-template-columns: 140px 1fr; gap: 6px 12px; font-size: 0.8rem; padding-top: 0.5rem;">
+              <span style="color: #71717a;">Brand</span><span style="font-weight: 600; color: #111111;">${esc(prod.brand)}</span>
+              <span style="color: #71717a;">Option</span><span style="font-weight: 600; color: #111111;">${esc(prod.weight)}</span>
+              <span style="color: #71717a;">Category</span><span style="font-weight: 600; color: #111111;">${esc(prod.section)}</span>
             </div>
           </details>
         </div>
@@ -1504,8 +1504,8 @@
 
       <div class="zp-pdp-mobile-bar">
         <div>
-          <div style="font-size: 1.05rem; font-weight: 800; color: #111827;">₹${prod.price}</div>
-          <div style="font-size: 0.72rem; color: #6b7280;">${esc(prod.weight)}</div>
+          <div style="font-size: 1rem; font-weight: 700; color: #111111;">₹${prod.price}</div>
+          <div style="font-size: 0.72rem; color: #71717a;">${esc(prod.weight)}</div>
         </div>
         <div class="zp-cta-slot" data-slot-url="${esc(prod.url)}" data-full="1" style="flex: 1; display: flex; max-width: 220px;">
           ${renderCtaControl(prod, true)}
@@ -1513,7 +1513,7 @@
       </div>
 
       <section style="margin-top: 2.5rem;">
-        <h2 style="font-size: 1.25rem; font-weight: 800; color: #111827; margin: 0 0 1rem 0;">Similar Products</h2>
+        <h2 style="font-size: 1.25rem; font-weight: 600; color: #111111; margin: 0 0 1rem 0; letter-spacing: -0.015em;">Similar Products</h2>
         <div class="zp-prod-grid">
           ${similar.map(renderProductCard).join('')}
         </div>
@@ -1582,12 +1582,12 @@
       <nav class="zp-breadcrumb">
         <a href="/" data-spa-nav="/">Home</a>
         <span>›</span>
-        <span style="color: #111827; font-weight: 600;">${esc(title)}</span>
+        <span style="color: #111111; font-weight: 500; font-size: 0.74rem;">${esc(title)}</span>
       </nav>
 
       <div class="zp-plp-layout">
         <aside class="zp-plp-sidebar">
-          <div style="padding: 0.5rem 0.75rem; font-size: 0.75rem; font-weight: 700; color: #9ca3af; text-transform: uppercase;">Categories</div>
+          <div style="padding: 0.5rem 0.75rem; font-size: 0.72rem; font-weight: 600; color: #71717a; text-transform: uppercase; letter-spacing: 0.08em;">Categories</div>
           ${state.categories.map(item => {
             const isAct = item.name.toLowerCase() === title.toLowerCase();
             return `<div class="zp-sidebar-item ${isAct ? 'active' : ''}" data-spa-nav="${esc(item.url)}">${esc(item.name)}</div>`;
@@ -1597,10 +1597,10 @@
         <div>
           <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 1rem; background: #ffffff; padding: 1rem 1.25rem; border-radius: 0.75rem; border: 1px solid #ece9f2;">
             <div>
-              <h1 style="margin: 0; font-size: 1.35rem; font-weight: 800; color: #111827;">${esc(title)}</h1>
-              <p style="margin: 2px 0 0 0; font-size: 0.82rem; color: #6b7280;">Showing ${matched.length} Shills Professional products</p>
+              <h1 style="margin: 0; font-size: 1.25rem; font-weight: 600; color: #111111; letter-spacing: -0.015em;">${esc(title)}</h1>
+              <p style="margin: 2px 0 0 0; font-size: 0.8rem; color: #71717a;">Showing ${matched.length} Shills Professional products</p>
             </div>
-            <select id="zpSortSelect" style="padding: 0.5rem 0.75rem; border: 1px solid #d1d5db; border-radius: 0.5rem; font-size: 0.85rem; font-weight: 600; color: #374151; background: #ffffff; cursor: pointer;">
+            <select id="zpSortSelect" style="padding: 0.45rem 0.75rem; border: 1px solid #e4e4e7; border-radius: 0.5rem; font-size: 0.8rem; font-weight: 500; color: #18181b; background: #ffffff; cursor: pointer;">
               <option value="relevance" ${state.activeSort === 'relevance' ? 'selected' : ''}>Sort: Relevance</option>
               <option value="price-asc" ${state.activeSort === 'price-asc' ? 'selected' : ''}>Price: Low to High</option>
               <option value="price-desc" ${state.activeSort === 'price-desc' ? 'selected' : ''}>Price: High to Low</option>
@@ -1744,29 +1744,29 @@
       <div class="zepto-drawer">
         <div style="padding: 1.25rem; border-bottom: 1px solid #e5e7eb; display: flex; align-items: center; justify-content: space-between;">
           <div>
-            <h2 style="font-size: 1.15rem; font-weight: 700; color: #111827; margin: 0;">Your Cart</h2>
-            <p style="font-size: 0.85rem; color: #6b7280; margin: 2px 0 0 0;">${count} ${count === 1 ? 'item' : 'items'} • Shills Professional</p>
+            <h2 style="font-size: 1.1rem; font-weight: 600; color: #111111; margin: 0; letter-spacing: -0.01em;">Your Cart</h2>
+            <p style="font-size: 0.8rem; color: #71717a; margin: 2px 0 0 0;">${count} ${count === 1 ? 'item' : 'items'} • Shills Professional</p>
           </div>
-          <button type="button" id="closeCartBtn" style="background: none; border: none; font-size: 1.5rem; cursor: pointer; color: #6b7280; padding: 4px;">✕</button>
+          <button type="button" id="closeCartBtn" style="background: none; border: none; font-size: 1.3rem; cursor: pointer; color: #71717a; padding: 4px;">✕</button>
         </div>
 
         <div style="flex: 1; overflow-y: auto; padding: 1.25rem;">
           ${items.length === 0 ? `
             <div style="text-align: center; padding: 3rem 1rem;">
-              <div style="font-size: 3rem; margin-bottom: 1rem;">💅</div>
-              <h3 style="font-size: 1.1rem; font-weight: 600; color: #374151;">Your cart is empty</h3>
-              <p style="color: #6b7280; font-size: 0.9rem; margin-top: 0.5rem;">Add salon-grade gel polishes, nail art &amp; beauty essentials!</p>
-              <button type="button" id="cartShopNow" style="margin-top: 1.5rem; background: #111111; color: white; border: none; padding: 0.65rem 1.5rem; border-radius: 0.5rem; font-weight: 600; cursor: pointer;">Shop Now</button>
+              <div style="font-size: 2.5rem; margin-bottom: 1rem;">💅</div>
+              <h3 style="font-size: 1rem; font-weight: 600; color: #18181b;">Your cart is empty</h3>
+              <p style="color: #71717a; font-size: 0.82rem; margin-top: 0.5rem;">Add salon-grade gel polishes, nail art &amp; beauty essentials!</p>
+              <button type="button" id="cartShopNow" style="margin-top: 1.5rem; background: #111111; color: white; border: none; padding: 0.6rem 1.4rem; border-radius: 9999px; font-weight: 600; font-size: 0.8rem; cursor: pointer;">Shop Now</button>
             </div>
           ` : `
             <div style="display: flex; flex-direction: column; gap: 1rem;">
               ${items.map(it => `
                 <div style="display: flex; align-items: center; gap: 0.75rem; padding-bottom: 1rem; border-bottom: 1px solid #f3f4f6;">
-                  <img src="${esc(it.image)}" alt="${esc(it.name)}" style="width: 56px; height: 56px; object-fit: contain; border-radius: 0.375rem; border: 1px solid #e5e7eb; background: #f9fafb;" />
+                  <img src="${esc(it.image)}" alt="${esc(it.name)}" style="width: 52px; height: 52px; object-fit: contain; border-radius: 0.375rem; border: 1px solid #e5e7eb; background: #f9fafb;" />
                   <div style="flex: 1; min-width: 0;">
-                    <h4 style="font-size: 0.875rem; font-weight: 600; color: #1f2937; margin: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${esc(it.name)}</h4>
-                    <p style="font-size: 0.75rem; color: #6b7280; margin: 2px 0 0 0;">${esc(it.weight || '')}</p>
-                    <p style="font-size: 0.85rem; color: #111827; margin: 4px 0 0 0; font-weight: 700;">₹${it.price}</p>
+                    <h4 style="font-size: 0.82rem; font-weight: 500; color: #18181b; margin: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; line-height: 1.35;">${esc(it.name)}</h4>
+                    <p style="font-size: 0.72rem; color: #71717a; margin: 2px 0 0 0;">${esc(it.weight || '')}</p>
+                    <p style="font-size: 0.85rem; color: #111111; margin: 3px 0 0 0; font-weight: 700;">₹${it.price}</p>
                   </div>
                   <div class="qty-stepper">
                     <button type="button" class="cart-minus" data-id="${esc(it.id)}">−</button>
@@ -1778,16 +1778,16 @@
             </div>
 
             <div style="margin-top: 1.5rem; background: #f9fafb; padding: 1rem; border-radius: 0.5rem; border: 1px solid #e5e7eb;">
-              <h4 style="font-size: 0.9rem; font-weight: 700; color: #111827; margin: 0 0 0.75rem 0;">Bill Details</h4>
-              <div style="display: flex; justify-content: space-between; font-size: 0.85rem; color: #4b5563; margin-bottom: 0.35rem;">
+              <h4 style="font-size: 0.82rem; font-weight: 600; color: #111111; margin: 0 0 0.75rem 0; letter-spacing: 0.02em;">Bill Details</h4>
+              <div style="display: flex; justify-content: space-between; font-size: 0.8rem; color: #52525b; margin-bottom: 0.35rem;">
                 <span>Subtotal</span>
                 <span>₹${total}</span>
               </div>
-              <div style="display: flex; justify-content: space-between; font-size: 0.85rem; color: #4b5563; margin-bottom: 0.35rem;">
+              <div style="display: flex; justify-content: space-between; font-size: 0.8rem; color: #52525b; margin-bottom: 0.35rem;">
                 <span>Express Delivery</span>
-                <span style="color: #10b981; font-weight: 600;">FREE</span>
+                <span style="color: #059669; font-weight: 600;">FREE</span>
               </div>
-              <div style="border-top: 1px dashed #d1d5db; padding-top: 0.5rem; display: flex; justify-content: space-between; font-weight: 700; font-size: 1rem; color: #111827;">
+              <div style="border-top: 1px dashed #e4e4e7; padding-top: 0.5rem; display: flex; justify-content: space-between; font-weight: 600; font-size: 0.95rem; color: #111111;">
                 <span>To Pay</span>
                 <span>₹${total}</span>
               </div>
@@ -1797,7 +1797,7 @@
 
         ${items.length > 0 ? `
           <div style="padding: 1.25rem; border-top: 1px solid #e5e7eb; background: #ffffff;">
-            <button type="button" id="checkoutBtn" style="width: 100%; background: #111111; color: white; border: none; padding: 0.85rem; border-radius: 0.5rem; font-weight: 700; font-size: 1rem; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+            <button type="button" id="checkoutBtn" style="width: 100%; background: #111111; color: white; border: none; padding: 0.8rem; border-radius: 9999px; font-weight: 600; font-size: 0.88rem; cursor: pointer; display: flex; justify-content: space-between; align-items: center; letter-spacing: 0.02em;">
               <span>₹${total} • Proceed to Checkout</span>
               <span>→</span>
             </button>

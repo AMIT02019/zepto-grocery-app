@@ -1,10 +1,50 @@
 
-/* Global High-Fashion Typography */
+/* ====================================================================
+   PROFESSIONAL & MINIMAL SALON-GRADE TYPOGRAPHY SYSTEM
+   Typeface: Manrope (Clean Scandinavian Geometric Grotesque)
+   ==================================================================== */
+
 html, body, button, input, select, textarea, .font-norms {
-  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  font-family: 'Manrope', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+  text-rendering: optimizeLegibility !important;
+  color: #18181b;
 }
-h1, h2, h3, .shills-editorial-title {
-  letter-spacing: -0.02em;
+
+/* Refined Minimalist Headings Hierarchy */
+h1, h2, h3, h4, h5, h6, .shills-editorial-title {
+  font-family: 'Manrope', sans-serif !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.02em !important;
+  color: #111111;
+  line-height: 1.35;
+}
+
+h1 {
+  font-size: 1.4rem !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.02em !important;
+}
+
+h2 {
+  font-size: 1.25rem !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.015em !important;
+}
+
+h3 {
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+}
+
+h4 {
+  font-size: 0.88rem !important;
+  font-weight: 600 !important;
+}
+
+p, span, li, a {
+  letter-spacing: -0.005em;
 }
 /* Zepto Clone Interactive & SPA Page Styles */
 .zepto-modal-overlay {
@@ -1074,17 +1114,21 @@ a[data-testid="search-bar-icon"]:hover {
 }
 .__8pvtm.zp-tab-active .c2zll {
   color: #111111 !important;
-  font-weight: 800 !important;
+  font-weight: 600 !important;
+  font-size: 0.82rem !important;
+  letter-spacing: 0.01em !important;
 }
 .__8pvtm.zp-tab-active .mh28o {
   opacity: 1 !important;
   background-color: #111111 !important;
-  height: 2.5px !important;
+  height: 2px !important;
   border-radius: 2px !important;
 }
 .__8pvtm:not(.zp-tab-active) .c2zll {
-  color: #64748b !important;
-  font-weight: 600 !important;
+  color: #52525b !important;
+  font-weight: 400 !important;
+  font-size: 0.82rem !important;
+  letter-spacing: 0.01em !important;
   transition: color 0.15s ease !important;
 }
 .__8pvtm:not(.zp-tab-active):hover .c2zll {
@@ -1095,7 +1139,7 @@ a[data-testid="search-bar-icon"]:hover {
 .zp-card {
   background: #ffffff !important;
   border: 1px solid #f0eef5 !important;
-  border-radius: 16px !important;
+  border-radius: 14px !important;
   padding: 12px !important;
   display: flex !important;
   flex-direction: column !important;
@@ -1106,14 +1150,14 @@ a[data-testid="search-bar-icon"]:hover {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02) !important;
 }
 .zp-card:hover {
-  transform: translateY(-5px) !important;
-  box-shadow: 0 14px 30px rgba(60, 0, 107, 0.09) !important;
-  border-color: #ddd6fe !important;
+  transform: translateY(-4px) !important;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.07) !important;
+  border-color: #e4e4e7 !important;
 }
 .zp-card-img-wrap {
   height: 165px !important;
   background: #fbfafc !important;
-  border-radius: 12px !important;
+  border-radius: 10px !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
@@ -1129,7 +1173,7 @@ a[data-testid="search-bar-icon"]:hover {
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
 }
 .zp-card:hover .zp-card-img-wrap img {
-  transform: scale(1.06) !important;
+  transform: scale(1.05) !important;
 }
 .zp-discount-badge {
   position: absolute !important;
@@ -1137,23 +1181,23 @@ a[data-testid="search-bar-icon"]:hover {
   left: 8px !important;
   background: #111111 !important;
   color: #ffffff !important;
-  font-size: 10px !important;
-  font-weight: 800 !important;
-  padding: 3px 7px !important;
-  border-radius: 6px !important;
-  letter-spacing: 0.04em !important;
+  font-size: 9px !important;
+  font-weight: 600 !important;
+  padding: 2.5px 6.5px !important;
+  border-radius: 4px !important;
+  letter-spacing: 0.02em !important;
   z-index: 2 !important;
 }
 .shills-pro-badge, .zp-eta-badge {
   display: inline-flex !important;
   align-items: center !important;
   gap: 3px !important;
-  background: #fdf4ff !important;
+  background: #fbf4fe !important;
   color: #701a75 !important;
   border: 1px solid #f5d0fe !important;
-  font-size: 9.5px !important;
-  font-weight: 700 !important;
-  letter-spacing: 0.05em !important;
+  font-size: 8.5px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.04em !important;
   text-transform: uppercase !important;
   padding: 2px 7px !important;
   border-radius: 9999px !important;
@@ -1162,12 +1206,12 @@ a[data-testid="search-bar-icon"]:hover {
 .zp-add-btn {
   background: #111111 !important;
   color: #ffffff !important;
-  border: 1.5px solid #111111 !important;
+  border: 1px solid #111111 !important;
   border-radius: 9999px !important;
-  padding: 6px 15px !important;
-  font-weight: 700 !important;
+  padding: 5px 14px !important;
+  font-weight: 600 !important;
   font-size: 0.72rem !important;
-  letter-spacing: 0.05em !important;
+  letter-spacing: 0.04em !important;
   text-transform: uppercase !important;
   cursor: pointer !important;
   transition: all 0.18s ease !important;
@@ -1177,27 +1221,27 @@ a[data-testid="search-bar-icon"]:hover {
   border-color: #3c006b !important;
   color: #ffffff !important;
   transform: translateY(-1px) !important;
-  box-shadow: 0 4px 12px rgba(60, 0, 107, 0.25) !important;
+  box-shadow: 0 4px 12px rgba(60, 0, 107, 0.2) !important;
 }
 .qty-stepper {
   display: inline-flex !important;
   align-items: center !important;
-  gap: 10px !important;
-  background: #3c006b !important;
+  gap: 8px !important;
+  background: #111111 !important;
   color: #ffffff !important;
   border-radius: 9999px !important;
-  padding: 4px 10px !important;
-  font-weight: 700 !important;
-  font-size: 0.8rem !important;
+  padding: 3px 9px !important;
+  font-weight: 600 !important;
+  font-size: 0.76rem !important;
 }
 .qty-stepper button {
   background: none !important;
   border: none !important;
   color: #ffffff !important;
-  font-size: 1.1rem !important;
-  font-weight: 800 !important;
+  font-size: 0.95rem !important;
+  font-weight: 600 !important;
   cursor: pointer !important;
-  padding: 0 4px !important;
+  padding: 0 3px !important;
 }
 
 /* Category Tiles */
@@ -1255,20 +1299,21 @@ footer.shills-luxury-footer,
   box-shadow: 0 16px 36px rgba(0, 0, 0, 0.4);
 }
 .shills-newsletter-tag {
-  font-size: 0.72rem;
-  font-weight: 800;
+  font-size: 0.68rem;
+  font-weight: 600;
   color: #c5a059;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
 }
 .shills-newsletter-title {
-  font-size: 1.65rem;
-  font-weight: 900;
+  font-size: 1.45rem;
+  font-weight: 700;
   color: #ffffff;
+  letter-spacing: -0.015em;
   margin: 0.35rem 0;
 }
 .shills-newsletter-desc {
-  font-size: 0.88rem;
+  font-size: 0.82rem;
   color: #d4d4d8;
   margin: 0;
   max-width: 580px;
@@ -1283,12 +1328,12 @@ footer.shills-luxury-footer,
 }
 .shills-newsletter-input {
   flex: 1;
-  padding: 12px 18px;
+  padding: 11px 18px;
   border-radius: 9999px;
-  border: 1.5px solid rgba(255, 255, 255, 0.2);
-  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.06);
   color: #ffffff;
-  font-size: 0.88rem;
+  font-size: 0.82rem;
   outline: none;
 }
 .shills-newsletter-input::placeholder {
@@ -1296,17 +1341,17 @@ footer.shills-luxury-footer,
 }
 .shills-newsletter-input:focus {
   border-color: #c5a059;
-  background: rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.12);
 }
 .shills-newsletter-btn {
   background: #ffffff;
   color: #111111;
   border: none;
   border-radius: 9999px;
-  padding: 12px 24px;
-  font-weight: 800;
-  font-size: 0.8rem;
-  letter-spacing: 0.06em;
+  padding: 11px 22px;
+  font-weight: 600;
+  font-size: 0.76rem;
+  letter-spacing: 0.04em;
   cursor: pointer;
   transition: background 0.2s, transform 0.2s;
 }
@@ -1343,7 +1388,7 @@ footer.shills-luxury-footer,
   filter: brightness(100);
 }
 .shills-footer-about {
-  font-size: 0.84rem;
+  font-size: 0.8rem;
   color: #a1a1aa;
   line-height: 1.6;
   margin: 0 0 1.25rem 0;
@@ -1354,8 +1399,9 @@ footer.shills-luxury-footer,
   gap: 8px;
 }
 .shills-badge-pill {
-  font-size: 0.72rem;
-  font-weight: 700;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
   color: #d4d4d8;
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.12);
@@ -1363,10 +1409,10 @@ footer.shills-luxury-footer,
   padding: 4px 10px;
 }
 .shills-footer-heading {
-  font-size: 0.92rem;
-  font-weight: 800;
+  font-size: 0.76rem;
+  font-weight: 600;
   color: #ffffff;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   margin: 0 0 1.15rem 0;
 }
@@ -1380,7 +1426,7 @@ footer.shills-luxury-footer,
 }
 .shills-footer-links li a {
   color: #a1a1aa;
-  font-size: 0.84rem;
+  font-size: 0.8rem;
   text-decoration: none;
   transition: color 0.15s, transform 0.15s;
   display: inline-block;
@@ -1526,14 +1572,14 @@ body {
 }
 
 .shills-mega-heading {
-  font-size: 0.8rem;
-  font-weight: 800;
-  color: #111111;
-  letter-spacing: 0.08em;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #18181b;
+  letter-spacing: 0.09em;
   text-transform: uppercase;
-  margin: 0 0 1rem 0;
-  padding-bottom: 0.6rem;
-  border-bottom: 1.5px solid #f0ecf6;
+  margin: 0 0 0.85rem 0;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #f0ecf6;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1545,19 +1591,19 @@ body {
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 7px;
 }
 
 .shills-mega-link {
-  font-size: 0.85rem;
-  font-weight: 500;
-  color: #4b5563;
+  font-size: 0.82rem;
+  font-weight: 400;
+  color: #52525b;
   text-decoration: none;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 8px;
-  padding: 3px 0;
+  padding: 2.5px 0;
   transition: color 0.15s ease, transform 0.15s ease;
   line-height: 1.35;
   width: 100%;
@@ -1571,17 +1617,17 @@ body {
 }
 
 .shills-mega-link:hover {
-  color: #3c006b;
-  font-weight: 700;
-  transform: translateX(4px);
+  color: #111111;
+  font-weight: 500;
+  transform: translateX(3px);
 }
 
 .shills-mega-tag {
-  font-size: 9px;
-  font-weight: 800;
+  font-size: 8.5px;
+  font-weight: 600;
   line-height: 1;
-  letter-spacing: 0.05em;
-  padding: 3px 6px;
+  letter-spacing: 0.04em;
+  padding: 2.5px 6px;
   border-radius: 9999px;
   text-transform: uppercase;
   white-space: nowrap;
@@ -1687,14 +1733,15 @@ body {
 }
 
 .shills-spotlight-price {
-  font-size: 1rem;
-  font-weight: 800;
-  color: #111827;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #111111;
+  letter-spacing: -0.01em;
 }
 
 .shills-spotlight-mrp {
-  font-size: 0.78rem;
-  color: #9ca3af;
+  font-size: 0.72rem;
+  color: #a1a1aa;
   text-decoration: line-through;
   margin-left: 4px;
 }
@@ -1704,17 +1751,17 @@ body {
   color: #ffffff;
   border: none;
   border-radius: 9999px;
-  padding: 6px 14px;
-  font-size: 0.74rem;
-  font-weight: 700;
-  letter-spacing: 0.04em;
+  padding: 5px 12px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
   cursor: pointer;
   transition: background 0.15s, transform 0.15s;
 }
 
 .shills-spotlight-btn:hover {
   background: #3c006b;
-  transform: scale(1.04);
+  transform: scale(1.02);
 }
 
 /* Promo Card in Mega Menu */
@@ -1741,23 +1788,25 @@ body {
 }
 
 .shills-mega-promo-badge {
-  font-size: 0.68rem;
-  font-weight: 800;
+  font-size: 0.65rem;
+  font-weight: 600;
   letter-spacing: 0.1em;
   color: #c5a059;
   text-transform: uppercase;
 }
 
 .shills-mega-promo-title {
-  font-size: 1.18rem;
-  font-weight: 900;
-  line-height: 1.25;
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 1.3;
   color: #ffffff;
   margin: 6px 0 8px 0;
+  letter-spacing: -0.015em;
 }
 
 .shills-mega-promo-desc {
-  font-size: 0.8rem;
+  font-size: 0.78rem;
+  font-weight: 400;
   color: #e4e4e7;
   line-height: 1.45;
   margin: 0 0 16px 0;
@@ -1768,10 +1817,10 @@ body {
   color: #111111;
   border: none;
   border-radius: 9999px;
-  padding: 7px 16px;
-  font-size: 0.76rem;
-  font-weight: 800;
-  letter-spacing: 0.04em;
+  padding: 6px 14px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
   width: fit-content;
   cursor: pointer;
   transition: background 0.15s, color 0.15s;
@@ -1790,8 +1839,9 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 0.82rem;
-  color: #6b7280;
+  font-size: 0.76rem;
+  font-weight: 500;
+  color: #71717a;
 }
 
 .shills-mega-trust-badges {
@@ -1804,9 +1854,9 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: #4b5563;
+  font-size: 0.76rem;
+  font-weight: 500;
+  color: #52525b;
 }
 
 .shills-mega-dot {
@@ -1816,10 +1866,10 @@ body {
 
 .shills-mega-view-all-btn {
   color: #3c006b;
-  font-weight: 800;
+  font-weight: 600;
   text-decoration: none;
-  font-size: 0.85rem;
-  letter-spacing: 0.02em;
+  font-size: 0.76rem;
+  letter-spacing: 0.01em;
   display: inline-flex;
   align-items: center;
   gap: 4px;
