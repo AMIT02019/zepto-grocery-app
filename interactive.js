@@ -234,10 +234,10 @@
           </div>
         </div>
         <div class="shills-trust-item">
-          <div class="shills-trust-icon">⚡</div>
+          <div class="shills-trust-icon">📦</div>
           <div>
-            <h4 style="margin: 0; font-size: 0.9rem; font-weight: 700; color: #111827;">Superfast Delivery</h4>
-            <p style="margin: 2px 0 0 0; font-size: 0.78rem; color: #6b7280;">Instant doorstep dispatch in minutes</p>
+            <h4 style="margin: 0; font-size: 0.9rem; font-weight: 700; color: #111827;">Pan-India Shipping</h4>
+            <p style="margin: 2px 0 0 0; font-size: 0.78rem; color: #6b7280;">Safe, insured dispatch to your doorstep or studio</p>
           </div>
         </div>
         <div class="shills-trust-item">
@@ -749,7 +749,7 @@
           heading: 'By Finish & Effect',
           links: [
             { text: '9D Silk Cat Eye Gel Polish', url: '/pn/silk-9d-cat-eye-gel-polish-7-5ml', badge: 'HOT' },
-            { text: '120+ Solid Gel Color Shades', url: '/cn/gel-polish', badge: '120+ SHADES' },
+            { text: '120+ Solid Gel Color Shades', url: '/cn/gel-polish', badge: '120+' },
             { text: 'Laser Glitter & Shimmer', url: '/cn/cat-eye-kit' },
             { text: 'Jelly & Transparent Glass Gel', url: '/cn/gel-polish' },
             { text: 'Platinum & Metallic Foil Gel', url: '/cn/gel-polish' },
@@ -770,7 +770,7 @@
         {
           heading: 'Prep, Remover & Care',
           links: [
-            { text: 'Dehydrator & Acid-Free Primer', url: '/cn/nail-prep', badge: 'MUST-HAVE' },
+            { text: 'Dehydrator & Acid-Free Primer', url: '/cn/nail-prep', badge: 'PRO' },
             { text: '12-in-1 Nail Therapy Polish', url: '/pn/12-in-1-nail-therapy' },
             { text: 'Cuticle Revitalizer Oil Pens', url: '/cn/nail-prep' },
             { text: 'Fast Gel Soak-Off Remover', url: '/cn/nail-prep' },
@@ -812,7 +812,7 @@
         {
           heading: 'Pro Brushes & Tools',
           links: [
-            { text: '14-Piece Precision Brush Kit', url: '/cn/nail-brush', badge: 'PRO CHOICE' },
+            { text: '14-Piece Precision Brush Kit', url: '/cn/nail-brush', badge: 'PRO' },
             { text: 'Ultra-Fine Liner Art Brushes', url: '/cn/nail-brush' },
             { text: 'Ombre & Gradient Sponge Tools', url: '/cn/nail-brush' },
             { text: 'Double-Ended Dotting Tools', url: '/cn/nail-tool' },
@@ -862,7 +862,7 @@
         {
           heading: 'Poly & Builder Systems',
           links: [
-            { text: 'Poly Gel Natural Nail Overlays Kit', url: '/pn/poly-gel-kit-spn-21096', badge: 'TOP SELLER' },
+            { text: 'Poly Gel Natural Nail Overlays Kit', url: '/pn/poly-gel-kit-spn-21096', badge: 'TOP' },
             { text: 'Hard Builder Gel in a Bottle', url: '/cn/nail-extension' },
             { text: 'Acrylic Powder & Monomer Liquid', url: '/cn/nail-extension' },
             { text: 'Dual Forms Extension Moulds', url: '/cn/nail-extension' }
@@ -910,7 +910,7 @@
         {
           heading: 'Electric Drills (E-Files)',
           links: [
-            { text: '35,000 RPM Professional Drill', url: '/cn/nail-tool', badge: 'MUST-HAVE' },
+            { text: '35,000 RPM Professional Drill', url: '/cn/nail-tool', badge: 'PRO' },
             { text: 'Carbide & Ceramic Drill Bits', url: '/cn/nail-tool' },
             { text: 'Sanding Bands & Mandrels', url: '/cn/nail-tool' },
             { text: 'Desktop Dust Vacuum Collector', url: '/cn/nail-tool' }
@@ -959,7 +959,7 @@
         {
           heading: 'Files & Buffers',
           links: [
-            { text: '100/180 Grit Zebra Files', url: '/cn/nail-tool', badge: 'BULK PACK' },
+            { text: '100/180 Grit Zebra Files', url: '/cn/nail-tool', badge: 'PACK' },
             { text: 'High-Shine Diamond Buffers', url: '/cn/nail-tool' },
             { text: 'Sponge Buffers for Prep', url: '/cn/nail-tool' }
           ]
@@ -1101,7 +1101,7 @@
         {
           heading: 'Styling & Protection',
           links: [
-            { text: 'Thermal Heat Protectant Spray', url: '/cn/hair', badge: 'MUST-HAVE' },
+            { text: 'Thermal Heat Protectant Spray', url: '/cn/hair', badge: 'STAR' },
             { text: 'Extra Strong Hold Hair Lacquer', url: '/cn/hair' },
             { text: 'Volumizing Blowout Mousse', url: '/cn/hair' }
           ]
@@ -1204,7 +1204,7 @@
                   ${col.links.map(link => `
                     <li>
                       <a href="${esc(link.url)}" data-spa-nav="${esc(link.url)}" class="shills-mega-link">
-                        <span>${esc(link.text)}</span>
+                        <span class="shills-mega-link-text">${esc(link.text)}</span>
                         ${link.badge ? `<span class="shills-mega-tag ${link.badge.toLowerCase().includes('sale') || link.badge.includes('%') ? 'sale' : (link.badge.toLowerCase().includes('hot') ? 'hot' : '')}">${esc(link.badge)}</span>` : ''}
                       </a>
                     </li>
@@ -1245,7 +1245,13 @@
           </div>
 
           <div class="shills-mega-bottom-bar">
-            <span>⚡ Salon Grade Formulations • 100% Genuine • Fast Express Dispatch</span>
+            <div class="shills-mega-trust-badges">
+              <span class="shills-mega-trust-tag">✨ Salon-Grade Quality</span>
+              <span class="shills-mega-dot">•</span>
+              <span class="shills-mega-trust-tag">🛡️ 100% Genuine Shills</span>
+              <span class="shills-mega-dot">•</span>
+              <span class="shills-mega-trust-tag">📦 Pan-India Shipping</span>
+            </div>
             <a href="${esc(data.categoryUrl)}" data-spa-nav="${esc(data.categoryUrl)}" class="shills-mega-view-all-btn">
               View All ${esc(data.title)} (${state.products.filter(p => p.section === data.title || p.section.toLowerCase().includes(id.replace('-',' '))).length || '25+'}) →
             </a>
@@ -1403,10 +1409,9 @@
             `).join('')}
           </div>
 
-          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; margin-top: 1rem;">
-            <div style="background: #f9fafb; border: 1px solid #ece9f2; border-radius: 0.5rem; padding: 0.65rem; text-align: center; font-size: 0.75rem; color: #374151; font-weight: 600;">⚡ 10 Min Delivery</div>
-            <div style="background: #f9fafb; border: 1px solid #ece9f2; border-radius: 0.5rem; padding: 0.65rem; text-align: center; font-size: 0.75rem; color: #374151; font-weight: 600;">✓ 100% Authentic</div>
-            <div style="background: #f9fafb; border: 1px solid #ece9f2; border-radius: 0.5rem; padding: 0.65rem; text-align: center; font-size: 0.75rem; color: #374151; font-weight: 600;">↺ Salon Grade</div>
+          <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.75rem; margin-top: 1rem;">
+            <div style="background: #faf8fc; border: 1px solid #ece9f2; border-radius: 0.5rem; padding: 0.65rem; text-align: center; font-size: 0.75rem; color: #374151; font-weight: 600;">✓ 100% Authentic Shills</div>
+            <div style="background: #faf8fc; border: 1px solid #ece9f2; border-radius: 0.5rem; padding: 0.65rem; text-align: center; font-size: 0.75rem; color: #374151; font-weight: 600;">↺ Certified Salon Grade</div>
           </div>
         </div>
 
@@ -1464,8 +1469,8 @@
             <h3 style="margin: 0 0 0.65rem 0; font-size: 0.9rem; font-weight: 700; color: #111827;">Why shop Shills Professional?</h3>
             <div style="display: flex; flex-direction: column; gap: 0.55rem; font-size: 0.82rem; color: #4b5563;">
               <div><strong>💅 Salon-Grade Formulas:</strong> Trusted by professional nail artists and beauty salons across India.</div>
-              <div><strong>⚡ Superfast Delivery:</strong> Dispatched immediately to arrive at your doorstep or studio fast.</div>
-              <div><strong>✓ 100% Genuine:</strong> Direct from Shills Professional official inventory.</div>
+              <div><strong>✓ 100% Genuine Guarantee:</strong> Direct from Shills Professional official authorized inventory.</div>
+              <div><strong>🛡️ Safe &amp; Toxin-Free:</strong> Formulated according to global professional cosmetic standards.</div>
             </div>
           </div>
 
@@ -1950,10 +1955,10 @@
         </div>
         <div style="padding: 1.25rem;">
           <div style="background: #ecfdf5; border: 1px solid #a7f3d0; border-radius: 0.5rem; padding: 0.75rem 1rem; margin-bottom: 1rem; display: flex; align-items: center; gap: 8px;">
-            <span style="font-size: 1.2rem;">⚡</span>
+            <span style="font-size: 1.2rem;">📦</span>
             <div>
-              <p style="margin: 0; font-size: 0.85rem; font-weight: 700; color: #065f46;">Express Delivery</p>
-              <p style="margin: 0; font-size: 0.8rem; color: #047857;">To: ${esc(state.location)}</p>
+              <p style="margin: 0; font-size: 0.85rem; font-weight: 700; color: #065f46;">Pan-India Express Dispatch</p>
+              <p style="margin: 0; font-size: 0.8rem; color: #047857;">Delivering to: ${esc(state.location)}</p>
             </div>
           </div>
 
