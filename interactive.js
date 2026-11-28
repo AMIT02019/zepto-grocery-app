@@ -301,7 +301,7 @@
           </div>
           <div class="zp-eta-badge">⚡ 10 MINS</div>
           <h4 style="margin: 0 0 4px 0; font-size: 0.85rem; font-weight: 600; color: #1f2937; line-height: 1.3; height: 36px; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;">${esc(p.name)}</h4>
-          <p style="margin: 0 0 8px 0; font-size: 0.75rem; color: #6b7280;">${esc(p.weight)}</p>
+          <p style="margin: 0 0 8px 0; font-size: 0.75rem; color: #6b7280; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${esc(p.weight)}</p>
         </div>
         <div style="display: flex; align-items: center; justify-content: space-between; margin-top: auto; padding-top: 6px;">
           <div>

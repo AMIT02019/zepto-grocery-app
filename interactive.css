@@ -132,8 +132,16 @@
 #zepto-spa-view {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 1.25rem 1rem 3rem 1rem;
+  padding: 1.25rem 1rem 4rem 1rem;
   min-height: 65vh;
+  position: relative;
+  z-index: 1;
+}
+
+/* Prevent Zepto footer (.RuYse { bottom: 80px }) from overlapping SPA content */
+footer.RuYse {
+  bottom: 0 !important;
+  margin-top: 2rem;
 }
 
 /* Breadcrumbs */
