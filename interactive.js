@@ -258,13 +258,13 @@
     `;
 
     const catGridHtml = `
-      <section style="margin-bottom: 2.25rem;">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
-          <div>
-            <h2 style="margin: 0; font-size: 1.25rem; font-weight: 600; color: #111111; letter-spacing: -0.015em;">Shop by Category</h2>
-            <p style="margin: 3px 0 0 0; font-size: 0.8rem; color: #71717a;">Explore salon-grade nail care, extensions, accessories &amp; beauty</p>
+      <section class="shills-cat-section">
+        <div class="shills-cat-header">
+          <div class="shills-cat-title-wrap">
+            <h2>Shop by Category</h2>
+            <p>Explore salon-grade nail systems, extensions, UV lamps &amp; pro beauty</p>
           </div>
-          <a href="/cn/best-selling" data-spa-nav="/cn/best-selling" style="color: #3c006b; font-weight: 600; font-size: 0.82rem; text-decoration: none;">See All ›</a>
+          <a href="/cn/best-selling" data-spa-nav="/cn/best-selling" class="shills-cat-view-all">View All (16) →</a>
         </div>
         <div class="shills-cat-grid">
           ${state.categories.map(c => `
@@ -272,7 +272,10 @@
               <div class="shills-cat-img">
                 <img src="${esc(c.image)}" alt="${esc(c.name)}" loading="lazy" />
               </div>
-              <span style="font-size: 0.76rem; font-weight: 500; color: #18181b; line-height: 1.25;">${esc(c.name)}</span>
+              <div class="shills-cat-info">
+                <span class="shills-cat-name">${esc(c.name)}</span>
+                <span class="shills-cat-sub">Explore ›</span>
+              </div>
             </div>
           `).join('')}
         </div>

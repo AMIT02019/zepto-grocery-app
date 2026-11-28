@@ -768,59 +768,190 @@ footer.RuYse {
   margin: 1rem 0 2rem 0;
   box-shadow: 0 12px 30px rgba(60, 0, 107, 0.16);
 }
-.shills-cat-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 0.85rem;
-  margin-bottom: 2.25rem;
+/* ====================================================================
+   LUXURY SALON SHOP-BY-CATEGORY SYSTEM
+   ==================================================================== */
+.shills-cat-section {
+  margin-bottom: 2.75rem;
+  position: relative;
 }
-@media (min-width: 640px) {
+
+.shills-cat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 1.15rem;
+  gap: 1rem;
+}
+
+.shills-cat-title-wrap h2 {
+  font-family: 'Manrope', sans-serif !important;
+  font-size: 1.3rem !important;
+  font-weight: 600 !important;
+  color: #111111 !important;
+  letter-spacing: -0.02em !important;
+  margin: 0 !important;
+}
+
+.shills-cat-title-wrap p {
+  font-family: 'Manrope', sans-serif !important;
+  font-size: 0.82rem !important;
+  color: #71717a !important;
+  margin: 3px 0 0 0 !important;
+}
+
+.shills-cat-view-all {
+  font-family: 'Manrope', sans-serif !important;
+  font-size: 0.78rem !important;
+  font-weight: 600 !important;
+  color: #3c006b !important;
+  text-decoration: none !important;
+  padding: 6px 14px !important;
+  border-radius: 9999px !important;
+  background: #faf5ff !important;
+  border: 1px solid #f3e8ff !important;
+  transition: all 0.2s ease !important;
+  white-space: nowrap !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 4px !important;
+}
+
+.shills-cat-view-all:hover {
+  background: #3c006b !important;
+  color: #ffffff !important;
+  border-color: #3c006b !important;
+  transform: translateX(2px) !important;
+}
+
+.shills-cat-grid {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 10px !important;
+  margin-bottom: 0 !important;
+}
+
+@media (min-width: 480px) {
   .shills-cat-grid {
-    grid-template-columns: repeat(6, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 10px !important;
   }
 }
+
+@media (min-width: 680px) {
+  .shills-cat-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    gap: 12px !important;
+  }
+}
+
 @media (min-width: 1024px) {
   .shills-cat-grid {
-    grid-template-columns: repeat(8, minmax(0, 1fr));
+    grid-template-columns: repeat(8, minmax(0, 1fr)) !important;
+    gap: 12px !important;
   }
 }
-@media (min-width: 1300px) {
-  .shills-cat-grid {
-    grid-template-columns: repeat(8, minmax(0, 1fr));
-    gap: 1.25rem;
-  }
-}
+
 .shills-cat-tile {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  cursor: pointer;
-  padding: 0.5rem;
-  border-radius: 0.75rem;
-  transition: transform 0.15s, background 0.15s;
+  background: #ffffff !important;
+  border: 1px solid #f0edf5 !important;
+  border-radius: 14px !important;
+  padding: 10px 8px 10px 8px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  text-align: center !important;
+  cursor: pointer !important;
+  transition: transform 0.22s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.22s, border-color 0.22s !important;
+  position: relative !important;
+  overflow: hidden !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02) !important;
+  text-decoration: none !important;
 }
+
 .shills-cat-tile:hover {
-  background: #faf5ff;
-  transform: translateY(-2px);
+  background: #ffffff !important;
+  transform: translateY(-4px) !important;
+  box-shadow: 0 12px 24px rgba(60, 0, 107, 0.08) !important;
+  border-color: #ddd6fe !important;
 }
+
 .shills-cat-img {
-  width: 78px;
-  height: 78px;
-  border-radius: 0.875rem;
-  background: #f5f3ff;
-  border: 1px solid #ede9fe;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  padding: 6px;
-  margin-bottom: 0.5rem;
+  width: 100% !important;
+  height: 84px !important;
+  border-radius: 10px !important;
+  background: #fbfafc !important;
+  border: 1px solid #f5f2f9 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  overflow: hidden !important;
+  padding: 8px !important;
+  margin-bottom: 8px !important;
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.2s, border-color 0.2s !important;
 }
+
+.shills-cat-tile:hover .shills-cat-img {
+  background: #fdf4ff !important;
+  border-color: #f3e8ff !important;
+}
+
 .shills-cat-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
+  max-width: 100% !important;
+  max-height: 100% !important;
+  width: auto !important;
+  height: auto !important;
+  object-fit: contain !important;
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.04)) !important;
+}
+
+.shills-cat-tile:hover .shills-cat-img img {
+  transform: scale(1.08) !important;
+}
+
+.shills-cat-info {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  width: 100% !important;
+}
+
+.shills-cat-tile span,
+.shills-cat-name {
+  font-family: 'Manrope', sans-serif !important;
+  font-size: 0.78rem !important;
+  font-weight: 600 !important;
+  color: #18181b !important;
+  line-height: 1.25 !important;
+  letter-spacing: -0.01em !important;
+  text-align: center !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  max-width: 100% !important;
+  display: block !important;
+  transition: color 0.15s ease !important;
+}
+
+.shills-cat-tile:hover .shills-cat-name,
+.shills-cat-tile:hover span {
+  color: #3c006b !important;
+}
+
+.shills-cat-sub {
+  font-family: 'Manrope', sans-serif !important;
+  font-size: 0.68rem !important;
+  font-weight: 500 !important;
+  color: #a1a1aa !important;
+  margin-top: 3px !important;
+  letter-spacing: 0.02em !important;
+  transition: color 0.15s ease !important;
+}
+
+.shills-cat-tile:hover .shills-cat-sub {
+  color: #701a75 !important;
 }
 
 /* Active menu tab highlight */
@@ -1244,33 +1375,6 @@ a[data-testid="search-bar-icon"]:hover {
   padding: 0 3px !important;
 }
 
-/* Category Tiles */
-.shills-cat-img {
-  width: 88px !important;
-  height: 88px !important;
-  border-radius: 50% !important;
-  background: radial-gradient(circle, #ffffff 35%, #f6f3fa 100%) !important;
-  border: 1.5px solid #ece7f2 !important;
-  box-shadow: 0 4px 12px rgba(60, 0, 107, 0.04) !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  overflow: hidden !important;
-  padding: 8px !important;
-  margin-bottom: 0.5rem !important;
-  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s !important;
-}
-.shills-cat-tile:hover .shills-cat-img {
-  border-color: #3c006b !important;
-  box-shadow: 0 8px 22px rgba(60, 0, 107, 0.12) !important;
-  transform: translateY(-3px) scale(1.03) !important;
-}
-.shills-cat-tile span {
-  font-size: 0.8rem !important;
-  font-weight: 700 !important;
-  color: #1f2937 !important;
-  letter-spacing: 0.01em !important;
-}
 
 /* Luxury Salon Boutique Footer */
 footer.shills-luxury-footer,
