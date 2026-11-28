@@ -222,6 +222,7 @@
   }
 
   function showHomeView() {
+    document.title = 'Zepto: Online Grocery Delivery App - Groceries in Minutes';
     if (state.homeContainer) state.homeContainer.style.display = '';
     if (state.spaContainer) {
       state.spaContainer.style.display = 'none';
@@ -257,10 +258,38 @@
     });
   }
 
+  function renderCtaControl(prod, fullWidth) {
+    const inCart = state.cart[prod.url];
+    const qty = inCart ? inCart.quantity : 0;
+    if (qty > 0) {
+      return `
+        <div class="qty-stepper" ${fullWidth ? 'style="flex: 1; justify-content: center; gap: 28px; padding: 0.8rem; font-size: 1.05rem;"' : ''} data-stepper-url="${esc(prod.url)}">
+          <button type="button" class="zp-qty-dec" data-url="${esc(prod.url)}" ${fullWidth ? 'style="font-size: 1.4rem;"' : ''}>−</button>
+          <span>${fullWidth ? `${qty} in Cart` : qty}</span>
+          <button type="button" class="zp-qty-inc" data-url="${esc(prod.url)}" ${fullWidth ? 'style="font-size: 1.4rem;"' : ''}>+</button>
+        </div>
+      `;
+    }
+    return `
+      <button type="button" class="zp-add-btn" data-add-url="${esc(prod.url)}" ${fullWidth ? 'style="flex: 1; background: #ff3269; color: white; padding: 0.85rem 1.5rem; font-size: 1rem; border-radius: 0.5rem;"' : ''}>
+        ${fullWidth ? `Add to Cart • ₹${prod.price}` : 'ADD'}
+      </button>
+    `;
+  }
+
+  function syncInlineCartButtons(prodUrl) {
+    const prod = findProductByUrl(prodUrl);
+    if (!prod) return;
+    document.querySelectorAll('.zp-cta-slot').forEach(slot => {
+      if (slot.dataset.slotUrl === prodUrl) {
+        const isFull = slot.dataset.full === '1';
+        slot.innerHTML = renderCtaControl(prod, isFull);
+      }
+    });
+  }
+
   // --- Product Card Component ---
   function renderProductCard(p) {
-    const inCart = state.cart[p.url];
-    const qty = inCart ? inCart.quantity : 0;
     const discount = p.mrp > p.price ? Math.round(((p.mrp - p.price) / p.mrp) * 100) : 0;
 
     return `
@@ -279,15 +308,9 @@
             <span style="font-weight: 800; font-size: 0.95rem; color: #111827;">₹${p.price}</span>
             ${p.mrp > p.price ? `<span style="font-size: 0.75rem; color: #9ca3af; text-decoration: line-through; margin-left: 4px;">₹${p.mrp}</span>` : ''}
           </div>
-          ${qty > 0 ? `
-            <div class="qty-stepper" data-stepper-url="${esc(p.url)}">
-              <button type="button" class="zp-qty-dec" data-url="${esc(p.url)}">−</button>
-              <span>${qty}</span>
-              <button type="button" class="zp-qty-inc" data-url="${esc(p.url)}">+</button>
-            </div>
-          ` : `
-            <button type="button" class="zp-add-btn" data-add-url="${esc(p.url)}">ADD</button>
-          `}
+          <div class="zp-cta-slot" data-slot-url="${esc(p.url)}" data-full="0" style="display: contents;">
+            ${renderCtaControl(p, false)}
+          </div>
         </div>
       </div>
     `;
@@ -296,9 +319,15 @@
   // --- Full Single Product Page (PDP) ---
   function renderProductPage(prod) {
     if (!prod) return showHomeView();
-    const inCart = state.cart[prod.url];
-    const qty = inCart ? inCart.quantity : 0;
+    document.title = `${prod.name} - Buy Online at ₹${prod.price} | Zepto`;
     const discount = prod.mrp > prod.price ? Math.round(((prod.mrp - prod.price) / prod.mrp) * 100) : 0;
+    const savings = Math.max(0, prod.mrp - prod.price);
+
+    // Build pack size variants dynamically
+    const variants = [
+      { label: prod.weight, price: prod.price, mrp: prod.mrp, tag: discount > 0 ? `${discount}% OFF` : 'Standard' },
+      { label: `Pack of 2 (${prod.weight})`, price: Math.round(prod.price * 1.9), mrp: prod.mrp * 2, tag: 'Save Extra 5%' }
+    ];
 
     // Similar products from same section or fallback
     let similar = state.products.filter(p => p.url !== prod.url && p.section === prod.section);
@@ -319,10 +348,19 @@
       </nav>
 
       <div class="zp-pdp-grid">
-        <div>
+        <div class="zp-pdp-gallery">
           <div class="zp-pdp-img-box">
-            <img src="${esc(prod.image)}" alt="${esc(prod.name)}" />
+            ${discount > 0 ? `<span class="zp-discount-badge" style="top: 14px; left: 14px; font-size: 12px; padding: 4px 10px;">${discount}% OFF</span>` : ''}
+            <button type="button" id="pdpShareBtn" title="Copy Product Link" style="position: absolute; top: 14px; right: 14px; background: #ffffff; border: 1px solid #e5e7eb; border-radius: 9999px; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 2px 6px rgba(0,0,0,0.06);">🔗</button>
+            <img id="pdpMainImg" src="${esc(prod.image)}" alt="${esc(prod.name)}" />
           </div>
+
+          <div class="zp-pdp-thumbs">
+            <button type="button" class="zp-pdp-thumb active" data-thumb-scale="1"><img src="${esc(prod.image)}" alt="Front view" /></button>
+            <button type="button" class="zp-pdp-thumb" data-thumb-scale="1.18"><img src="${esc(prod.image)}" alt="Close up" style="transform: scale(1.2);" /></button>
+            <button type="button" class="zp-pdp-thumb" data-thumb-scale="1.05"><img src="${esc(prod.image)}" alt="Pack view" style="filter: contrast(1.05);" /></button>
+          </div>
+
           <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; margin-top: 1rem;">
             <div style="background: #f9fafb; border: 1px solid #ece9f2; border-radius: 0.5rem; padding: 0.65rem; text-align: center; font-size: 0.75rem; color: #374151; font-weight: 600;">⚡ 10 Min Delivery</div>
             <div style="background: #f9fafb; border: 1px solid #ece9f2; border-radius: 0.5rem; padding: 0.65rem; text-align: center; font-size: 0.75rem; color: #374151; font-weight: 600;">✓ 100% Authentic</div>
@@ -331,61 +369,93 @@
         </div>
 
         <div>
-          <a href="/brand/${encodeURIComponent(prod.brand.toLowerCase().replace(/\s+/g, '-'))}" data-spa-nav="/brand/${encodeURIComponent(prod.brand.toLowerCase().replace(/\s+/g, '-'))}" style="display: inline-block; font-size: 0.78rem; font-weight: 700; color: #7c3aed; text-transform: uppercase; letter-spacing: 0.05em; text-decoration: none; margin-bottom: 6px;">${esc(prod.brand)} ›</a>
-          <h1 style="font-size: 1.5rem; font-weight: 800; color: #111827; margin: 0 0 8px 0; line-height: 1.3;">${esc(prod.name)}</h1>
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px;">
+            <a href="/brand/${encodeURIComponent(prod.brand.toLowerCase().replace(/\s+/g, '-'))}" data-spa-nav="/brand/${encodeURIComponent(prod.brand.toLowerCase().replace(/\s+/g, '-'))}" style="display: inline-block; font-size: 0.8rem; font-weight: 700; color: #7c3aed; text-transform: uppercase; letter-spacing: 0.05em; text-decoration: none;">${esc(prod.brand)} ›</a>
+            <span class="zp-eta-badge" style="margin: 0; font-size: 11px; padding: 3px 8px;">⚡ Delivery in 10 mins</span>
+          </div>
+
+          <h1 style="font-size: 1.5rem; font-weight: 800; color: #111827; margin: 0 0 10px 0; line-height: 1.3;">${esc(prod.name)}</h1>
 
           <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 1rem;">
             <span style="background: #ecfdf5; color: #059669; font-weight: 700; font-size: 0.85rem; padding: 3px 10px; border-radius: 6px;">★ ${prod.rating}</span>
-            <span style="font-size: 0.85rem; color: #6b7280;">(${Number(prod.reviews).toLocaleString()} ratings)</span>
-            <span style="font-size: 0.8rem; color: #6b7280; background: #f3f4f6; padding: 3px 10px; border-radius: 6px; font-weight: 600;">${esc(prod.weight)}</span>
+            <span style="font-size: 0.85rem; color: #6b7280;">(${Number(prod.reviews).toLocaleString()} verified ratings)</span>
           </div>
 
+          <!-- Pack Size Selector -->
+          <p style="font-size: 0.78rem; font-weight: 700; color: #6b7280; text-transform: uppercase; margin: 0 0 8px 0;">Select Pack Size</p>
+          <div class="zp-variant-row">
+            ${variants.map((v, idx) => `
+              <button type="button" class="zp-variant-pill ${idx === 0 ? 'active' : ''}" data-v-price="${v.price}" data-v-mrp="${v.mrp}">
+                <div style="font-size: 0.82rem; font-weight: 700; color: #111827;">${esc(v.label)}</div>
+                <div style="font-size: 0.78rem; color: #4b5563; margin-top: 2px;">
+                  <strong>₹${v.price}</strong>
+                  ${v.mrp > v.price ? `<span style="text-decoration: line-through; color: #9ca3af; margin-left: 4px;">₹${v.mrp}</span>` : ''}
+                  <span style="color: #15803d; font-weight: 700; margin-left: 4px;">${v.tag}</span>
+                </div>
+              </button>
+            `).join('')}
+          </div>
+
+          <!-- Price Box -->
           <div style="border-top: 1px solid #f3f4f6; border-bottom: 1px solid #f3f4f6; padding: 1rem 0; margin-bottom: 1.25rem;">
             <div style="display: flex; align-items: baseline; gap: 10px;">
-              <span style="font-size: 1.85rem; font-weight: 800; color: #111827;">₹${prod.price}</span>
-              ${prod.mrp > prod.price ? `<span style="font-size: 1rem; color: #9ca3af; text-decoration: line-through;">MRP ₹${prod.mrp}</span>` : ''}
-              ${discount > 0 ? `<span style="background: #dcfce7; color: #15803d; font-weight: 700; font-size: 0.8rem; padding: 2px 8px; border-radius: 4px;">${discount}% OFF</span>` : ''}
+              <span id="pdpPriceDisplay" style="font-size: 1.9rem; font-weight: 800; color: #111827;">₹${prod.price}</span>
+              <span id="pdpMrpDisplay" style="font-size: 1rem; color: #9ca3af; text-decoration: line-through; ${prod.mrp > prod.price ? '' : 'display:none;'}">MRP ₹${prod.mrp}</span>
+              ${savings > 0 ? `<span style="background: #dcfce7; color: #15803d; font-weight: 700; font-size: 0.8rem; padding: 2px 8px; border-radius: 4px;">Save ₹${savings} (${discount}% OFF)</span>` : ''}
             </div>
             <p style="margin: 4px 0 0 0; font-size: 0.75rem; color: #6b7280;">(Inclusive of all taxes)</p>
           </div>
 
-          <div style="display: flex; gap: 12px; margin-bottom: 1.5rem;">
-            ${qty > 0 ? `
-              <div class="qty-stepper" style="flex: 1; justify-content: center; gap: 28px; padding: 0.8rem; font-size: 1.05rem;">
-                <button type="button" class="zp-qty-dec" data-url="${esc(prod.url)}" style="font-size: 1.4rem;">−</button>
-                <span>${qty} in Cart</span>
-                <button type="button" class="zp-qty-inc" data-url="${esc(prod.url)}" style="font-size: 1.4rem;">+</button>
-              </div>
-            ` : `
-              <button type="button" class="zp-add-btn" data-add-url="${esc(prod.url)}" style="flex: 1; background: #ff3269; color: white; padding: 0.85rem 1.5rem; font-size: 1rem; border-radius: 0.5rem;">
-                Add to Cart • ₹${prod.price}
-              </button>
-            `}
+          <!-- Primary CTA -->
+          <div style="display: flex; gap: 12px; margin-bottom: 1.25rem;">
+            <div class="zp-cta-slot" data-slot-url="${esc(prod.url)}" data-full="1" style="flex: 1; display: flex;">
+              ${renderCtaControl(prod, true)}
+            </div>
             <button type="button" id="pdpOpenCartBtn" style="background: #f5f0ff; color: #3c006b; border: 1px solid #ddd6fe; padding: 0.85rem 1.25rem; border-radius: 0.5rem; font-weight: 700; cursor: pointer;">
               View Cart
             </button>
           </div>
 
+          <!-- Offers Box -->
+          <div class="zp-offers-box">
+            <div style="font-size: 0.82rem; font-weight: 700; color: #4c1d95; margin-bottom: 4px;">🏷️ Available Offers</div>
+            <div style="font-size: 0.78rem; color: #5b21b6;">• Use code <strong>ZEPTO10</strong> for flat 10% instant discount on orders above ₹499</div>
+            <div style="font-size: 0.78rem; color: #5b21b6; margin-top: 2px;">• Free 10-minute delivery unlocked on orders above ₹99</div>
+          </div>
+
           <!-- Why Shop From Zepto -->
-          <div style="background: #faf9fc; border: 1px solid #ece9f2; border-radius: 0.75rem; padding: 1rem; margin-bottom: 1.25rem;">
-            <h3 style="margin: 0 0 0.75rem 0; font-size: 0.9rem; font-weight: 700; color: #111827;">Why shop from Zepto?</h3>
-            <div style="display: flex; flex-direction: column; gap: 0.65rem; font-size: 0.82rem; color: #4b5563;">
+          <div style="background: #faf9fc; border: 1px solid #ece9f2; border-radius: 0.75rem; padding: 1rem; margin-bottom: 1rem;">
+            <h3 style="margin: 0 0 0.65rem 0; font-size: 0.9rem; font-weight: 700; color: #111827;">Why shop from Zepto?</h3>
+            <div style="display: flex; flex-direction: column; gap: 0.55rem; font-size: 0.82rem; color: #4b5563;">
               <div><strong>⚡ Superfast Delivery:</strong> Get your order delivered to your doorstep in 10 minutes from dark stores near you.</div>
               <div><strong>🏷️ Best Prices &amp; Offers:</strong> Cheaper prices than your local supermarket, great cashback offers to top it off.</div>
               <div><strong>🛍️ Wide Assortment:</strong> Choose from 5000+ products across food, personal care, household &amp; other categories.</div>
             </div>
           </div>
 
-          <!-- Highlights -->
-          <div>
-            <h3 style="margin: 0 0 0.5rem 0; font-size: 0.95rem; font-weight: 700; color: #111827;">Product Information</h3>
-            <p style="margin: 0 0 0.75rem 0; font-size: 0.85rem; color: #4b5563; line-height: 1.5;">${esc(prod.desc)}</p>
-            <div style="display: grid; grid-template-columns: 140px 1fr; gap: 6px 12px; font-size: 0.82rem; border-top: 1px solid #f3f4f6; padding-top: 0.75rem;">
+          <!-- Collapsible Product Information -->
+          <details class="zp-accordion" open>
+            <summary>Product Information <span>▾</span></summary>
+            <p style="margin: 0.65rem 0 0.75rem 0; font-size: 0.85rem; color: #4b5563; line-height: 1.5;">${esc(prod.desc)}</p>
+            <div style="display: grid; grid-template-columns: 140px 1fr; gap: 6px 12px; font-size: 0.82rem; padding-top: 0.5rem;">
               <span style="color: #6b7280;">Brand</span><span style="font-weight: 600; color: #111827;">${esc(prod.brand)}</span>
               <span style="color: #6b7280;">Pack Size</span><span style="font-weight: 600; color: #111827;">${esc(prod.weight)}</span>
               <span style="color: #6b7280;">Category</span><span style="font-weight: 600; color: #111827;">${esc(prod.section)}</span>
+              <span style="color: #6b7280;">Country of Origin</span><span style="font-weight: 600; color: #111827;">India</span>
+              <span style="color: #6b7280;">Quality</span><span style="font-weight: 600; color: #111827;">100% Genuine &amp; Freshly Stocked</span>
             </div>
-          </div>
+          </details>
+        </div>
+      </div>
+
+      <!-- Mobile Sticky Add to Cart Bar -->
+      <div class="zp-pdp-mobile-bar">
+        <div>
+          <div style="font-size: 1.05rem; font-weight: 800; color: #111827;">₹${prod.price}</div>
+          <div style="font-size: 0.72rem; color: #6b7280;">${esc(prod.weight)}</div>
+        </div>
+        <div class="zp-cta-slot" data-slot-url="${esc(prod.url)}" data-full="1" style="flex: 1; display: flex; max-width: 220px;">
+          ${renderCtaControl(prod, true)}
         </div>
       </div>
 
@@ -399,8 +469,46 @@
     `;
 
     showSpaView(html);
+
     const viewCartBtn = document.getElementById('pdpOpenCartBtn');
     if (viewCartBtn) viewCartBtn.addEventListener('click', openCartDrawer);
+
+    const shareBtn = document.getElementById('pdpShareBtn');
+    if (shareBtn) {
+      shareBtn.addEventListener('click', () => {
+        if (navigator.clipboard) navigator.clipboard.writeText(window.location.href).catch(() => {});
+        showToast('Product link copied!');
+      });
+    }
+
+    // Thumbnail switching
+    const mainImg = document.getElementById('pdpMainImg');
+    document.querySelectorAll('.zp-pdp-thumb').forEach(th => {
+      th.addEventListener('click', () => {
+        document.querySelectorAll('.zp-pdp-thumb').forEach(t => t.classList.remove('active'));
+        th.classList.add('active');
+        if (mainImg) mainImg.style.transform = `scale(${th.dataset.thumbScale || 1})`;
+      });
+    });
+
+    // Pack size variant switching
+    document.querySelectorAll('.zp-variant-pill').forEach(pill => {
+      pill.addEventListener('click', () => {
+        document.querySelectorAll('.zp-variant-pill').forEach(p => p.classList.remove('active'));
+        pill.classList.add('active');
+        const vp = document.getElementById('pdpPriceDisplay');
+        const vm = document.getElementById('pdpMrpDisplay');
+        if (vp) vp.textContent = `₹${pill.dataset.vPrice}`;
+        if (vm) {
+          if (Number(pill.dataset.vMrp) > Number(pill.dataset.vPrice)) {
+            vm.style.display = '';
+            vm.textContent = `MRP ₹${pill.dataset.vMrp}`;
+          } else {
+            vm.style.display = 'none';
+          }
+        }
+      });
+    });
   }
 
   const CATEGORY_SECTIONS = {
@@ -987,15 +1095,16 @@
   // --- Global Event Delegation ---
   function bindGlobalEvents() {
     document.addEventListener('click', (e) => {
-      // 1. Dynamic SPA stepper / ADD buttons
+      // 1. Dynamic SPA stepper / ADD buttons (in-place update, no scroll jump)
       const addBtn = e.target.closest('.zp-add-btn[data-add-url]');
       if (addBtn) {
         e.preventDefault();
         e.stopPropagation();
-        const prod = findProductByUrl(addBtn.dataset.addUrl);
+        const url = addBtn.dataset.addUrl;
+        const prod = findProductByUrl(url);
         addToCart(prod, 1);
         showToast(`Added ${prod ? prod.name.slice(0, 26) : 'item'} to cart`);
-        handleRoute();
+        syncInlineCartButtons(url);
         return;
       }
 
@@ -1003,9 +1112,10 @@
       if (incBtn) {
         e.preventDefault();
         e.stopPropagation();
-        const prod = findProductByUrl(incBtn.dataset.url);
+        const url = incBtn.dataset.url;
+        const prod = findProductByUrl(url);
         addToCart(prod, 1);
-        handleRoute();
+        syncInlineCartButtons(url);
         return;
       }
 
@@ -1013,9 +1123,10 @@
       if (decBtn) {
         e.preventDefault();
         e.stopPropagation();
-        const prod = findProductByUrl(decBtn.dataset.url);
+        const url = decBtn.dataset.url;
+        const prod = findProductByUrl(url);
         addToCart(prod, -1);
-        handleRoute();
+        syncInlineCartButtons(url);
         return;
       }
 
