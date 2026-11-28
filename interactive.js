@@ -105,11 +105,11 @@
       const bar = btn.querySelector('.mh28o');
       if (label && txt === label.toLowerCase()) {
         btn.classList.add('zp-tab-active');
-        if (span) span.style.color = '#9A16CA';
-        if (bar) { bar.style.opacity = '1'; bar.style.backgroundColor = '#9A16CA'; }
+        if (span) span.style.color = '#111111';
+        if (bar) { bar.style.opacity = '1'; bar.style.backgroundColor = '#111111'; }
       } else {
         btn.classList.remove('zp-tab-active');
-        if (span) span.style.color = '#586274';
+        if (span) span.style.color = '#64748b';
         if (bar) { bar.style.opacity = '0'; }
       }
     });
@@ -128,8 +128,8 @@
       `;
     }
     return `
-      <button type="button" class="zp-add-btn" data-add-url="${esc(prod.url)}" ${fullWidth ? 'style="flex: 1; background: #ff3269; color: white; padding: 0.85rem 1.5rem; font-size: 1rem; border-radius: 0.5rem;"' : ''}>
-        ${fullWidth ? `Add to Cart • ₹${prod.price}` : 'ADD'}
+      <button type="button" class="zp-add-btn" data-add-url="${esc(prod.url)}" ${fullWidth ? 'style="flex: 1; background: #111111; color: white; padding: 0.95rem 1.6rem; font-size: 0.92rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; border-radius: 9999px; border: none; cursor: pointer;"' : ''}>
+        ${fullWidth ? `Add to Bag • ₹${prod.price}` : 'ADD'}
       </button>
     `;
   }
@@ -154,7 +154,7 @@
             ${discount > 0 ? `<span class="zp-discount-badge">${discount}% OFF</span>` : ''}
             <img src="${esc(p.image)}" alt="${esc(p.name)}" loading="lazy" />
           </div>
-          <div class="zp-eta-badge">⚡ 10 MINS</div>
+          <div class="shills-pro-badge">★ SALON PRO</div>
           <h4 style="margin: 0 0 4px 0; font-size: 0.85rem; font-weight: 600; color: #1f2937; line-height: 1.3; height: 36px; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;">${esc(p.name)}</h4>
           <p style="margin: 0 0 8px 0; font-size: 0.75rem; color: #6b7280; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${esc(p.weight)}</p>
         </div>
@@ -264,7 +264,7 @@
             <h2 style="margin: 0; font-size: 1.35rem; font-weight: 800; color: #111827;">Shop by Category</h2>
             <p style="margin: 3px 0 0 0; font-size: 0.82rem; color: #6b7280;">Explore salon-grade nail care, extensions, accessories &amp; beauty</p>
           </div>
-          <a href="/cn/best-selling" data-spa-nav="/cn/best-selling" style="color: #ff3269; font-weight: 700; font-size: 0.875rem; text-decoration: none;">See All ›</a>
+          <a href="/cn/best-selling" data-spa-nav="/cn/best-selling" style="color: #3c006b; font-weight: 700; font-size: 0.875rem; text-decoration: none;">See All ›</a>
         </div>
         <div class="shills-cat-grid">
           ${state.categories.map(c => `
@@ -383,7 +383,7 @@
       <section class="shills-reels-section">
         <div class="shills-reels-header">
           <div>
-            <span style="color: #ff3269; font-weight: 800; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em;">Trending On Social</span>
+            <span style="color: #3c006b; font-weight: 800; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em;">Trending On Social</span>
             <h2 style="font-size: 1.45rem; font-weight: 900; color: #111827; margin: 0.25rem 0 0 0;">Watch &amp; Buy Salon Looks</h2>
           </div>
           <span style="font-size: 0.85rem; color: #6b7280; font-weight: 500;">Hover or click reel to play with sound</span>
@@ -427,7 +427,7 @@
               <h3 style="margin: 0; font-size: 1.25rem; font-weight: 800; color: #111827;">${esc(secName)}</h3>
               <p style="margin: 2px 0 0 0; font-size: 0.8rem; color: #6b7280;">High-performance professional formulas</p>
             </div>
-            <a href="${esc(secUrl)}" data-spa-nav="${esc(secUrl)}" style="color: #ff3269; font-weight: 700; font-size: 0.875rem; text-decoration: none;">View All (${state.products.filter(p => p.section === secName).length}) ›</a>
+            <a href="${esc(secUrl)}" data-spa-nav="${esc(secUrl)}" style="color: #3c006b; font-weight: 700; font-size: 0.875rem; text-decoration: none;">View All (${state.products.filter(p => p.section === secName).length}) ›</a>
           </div>
           <div class="zp-prod-grid">
             ${items.map(renderProductCard).join('')}
@@ -462,7 +462,7 @@
           <h2 style="font-size: 1.65rem; font-weight: 900; color: #111827; margin: 0.6rem 0 0.85rem 0; line-height: 1.25;">How to Create 9D Cat Eye &amp; Builder Gel Extensions</h2>
           <p style="font-size: 0.9rem; color: #4b5563; line-height: 1.6; margin-bottom: 1.25rem;">Watch top Indian nail educators and salon technicians demonstrate step-by-step techniques using Shills UV/LED Gel Polishes, magnetic wands, and poly gels.</p>
           <div style="display: flex; flex-wrap: wrap; gap: 10px;">
-            <button type="button" data-spa-nav="/cn/cat-eye-kit" style="background: #ff3269; color: white; border: none; padding: 0.75rem 1.4rem; border-radius: 0.5rem; font-weight: 700; cursor: pointer; box-shadow: 0 4px 12px rgba(255,50,105,0.3);">Shop Featured Kit →</button>
+            <button type="button" data-spa-nav="/cn/cat-eye-kit" style="background: #111111; color: white; border: none; padding: 0.75rem 1.4rem; border-radius: 0.5rem; font-weight: 700; cursor: pointer; box-shadow: 0 4px 12px rgba(255,50,105,0.3);">Shop Featured Kit →</button>
             <a href="https://www.youtube.com/@ShillsProfessional.Official" target="_blank" rel="noopener" style="background: #f3f4f6; color: #111827; padding: 0.75rem 1.25rem; border-radius: 0.5rem; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">Watch on YouTube ↗</a>
           </div>
         </div>
@@ -706,7 +706,7 @@
             <img src="${esc(reel.productImg)}" alt="${esc(reel.title)}" style="width: 42px; height: 42px; border-radius: 8px; object-fit: cover; flex-shrink: 0;" />
             <div style="flex: 1; min-width: 0;">
               <div style="font-size: 0.8rem; font-weight: 700; color: #111827; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${esc(reel.title)}</div>
-              <div style="font-size: 0.88rem; font-weight: 800; color: #ff3269; margin-top: 1px;">₹ ${esc(reel.price)}</div>
+              <div style="font-size: 0.88rem; font-weight: 800; color: #3c006b; margin-top: 1px;">₹ ${esc(reel.price)}</div>
             </div>
             <button type="button" id="reelBuyNowBtn" style="background: #3c006b; color: #fff; border: none; padding: 7px 12px; border-radius: 8px; font-weight: 700; font-size: 0.78rem; cursor: pointer; white-space: nowrap;">Shop Now →</button>
           </div>
@@ -817,7 +817,7 @@
         <div>
           <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px;">
             <a href="${esc(catUrl)}" data-spa-nav="${esc(catUrl)}" style="display: inline-block; font-size: 0.8rem; font-weight: 700; color: #7c3aed; text-transform: uppercase; letter-spacing: 0.05em; text-decoration: none;">${esc(prod.brand)} ›</a>
-            <span class="zp-eta-badge" style="margin: 0; font-size: 11px; padding: 3px 8px;">⚡ Delivery in 10 mins</span>
+            <span class="shills-pro-badge" style="margin: 0; font-size: 11px; padding: 4px 10px;">★ CERTIFIED SALON GRADE</span>
           </div>
 
           <h1 style="font-size: 1.5rem; font-weight: 800; color: #111827; margin: 0 0 10px 0; line-height: 1.3;">${esc(prod.name)}</h1>
@@ -1129,7 +1129,7 @@
               <div style="font-size: 3rem; margin-bottom: 1rem;">💅</div>
               <h3 style="font-size: 1.1rem; font-weight: 600; color: #374151;">Your cart is empty</h3>
               <p style="color: #6b7280; font-size: 0.9rem; margin-top: 0.5rem;">Add salon-grade gel polishes, nail art &amp; beauty essentials!</p>
-              <button type="button" id="cartShopNow" style="margin-top: 1.5rem; background: #ff3269; color: white; border: none; padding: 0.65rem 1.5rem; border-radius: 0.5rem; font-weight: 600; cursor: pointer;">Shop Now</button>
+              <button type="button" id="cartShopNow" style="margin-top: 1.5rem; background: #111111; color: white; border: none; padding: 0.65rem 1.5rem; border-radius: 0.5rem; font-weight: 600; cursor: pointer;">Shop Now</button>
             </div>
           ` : `
             <div style="display: flex; flex-direction: column; gap: 1rem;">
@@ -1170,7 +1170,7 @@
 
         ${items.length > 0 ? `
           <div style="padding: 1.25rem; border-top: 1px solid #e5e7eb; background: #ffffff;">
-            <button type="button" id="checkoutBtn" style="width: 100%; background: #ff3269; color: white; border: none; padding: 0.85rem; border-radius: 0.5rem; font-weight: 700; font-size: 1rem; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+            <button type="button" id="checkoutBtn" style="width: 100%; background: #111111; color: white; border: none; padding: 0.85rem; border-radius: 0.5rem; font-weight: 700; font-size: 1rem; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
               <span>₹${total} • Proceed to Checkout</span>
               <span>→</span>
             </button>
@@ -1250,7 +1250,7 @@
         <div style="padding: 1.25rem;">
           <div style="display: flex; gap: 8px; margin-bottom: 1rem;">
             <input id="customLocInput" type="text" placeholder="Enter Pincode or City..." value="${esc(state.location)}" style="flex: 1; padding: 0.6rem 0.75rem; border: 1px solid #d1d5db; border-radius: 0.375rem; font-size: 0.9rem;" />
-            <button type="button" id="saveCustomLocBtn" style="background: #ff3269; color: white; border: none; padding: 0 1rem; border-radius: 0.375rem; font-weight: 600; cursor: pointer;">Save</button>
+            <button type="button" id="saveCustomLocBtn" style="background: #111111; color: white; border: none; padding: 0 1rem; border-radius: 0.375rem; font-weight: 600; cursor: pointer;">Save</button>
           </div>
           <div style="display: flex; flex-direction: column; gap: 0.5rem;">
             ${cities.map(c => `
@@ -1303,14 +1303,14 @@
           <button type="button" id="closeLoginModal" style="background: none; border: none; font-size: 1.3rem; cursor: pointer; color: #6b7280;">✕</button>
         </div>
         <div style="padding: 0 1.5rem 2rem 1.5rem;">
-          <div style="width: 56px; height: 56px; background: #ffe4e9; color: #ff3269; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.75rem; margin: 0 auto 1rem auto;">💅</div>
+          <div style="width: 56px; height: 56px; background: #ffe4e9; color: #3c006b; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.75rem; margin: 0 auto 1rem auto;">💅</div>
           <h2 style="font-size: 1.25rem; font-weight: 700; color: #111827; margin: 0 0 0.5rem 0;">Shills Professional</h2>
           <p style="font-size: 0.85rem; color: #6b7280; margin: 0 0 1.5rem 0;">Log in or Sign up for salon pro offers and order tracking</p>
           <div style="display: flex; border: 1px solid #d1d5db; border-radius: 0.5rem; overflow: hidden; margin-bottom: 1rem;">
             <span style="background: #f9fafb; padding: 0.75rem 0.85rem; font-weight: 600; font-size: 0.95rem; color: #374151; border-right: 1px solid #d1d5db;">+91</span>
             <input id="loginPhoneInput" type="tel" maxlength="10" placeholder="Enter Phone Number" style="flex: 1; border: none; outline: none; padding: 0.75rem; font-size: 0.95rem;" />
           </div>
-          <button type="button" id="sendOtpBtn" style="width: 100%; background: #ff3269; color: white; border: none; padding: 0.85rem; border-radius: 0.5rem; font-weight: 700; font-size: 1rem; cursor: pointer;">Continue with Phone</button>
+          <button type="button" id="sendOtpBtn" style="width: 100%; background: #111111; color: white; border: none; padding: 0.85rem; border-radius: 0.5rem; font-weight: 700; font-size: 1rem; cursor: pointer;">Continue with Phone</button>
         </div>
       </div>
     `;
@@ -1405,7 +1405,7 @@
           <div style="font-size: 3.5rem; margin-bottom: 1rem;">🎉</div>
           <h2 style="font-size: 1.4rem; font-weight: 800; color: #111827; margin: 0 0 0.5rem 0;">Order Placed Successfully!</h2>
           <p style="font-size: 0.95rem; color: #4b5563; margin: 0 0 1.5rem 0;">Your Shills Professional order is being packed for delivery to ${esc(state.location.split(',')[0])}.</p>
-          <button type="button" id="successOkBtn" style="background: #ff3269; color: white; border: none; padding: 0.75rem 2rem; border-radius: 0.5rem; font-weight: 700; cursor: pointer;">Awesome, Thanks!</button>
+          <button type="button" id="successOkBtn" style="background: #111111; color: white; border: none; padding: 0.75rem 2rem; border-radius: 0.5rem; font-weight: 700; cursor: pointer;">Awesome, Thanks!</button>
         </div>
       `;
       document.body.appendChild(successModal);
