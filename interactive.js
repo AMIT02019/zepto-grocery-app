@@ -178,6 +178,13 @@
 
     const banners = [
       {
+        img: '/assets/banners/black-friday-sale.jpg',
+        title: 'Black Friday to Cyber Monday Sale',
+        sub: 'Shop More. Save More. 5% to 25% OFF site-wide on salon essentials!',
+        cta: 'Shop Mega Sale',
+        url: '/cn/best-selling'
+      },
+      {
         img: 'https://shillsprofessional.com/cdn/shop/files/Shills_Web_Banner_-_1.png?v=1790592914&width=2400',
         title: 'UV/LED Gel Polish Collection',
         sub: 'Over 120+ vibrant shades with 21-day chip-free salon shine',
@@ -197,13 +204,6 @@
         sub: 'Salon-grade UV/LED lamps, tips & builder gels delivered in minutes',
         cta: 'View Nail Tools',
         url: '/cn/nail-lamp'
-      },
-      {
-        img: 'https://shillsprofessional.com/cdn/shop/files/Black_Friday_Sale_Banner.jpg?v=1795714618&width=2400',
-        title: 'Shills Mega Beauty Sale',
-        sub: 'Up to 40% OFF on Top Coats, Primers, Skincare & Makeup',
-        cta: 'Shop Deals',
-        url: '/cn/best-selling'
       }
     ];
 
@@ -279,9 +279,143 @@
       </section>
     `;
 
+    // Curated Shoppable Reels / Watch & Buy Section
+    const reels = [
+      {
+        id: "reel-1",
+        title: "Uv/Led 9d Silk Cat Rye Soak Off Gel Polish...",
+        fullTitle: "Uv/Led 9d Silk Cat Rye Soak Off Gel Polish Magnetic Gel Nail Polish With Silky Velvet Shimmer",
+        price: "569",
+        mrp: "749",
+        handle: "silk-9d-cat-eye-gel-polish-7-5ml",
+        url: "/pn/silk-9d-cat-eye-gel-polish-7-5ml",
+        videoUrl: "https://cdn.shopify.com/videos/c/o/v/15620164b1f34c4e9a16e70f7e8c1ec8.mp4",
+        poster: "https://cdn.shopify.com/s/files/1/0696/6476/8172/files/preview_images/15620164b1f34c4e9a16e70f7e8c1ec8.thumbnail.0000000000.jpg?v=1792058889",
+        productImg: "https://cdn.shopify.com/s/files/1/0696/6476/8172/files/preview_images/15620164b1f34c4e9a16e70f7e8c1ec8.thumbnail.0000000000.jpg?v=1792058889"
+      },
+      {
+        id: "reel-2",
+        title: "Cat Eye Gel Polish Kit",
+        fullTitle: "Cat Eye Gel Polish Kit - Professional 9D Magnetic Nail Art Set",
+        price: "4,499",
+        mrp: "5,999",
+        handle: "cat-eye-gel-polish-kit",
+        url: "/pn/cat-eye-gel-polish-kit",
+        videoUrl: "https://cdn.shopify.com/videos/c/o/v/190be95f8b55417ea0aa79af136773da.mp4",
+        poster: "https://cdn.shopify.com/s/files/1/0696/6476/8172/files/preview_images/190be95f8b55417ea0aa79af136773da.thumbnail.0000000000.jpg?v=1772784326",
+        productImg: "https://cdn.shopify.com/s/files/1/0696/6476/8172/files/preview_images/190be95f8b55417ea0aa79af136773da.thumbnail.0000000000.jpg?v=1772784326"
+      },
+      {
+        id: "reel-3",
+        title: "Non Transfer Lip Gloss",
+        fullTitle: "Non Transfer Lip Gloss - Waterproof All Day Velvet Matte",
+        price: "404",
+        mrp: "449",
+        handle: "non-transfer-lip-gloss",
+        url: "/pn/non-transfer-lip-gloss",
+        videoUrl: "https://cdn.shopify.com/videos/c/o/v/30026a04b6474cc781f75be294e7fcb2.mp4",
+        poster: "https://cdn.shopify.com/s/files/1/0696/6476/8172/files/preview_images/30026a04b6474cc781f75be294e7fcb2.thumbnail.0000000000.jpg?v=1766399668",
+        productImg: "https://cdn.shopify.com/s/files/1/0696/6476/8172/files/preview_images/30026a04b6474cc781f75be294e7fcb2.thumbnail.0000000000.jpg?v=1766399668"
+      },
+      {
+        id: "reel-4",
+        title: "Uv/Led 9d Silk Cat Rye Soak Off Gel Polish...",
+        fullTitle: "Uv/Led 9d Silk Cat Rye Soak Off Gel Polish Magnetic Gel Nail Polish With Silky Velvet Shimmer",
+        price: "569",
+        mrp: "749",
+        handle: "silk-9d-cat-eye-gel-polish-7-5ml",
+        url: "/pn/silk-9d-cat-eye-gel-polish-7-5ml",
+        videoUrl: "https://cdn.shopify.com/videos/c/o/v/2f36aa7e14ec483fa9a40350aba885f6.mp4",
+        poster: "https://cdn.shopify.com/s/files/1/0696/6476/8172/files/preview_images/2f36aa7e14ec483fa9a40350aba885f6.thumbnail.0000000000.jpg?v=1792059494",
+        productImg: "https://cdn.shopify.com/s/files/1/0696/6476/8172/files/preview_images/15620164b1f34c4e9a16e70f7e8c1ec8.thumbnail.0000000000.jpg?v=1792058889"
+      },
+      {
+        id: "reel-5",
+        title: "Cat Eye Gel Polish Kit",
+        fullTitle: "Cat Eye Gel Polish Kit - Professional 9D Magnetic Nail Art Set",
+        price: "4,499",
+        mrp: "5,999",
+        handle: "cat-eye-gel-polish-kit",
+        url: "/pn/cat-eye-gel-polish-kit",
+        videoUrl: "https://cdn.shopify.com/videos/c/o/v/a5407ca85eb540f691f47f13e93277ec.mp4",
+        poster: "https://cdn.shopify.com/s/files/1/0696/6476/8172/files/preview_images/a5407ca85eb540f691f47f13e93277ec.thumbnail.0000000000.jpg?v=1772790886",
+        productImg: "https://cdn.shopify.com/s/files/1/0696/6476/8172/files/preview_images/190be95f8b55417ea0aa79af136773da.thumbnail.0000000000.jpg?v=1772784326"
+      },
+      {
+        id: "reel-6",
+        title: "Non Transfer Lip Gloss",
+        fullTitle: "Non Transfer Lip Gloss - Waterproof All Day Velvet Matte",
+        price: "404",
+        mrp: "449",
+        handle: "non-transfer-lip-gloss",
+        url: "/pn/non-transfer-lip-gloss",
+        videoUrl: "https://cdn.shopify.com/videos/c/o/v/30026a04b6474cc781f75be294e7fcb2.mp4",
+        poster: "https://cdn.shopify.com/s/files/1/0696/6476/8172/files/preview_images/30026a04b6474cc781f75be294e7fcb2.thumbnail.0000000000.jpg?v=1766399668",
+        productImg: "https://cdn.shopify.com/s/files/1/0696/6476/8172/files/preview_images/30026a04b6474cc781f75be294e7fcb2.thumbnail.0000000000.jpg?v=1766399668"
+      },
+      {
+        id: "reel-7",
+        title: "12 In 1 Nail Therapy",
+        fullTitle: "12 In 1 Nail Therapy Multi-Benefit Nail Treatment",
+        price: "474",
+        mrp: "499",
+        handle: "12-in-1-nail-therapy",
+        url: "/pn/12-in-1-nail-therapy",
+        videoUrl: "https://cdn.shopify.com/videos/c/o/v/c86fd16d11d54d7a822149620c2772c3.mp4",
+        poster: "https://cdn.shopify.com/s/files/1/0696/6476/8172/files/preview_images/c86fd16d11d54d7a822149620c2772c3.thumbnail.0000000000.jpg?v=1792058895",
+        productImg: "https://cdn.shopify.com/s/files/1/0696/6476/8172/files/preview_images/c86fd16d11d54d7a822149620c2772c3.thumbnail.0000000000.jpg?v=1792058895"
+      },
+      {
+        id: "reel-8",
+        title: "Solid Tip Bond Gel",
+        fullTitle: "Solid Tip Bond Gel for Seamless Long-Wear Extensions",
+        price: "499",
+        mrp: "699",
+        handle: "shills-solid-tip-bond-spn-21045",
+        url: "/pn/shills-solid-tip-bond-spn-21045",
+        videoUrl: "https://cdn.shopify.com/videos/c/o/v/5998ef6e948b4be8bd31981824d66aee.mp4",
+        poster: "https://cdn.shopify.com/s/files/1/0696/6476/8172/files/preview_images/5998ef6e948b4be8bd31981824d66aee.thumbnail.0000000000.jpg?v=1792566907",
+        productImg: "https://cdn.shopify.com/s/files/1/0696/6476/8172/files/preview_images/5998ef6e948b4be8bd31981824d66aee.thumbnail.0000000000.jpg?v=1792566907"
+      }
+    ];
+
+    const reelsSectionHtml = `
+      <section class="shills-reels-section">
+        <div class="shills-reels-header">
+          <div>
+            <span style="color: #ff3269; font-weight: 800; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em;">Trending On Social</span>
+            <h2 style="font-size: 1.45rem; font-weight: 900; color: #111827; margin: 0.25rem 0 0 0;">Watch &amp; Buy Salon Looks</h2>
+          </div>
+          <span style="font-size: 0.85rem; color: #6b7280; font-weight: 500;">Hover or click reel to play with sound</span>
+        </div>
+        <div class="shills-reels-slider-wrapper">
+          <button type="button" class="shills-reels-nav-btn shills-reels-prev" id="reelsPrev" aria-label="Previous Reels">‹</button>
+          <div class="shills-reels-track" id="reelsTrack">
+            ${reels.map(r => `
+              <div class="shills-reel-card" data-reel-id="${esc(r.id)}" data-video-url="${esc(r.videoUrl)}" data-prod-url="${esc(r.url)}">
+                <div class="shills-reel-watermark">SHILLS</div>
+                <video class="shills-reel-video" src="${esc(r.videoUrl)}" poster="${esc(r.poster)}" loop muted playsinline preload="metadata"></video>
+                <div class="shills-reel-play-indicator">▶</div>
+                <div class="shills-reel-product-pill" data-spa-nav="${esc(r.url)}">
+                  <img src="${esc(r.productImg)}" alt="${esc(r.title)}" class="shills-reel-prod-thumb" />
+                  <div class="shills-reel-prod-details">
+                    <span class="shills-reel-prod-title" title="${esc(r.fullTitle)}">${esc(r.title)}</span>
+                    <span class="shills-reel-prod-price">₹ ${esc(r.price)}</span>
+                  </div>
+                </div>
+              </div>
+            `).join('')}
+          </div>
+          <button type="button" class="shills-reels-nav-btn shills-reels-next" id="reelsNext" aria-label="Next Reels">›</button>
+        </div>
+      </section>
+    `;
+
     // Featured Product Carousels
-    const featuredSections = ['Gel Polish', 'Nail Art', 'UV/LED Nail Lamps', 'Nail Extensions', 'Skincare', 'Makeup'];
-    const sectionsHtml = featuredSections.map(secName => {
+    const topSections = ['Gel Polish', 'Nail Art', 'UV/LED Nail Lamps', 'Nail Extensions'];
+    const bottomSections = ['Skincare', 'Makeup'];
+
+    const renderSec = (secName) => {
       const items = state.products.filter(p => p.section === secName).slice(0, 6);
       if (items.length === 0) return '';
       const catObj = state.categories.find(c => c.name === secName);
@@ -300,7 +434,17 @@
           </div>
         </section>
       `;
-    }).join('');
+    };
+
+    const topSectionsHtml = topSections.map(renderSec).join('');
+    const bottomSectionsHtml = bottomSections.map(renderSec).join('');
+
+    // Refined Beauty Promotional Banner
+    const refinedBeautyBannerHtml = `
+      <div class="shills-promo-banner-card" data-spa-nav="/cn/makeup">
+        <img src="/assets/banners/refined-beauty.jpg" alt="Refined Beauty Timeless Elegance - Shills Professional" loading="lazy" />
+      </div>
+    `;
 
     // Video Section
     const videoSectionHtml = `
@@ -443,7 +587,10 @@
         ${bannerHtml}
         ${trustBarHtml}
         ${catGridHtml}
-        ${sectionsHtml}
+        ${reelsSectionHtml}
+        ${topSectionsHtml}
+        ${refinedBeautyBannerHtml}
+        ${bottomSectionsHtml}
         ${videoSectionHtml}
         ${reviewsHtml}
         ${faqSectionHtml}
@@ -451,8 +598,9 @@
       </div>
     `;
 
-    // Initialize Banner Carousel
+    // Initialize Banner Carousel & Reels Slider
     initBannerSlider(banners.length);
+    initReelsSlider(reels);
   }
 
   function initBannerSlider(totalSlides) {
@@ -480,6 +628,114 @@
     track._autoTimer = setInterval(() => {
       goToSlide(currentSlide + 1);
     }, 4500);
+  }
+
+  function initReelsSlider(reels) {
+    const track = document.getElementById('reelsTrack');
+    const prev = document.getElementById('reelsPrev');
+    const next = document.getElementById('reelsNext');
+    if (!track) return;
+
+    if (prev) {
+      prev.addEventListener('click', (e) => {
+        e.stopPropagation();
+        track.scrollBy({ left: -460, behavior: 'smooth' });
+      });
+    }
+    if (next) {
+      next.addEventListener('click', (e) => {
+        e.stopPropagation();
+        track.scrollBy({ left: 460, behavior: 'smooth' });
+      });
+    }
+
+    const cards = track.querySelectorAll('.shills-reel-card');
+    cards.forEach(card => {
+      const video = card.querySelector('video');
+      const pill = card.querySelector('.shills-reel-product-pill');
+
+      // Video play on hover
+      card.addEventListener('mouseenter', () => {
+        if (video) {
+          card.classList.add('is-playing');
+          video.play().catch(() => {});
+        }
+      });
+      card.addEventListener('mouseleave', () => {
+        if (video) {
+          card.classList.remove('is-playing');
+          video.pause();
+          video.currentTime = 0;
+        }
+      });
+
+      // Product pill click
+      if (pill) {
+        pill.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const url = pill.getAttribute('data-spa-nav');
+          if (url) navigateTo(url);
+        });
+      }
+
+      // Card click opens modal to view full reel with audio and shop button
+      card.addEventListener('click', (e) => {
+        if (e.target.closest('.shills-reel-product-pill')) return;
+        const reelId = card.getAttribute('data-reel-id');
+        const reel = reels.find(r => r.id === reelId);
+        if (reel) openReelModal(reel);
+      });
+    });
+  }
+
+  function openReelModal(reel) {
+    const existing = document.getElementById('shillsReelModal');
+    if (existing) existing.remove();
+
+    const modal = document.createElement('div');
+    modal.id = 'shillsReelModal';
+    modal.className = 'zepto-modal-overlay';
+    modal.innerHTML = `
+      <div style="position: relative; max-width: 400px; width: 92%; background: #000; border-radius: 20px; overflow: hidden; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);">
+        <button type="button" id="closeReelModal" style="position: absolute; top: 12px; right: 12px; z-index: 10; width: 36px; height: 36px; border-radius: 50%; background: rgba(0,0,0,0.6); color: #fff; border: none; font-size: 1.4rem; cursor: pointer; display: flex; align-items: center; justify-content: center; backdrop-filter: blur(4px);">×</button>
+        <div style="aspect-ratio: 9/16; width: 100%; position: relative;">
+          <video id="modalReelVideo" src="${esc(reel.videoUrl)}" autoplay loop playsinline controls style="width: 100%; height: 100%; object-fit: cover; display: block;"></video>
+        </div>
+        <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 14px; background: linear-gradient(to top, rgba(0,0,0,0.95), rgba(0,0,0,0.4), transparent); z-index: 5;">
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 10px; background: rgba(255,255,255,0.96); backdrop-filter: blur(10px); padding: 8px 12px; border-radius: 12px;">
+            <img src="${esc(reel.productImg)}" alt="${esc(reel.title)}" style="width: 42px; height: 42px; border-radius: 8px; object-fit: cover; flex-shrink: 0;" />
+            <div style="flex: 1; min-width: 0;">
+              <div style="font-size: 0.8rem; font-weight: 700; color: #111827; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${esc(reel.title)}</div>
+              <div style="font-size: 0.88rem; font-weight: 800; color: #ff3269; margin-top: 1px;">₹ ${esc(reel.price)}</div>
+            </div>
+            <button type="button" id="reelBuyNowBtn" style="background: #3c006b; color: #fff; border: none; padding: 7px 12px; border-radius: 8px; font-weight: 700; font-size: 0.78rem; cursor: pointer; white-space: nowrap;">Shop Now →</button>
+          </div>
+        </div>
+      </div>
+    `;
+
+    document.body.appendChild(modal);
+
+    const closeBtn = document.getElementById('closeReelModal');
+    const video = document.getElementById('modalReelVideo');
+    const buyBtn = document.getElementById('reelBuyNowBtn');
+
+    function closeModal() {
+      if (video) video.pause();
+      modal.remove();
+    }
+
+    if (closeBtn) closeBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) closeModal();
+    });
+
+    if (buyBtn) {
+      buyBtn.addEventListener('click', () => {
+        closeModal();
+        navigateTo(reel.url);
+      });
+    }
   }
 
   function showHomeView() {

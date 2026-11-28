@@ -1,0 +1,310 @@
+{
+  "shopId": "mKG9BzD4yjH1x2yldkOR",
+  "feedList": [
+    {
+      "id": "1912-531453",
+      "desktopStoryBorderColor": "#FFC0AB",
+      "loopVideo": true,
+      "desktopProductNameColor": "#333333",
+      "desktopScrollType": "horizontal",
+      "shopId": "mKG9BzD4yjH1x2yldkOR",
+      "desktopShareStatus": true,
+      "autoPlayCenterVideo": false,
+      "mobileProductNameColor": "#333333",
+      "desktopProductNameSize": 20,
+      "shareIcon": "share-icon-1",
+      "mobileStartVideoWithSound": true,
+      "mobileProductCardButtonIconColor": "#FFFFFF",
+      "desktopLikeIcon": "heart",
+      "mobileVideoReplay": false,
+      "desktopPriceDisplay": "price-and-compare",
+      "desktopProductCardButtonBackgroundColor": "#333333",
+      "desktopAutoplayOption": "full",
+      "desktopStoryGap": 16,
+      "mobileHeadingText": "Product seen in the video",
+      "mobileAutoplayDuration": 3,
+      "mobileButtonTextColor": "#FFFFFF",
+      "isDefault": true,
+      "desktopPriceColor": "#333333",
+      "mobileBorderRadius": 8,
+      "shareStatus": false,
+      "desktopShareIcon": "share-icon-3",
+      "desktopVideoRatio": "portrait",
+      "desktopAutoplayDuration": 3,
+      "desktopPopupCloseBehavior": "minimize-to-circle",
+      "desktopBorderRadius": 32,
+      "mobileProductCardTemplate": "overlay",
+      "mobileStorySize": 72,
+      "mobileVideoMute": false,
+      "mobileStoryGap": 8,
+      "desktopPriceSize": 20,
+      "mobileButtonIconColor": "#FFFFFF",
+      "mobileLikeIcon": "heart",
+      "desktopCompareAtPriceSize": 20,
+      "desktopProductCardTemplate": "overlay",
+      "description": "",
+      "mobileLayout": "grid",
+      "desktopButtonTextSize": 20,
+      "mobilePopupCloseBehavior": "minimize-to-circle",
+      "likeStatus": false,
+      "mobilePriceSize": 18,
+      "desktopDefaultPosition": "bottom-right",
+      "desktopStartVideoWithSound": true,
+      "layout": "",
+      "mobileAutoplayOption": "full",
+      "mobileDefaultPosition": "bottom-right",
+      "mobileScrollType": "vertical",
+      "mobileButtonText": "Shop now",
+      "mobilePriceColor": "#333333",
+      "desktopLikeStatus": true,
+      "mobileProductCardButtonBackgroundColor": "#333333",
+      "desktopStorySize": 80,
+      "mobileButtonTextSize": 18,
+      "mobileCompareAtPriceSize": 18,
+      "mobileVideoSeek": false,
+      "mobilePriceDisplay": "price-and-compare",
+      "desktopHeadingText": "Product seen in the video",
+      "desktopProductCardButtonTextColor": "#FFFFFF",
+      "products": [],
+      "mobileLikeStatus": true,
+      "desktopColumnSpacing": "medium",
+      "likeIcon": "like",
+      "name": "Default Widget",
+      "mobileProductCardButtonText": "Shop now",
+      "mobileProductCardButtonTextColor": "#FFFFFF",
+      "desktopWhenPlaylistEnds": "replay-from-start",
+      "mobileWhenPlaylistEnds": "replay-from-start",
+      "mobileShareIcon": "share-icon-3",
+      "desktopButtonTextColor": "#FFFFFF",
+      "desktopProductCardButtonIconColor": "#FFFFFF",
+      "mobileStoryBorderColor": "#FFC0AB",
+      "desktopProductCardButtonText": "Shop now",
+      "mobileButtonIcon": "store",
+      "desktopDisplayUnmuteButton": true,
+      "mobileProductNameSize": 18,
+      "arrowsButton": false,
+      "mobileShareStatus": true,
+      "mobileVideoRatio": "portrait",
+      "rowsPerClick": 3,
+      "desktopButtonIconColor": "#FFFFFF",
+      "installedAt": "2025-12-19T07:34:47.124Z",
+      "mVtAlign": "left",
+      "autoplayDuration": 3,
+      "posType": "other-pages",
+      "pdpProPick": [],
+      "createdAt": "2025-12-19T07:34:47.327Z",
+      "mVtLine": 1,
+      "proSelType": "specific-products",
+      "mobileButtonAction": "add-to-cart",
+      "mobilePriceEnabled": true,
+      "pageTargeting": {
+        "productPages": {
+          "type": "all",
+          "enabled": true,
+          "products": []
+        },
+        "collectionPages": {
+          "collections": [],
+          "type": "all",
+          "enabled": false
+        },
+        "homePage": false
+      },
+      "dVtSize": 14,
+      "autoplayOption": "full",
+      "mobileFont": "Helvetica+Neue",
+      "dVtLine": 1,
+      "mobileStoryAlignment": "center",
+      "dVtAlign": "left",
+      "dVtShow": false,
+      "pdpProOmit": [],
+      "desktopPriceEnabled": true,
+      "desktopStoryAlignment": "center",
+      "desktopFont": "Helvetica+Neue",
+      "mVtShow": false,
+      "videoPlayBehavior": "none",
+      "mVtSize": 14,
+      "status": "active",
+      "hasShownInstructionModal": true,
+      "mobileProductCard": true,
+      "desktopVideoPlayBehavior": "autoplay",
+      "mobileVideoPlayBehavior": "autoplay",
+      "desktopProductCard": true,
+      "mobileColumnSpacing": "small",
+      "desktopColumnNumber": 6,
+      "mobileColumnNumber": 2,
+      "desktopButtonText": "Buy now",
+      "desktopButtonAction": "product-page",
+      "desktopButtonBackgroundColor": "#b91c5f",
+      "desktopCompareAtPriceColor": "#b91c5f",
+      "mobileButtonBackgroundColor": "b91c5f",
+      "mobileCompareAtPriceColor": "#b91c5f",
+      "font": "Poppins",
+      "blockTitleSize": 32,
+      "mobileProductDetailButtonBackgroundColor": "#333333",
+      "mobileProductDetailCompareAtPriceColor": "#AEAEAE",
+      "mobileProductDetailButtonTextColor": "#FFFFFF",
+      "desktopProductDetailMoreInfoBorderColor": "#333333",
+      "desktopProductDetailButtonEnabled": true,
+      "desktopProductDetailPriceDisplay": "price-and-compare",
+      "mobileProductDetailMoreInfoIconColor": "#333333",
+      "mobileProductDetailCompareAtPriceSize": 12,
+      "desktopProductDetailButtonTextSize": 20,
+      "desktopVideoLayout": "video-with-product",
+      "desktopProductCardTemplateVideoOnly": "icon-button",
+      "desktopProductDetailMoreInfoEnabled": true,
+      "mobileProductDetailMoreInfoBorderColor": "#333333",
+      "desktopProductDetailProductNameColor": "#333333",
+      "mobileProductDetailButtonTextSize": 20,
+      "mobileProductDetailPriceSize": 16,
+      "mobileProductDetailButtonText": "Shop now",
+      "desktopProductDetailPriceEnabled": true,
+      "desktopProductDetailCompareAtPriceColor": "#AEAEAE",
+      "desktopProductDetailCompareAtPriceSize": 12,
+      "blockTitleColor": "#fc2679",
+      "desktopProductDetailPriceSize": 16,
+      "mobileProductDetailProductNameColor": "#333333",
+      "mobileProductDetailProductNameSize": 20,
+      "desktopProductDetailButtonBackgroundColor": "#333333",
+      "mobileProductDetailPriceDisplay": "price-and-compare",
+      "desktopProductDetailMoreInfoIconColor": "#333333",
+      "mobileProductDetailPriceEnabled": true,
+      "desktopButtonBorderRadius": 12,
+      "desktopProductDetailButtonTextColor": "#FFFFFF",
+      "desktopProductDetailButtonText": "Shop now",
+      "mobileProductCardTemplateVideoOnly": "icon-button",
+      "mobileButtonBorderRadius": 12,
+      "mobileProductDetailButtonEnabled": true,
+      "mobileProductDetailMoreInfoEnabled": true,
+      "mobileVideoLayout": "video-with-product",
+      "desktopProductDetailProductNameSize": 20,
+      "desktopProductDetailPriceColor": "#fc2679",
+      "desktopVideoMute": true,
+      "desktopLayout": "grid",
+      "desktopVideoSeek": true,
+      "desktopVideoReplay": true,
+      "mobileProductDetailPriceColor": "fc2679",
+      "desktopButtonIcon": "bag",
+      "desktopCaptionSize": 12,
+      "blockTitle": "",
+      "desktopCaptionEnabled": false,
+      "mobileProductCardClickAction": "open-product-page",
+      "colorMode": "basic",
+      "mobileCaptionEnabled": false,
+      "desktopProductCardClickAction": "open-product-page",
+      "mobileCaptionSize": 12,
+      "desktopAutoStartVideo": true,
+      "mobileAutoStartVideo": true,
+      "firstActivatedAt": "2026-03-06T08:08:07.011Z",
+      "autoPlaylistMustShowByProduct": false,
+      "autoPlaylistMaxMustShow": 20,
+      "autoPlaylist": false,
+      "desktopShowSearchBar": false,
+      "autoPlaylistRefreshInterval": "24h",
+      "mobileSearchBarPosition": "left",
+      "mobileFullscreenProductCardClickAction": "open-product-list",
+      "mobileShowSearchBar": false,
+      "desktopVideoLinkStatus": false,
+      "mobileAutoplayNextVideo": false,
+      "autoPlaylistMustShowSpecificVideoIds": [],
+      "visibilityRegion": {
+        "mode": "all",
+        "countries": [],
+        "marketIds": [],
+        "countryCodes": []
+      },
+      "desktopSearchBarPosition": "left",
+      "desktopAutoplayNextVideo": false,
+      "mobileVideoLinkStatus": false,
+      "autoPlaylistCriteria": "mix",
+      "mobileSearchBarBorderRadius": 12,
+      "desktopSlideSpeed": "medium",
+      "mobileNavigationArrows": false,
+      "autoPlaylistExcludeOutOfStock": true,
+      "autoPlaylistLastRefreshedAt": null,
+      "mobileInfiniteLoop": false,
+      "shuffleVideos": false,
+      "autoPlaylistMustShowSpecificVideos": false,
+      "mobileSlideSpeed": "medium",
+      "autoPlaylistBackupVideoIds": [],
+      "desktopSearchBarBorderRadius": 12,
+      "desktopInfiniteLoop": false,
+      "autoPlaylistMustShowProductIds": [],
+      "enableFullscreenVideo": true,
+      "autoPlaylistSmartPickCount": 20,
+      "presetUsed": "none",
+      "desktopProductCardPriceDisplay": "price-only",
+      "mobileProductCardPriceDisplay": "price-only",
+      "videos": [
+        {
+          "id": "FXplLPhoMsOo4EJjlatV"
+        },
+        {
+          "id": "pYLN2ubBCYFheJTPPskc"
+        },
+        {
+          "id": "mKkvXWYPJ6MeP8J0XWa2"
+        },
+        {
+          "id": "bjA1yBLj5GzAeig9EXao"
+        },
+        {
+          "id": "FYmbNc1nrUBKzdbFC6cx"
+        },
+        {
+          "id": "qoxfxBNnNByKvkVzRhBQ"
+        },
+        {
+          "id": "g3WKOVb19po2KvV4kANL"
+        },
+        {
+          "id": "AJbxdc4VqiuJDoJpZ0yY"
+        },
+        {
+          "id": "ozUUykweb5ZqogfDK6dV"
+        },
+        {
+          "id": "Gnci4b7kDdel7PIq10oz"
+        },
+        {
+          "id": "cyH8YnLzaq3EgLXeismt"
+        },
+        {
+          "id": "gPRKqsm2SGELf9JSlu3W"
+        },
+        {
+          "id": "hcSM8eJWOadd7Agh2Kqf"
+        },
+        {
+          "id": "4R27moC8Cm87Cn3XEU41"
+        },
+        {
+          "id": "8ecdVaz6A4UZrb7I9EcT"
+        },
+        {
+          "id": "GHNjI3U4V4cdCDA0dDu4"
+        },
+        {
+          "id": "uUbOPof3WnZFxa8vWF53"
+        },
+        {
+          "id": "3ZnI4mxxs7UdrenyqXOt"
+        },
+        {
+          "id": "mXM6dSMt88oBnANCvU4x"
+        },
+        {
+          "id": "8yGB2ZbCxs4jYQRYLF9P"
+        },
+        {
+          "id": "9TjUHPNJpWNLPtjN9OUc"
+        },
+        {
+          "id": "xX5YN5BiMmwEpygDnZ2N"
+        }
+      ],
+      "updatedAt": "2026-08-17T13:30:50.916Z"
+    }
+  ],
+  "lastUpdated": "2026-08-17T13:30:51.554Z"
+}
