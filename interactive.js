@@ -221,7 +221,7 @@
     `;
 
     const sectionsHtml = featuredSections.map(secName => {
-      const items = state.products.filter(p => p.section === secName).slice(0, 5);
+      const items = state.products.filter(p => p.section === secName).slice(0, 6);
       if (items.length === 0) return '';
       const catObj = state.categories.find(c => c.name === secName);
       const secUrl = catObj ? catObj.url : `/cn/${secName.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`;
@@ -238,7 +238,7 @@
       `;
     }).join('');
 
-    state.homeContainer.innerHTML = `<div style="padding: 0 1rem;">${heroHtml}${catGridHtml}${sectionsHtml}</div>`;
+    state.homeContainer.innerHTML = `<div style="padding: 0;">${heroHtml}${catGridHtml}${sectionsHtml}</div>`;
   }
 
   function showHomeView() {

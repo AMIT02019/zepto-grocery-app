@@ -128,20 +128,52 @@
   line-height: 1;
 }
 
-/* SPA View Container */
-#zepto-spa-view {
-  max-width: 1280px;
+/* Expanded Screen Width System (Max Width 1600px / 96vw) */
+.__9vKLE {
+  max-width: 1600px !important;
+  width: 96% !important;
+  margin: 0 auto !important;
+  padding-left: 12px !important;
+  padding-right: 12px !important;
+}
+
+.XzXPq {
+  max-width: 1600px !important;
+  width: 96% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 12px !important;
+  padding-right: 12px !important;
+}
+
+#shills-home-root {
+  max-width: 1600px;
+  width: 96%;
   margin: 0 auto;
-  padding: 1.25rem 1rem 4rem 1rem;
+}
+
+#zepto-spa-view {
+  max-width: 1600px;
+  width: 96%;
+  margin: 0 auto;
+  padding: 1.25rem 12px 4rem 12px;
   min-height: 65vh;
   position: relative;
   z-index: 1;
 }
 
+footer {
+  max-width: 1600px !important;
+  width: 96% !important;
+  margin: 2rem auto 0 auto !important;
+  padding-left: 12px !important;
+  padding-right: 12px !important;
+}
+
 /* Prevent Zepto footer (.RuYse { bottom: 80px }) from overlapping SPA content */
 footer.RuYse {
   bottom: 0 !important;
-  margin-top: 2rem;
+  margin-top: 2rem !important;
 }
 
 /* Breadcrumbs */
@@ -351,7 +383,7 @@ footer.RuYse {
 .zp-prod-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.875rem;
+  gap: 1rem;
 }
 @media (min-width: 640px) {
   .zp-prod-grid {
@@ -361,6 +393,11 @@ footer.RuYse {
 @media (min-width: 1024px) {
   .zp-prod-grid {
     grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+}
+@media (min-width: 1400px) {
+  .zp-prod-grid {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
   }
 }
 
@@ -461,6 +498,12 @@ footer.RuYse {
 @media (min-width: 1024px) {
   .shills-cat-grid {
     grid-template-columns: repeat(8, minmax(0, 1fr));
+  }
+}
+@media (min-width: 1300px) {
+  .shills-cat-grid {
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+    gap: 1.25rem;
   }
 }
 .shills-cat-tile {
