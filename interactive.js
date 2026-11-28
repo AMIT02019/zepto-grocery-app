@@ -171,40 +171,99 @@
     `;
   }
 
-  // --- Shills Professional Homepage (Zepto Layout) ---
+  // --- Shills Professional Homepage (Zepto Layout + Rich Sections) ---
   function renderHomePage() {
     if (!state.homeContainer) return;
-    document.title = 'Shills Professional - Nail Care, Gel Polish, Beauty & Makeup';
+    document.title = 'Shills Professional - Salon Quality Nail Care, Gel Polish, Beauty & Makeup';
 
-    const featuredSections = ['Gel Polish', 'Nail Art', 'UV/LED Nail Lamps', 'Nail Extensions', 'Skincare', 'Makeup', 'Hair & Styling', 'Best Sellers'];
+    const banners = [
+      {
+        img: 'https://shillsprofessional.com/cdn/shop/files/Shills_Web_Banner_-_1.png?v=1790592914&width=2400',
+        title: 'UV/LED Gel Polish Collection',
+        sub: 'Over 120+ vibrant shades with 21-day chip-free salon shine',
+        cta: 'Shop Gel Polish',
+        url: '/cn/gel-polish'
+      },
+      {
+        img: 'https://shillsprofessional.com/cdn/shop/files/Shills_Web_Banner_-_2.png?v=1790592914&width=2400',
+        title: 'Professional Cat Eye & Glitters',
+        sub: 'Magical 9D magnetic effects for stunning nail artistry',
+        cta: 'Explore Cat Eye',
+        url: '/cn/cat-eye-kit'
+      },
+      {
+        img: 'https://shillsprofessional.com/cdn/shop/files/Shills_Web_Banner_-_3.png?v=1790592914&width=2400',
+        title: 'Pro Nail Extensions & Lamps',
+        sub: 'Salon-grade UV/LED lamps, tips & builder gels delivered in minutes',
+        cta: 'View Nail Tools',
+        url: '/cn/nail-lamp'
+      },
+      {
+        img: 'https://shillsprofessional.com/cdn/shop/files/Black_Friday_Sale_Banner.jpg?v=1795714618&width=2400',
+        title: 'Shills Mega Beauty Sale',
+        sub: 'Up to 40% OFF on Top Coats, Primers, Skincare & Makeup',
+        cta: 'Shop Deals',
+        url: '/cn/best-selling'
+      }
+    ];
 
-    const heroHtml = `
-      <div class="shills-hero">
-        <div style="max-width: 560px;">
-          <span style="display: inline-block; background: rgba(255,255,255,0.16); padding: 4px 12px; border-radius: 9999px; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.05em; margin-bottom: 0.75rem;">⚡ SALON-GRADE BEAUTY IN MINUTES</span>
-          <h1 style="margin: 0 0 0.65rem 0; font-size: 1.85rem; font-weight: 900; line-height: 1.2;">Shills Professional Store</h1>
-          <p style="margin: 0 0 1.25rem 0; font-size: 0.95rem; color: rgba(255,255,255,0.9); line-height: 1.5;">Shop ${state.products.length}+ authentic UV/LED Gel Polishes, Nail Extensions, Nail Art Kits, Lamps, Skincare &amp; Makeup — delivered fast.</p>
-          <div style="display: flex; flex-wrap: wrap; gap: 10px;">
-            <button type="button" data-spa-nav="/cn/best-selling" style="background: #ffffff; color: #3c006b; border: none; padding: 0.7rem 1.4rem; border-radius: 0.5rem; font-weight: 800; font-size: 0.9rem; cursor: pointer;">Shop Best Sellers →</button>
-            <button type="button" data-spa-nav="/cn/gel-polish" style="background: rgba(255,255,255,0.16); color: #ffffff; border: 1px solid rgba(255,255,255,0.35); padding: 0.7rem 1.25rem; border-radius: 0.5rem; font-weight: 700; font-size: 0.9rem; cursor: pointer;">Explore Gel Polish</button>
-          </div>
-        </div>
-        <div style="display: flex; gap: 12px; flex-wrap: wrap;">
-          ${state.products.slice(0, 3).map(p => `
-            <div data-prod-url="${esc(p.url)}" class="zp-card" style="width: 120px; padding: 0.5rem; cursor: pointer; background: rgba(255,255,255,0.96); color: #111827;">
-              <img src="${esc(p.image)}" alt="${esc(p.name)}" style="height: 82px; width: 100%; object-fit: contain; margin-bottom: 4px;" />
-              <div style="font-size: 0.72rem; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${esc(p.name)}</div>
-              <div style="font-size: 0.78rem; font-weight: 800; color: #ff3269;">₹${p.price}</div>
+    const bannerHtml = `
+      <div class="shills-banner-slider" id="homeBannerSlider">
+        <div class="shills-slide-track" id="homeSlideTrack">
+          ${banners.map(b => `
+            <div class="shills-slide-item" data-spa-nav="${esc(b.url)}">
+              <img src="${esc(b.img)}" alt="${esc(b.title)}" />
             </div>
           `).join('')}
+        </div>
+        <button type="button" class="shills-slider-btn shills-slider-prev" id="sliderPrev">‹</button>
+        <button type="button" class="shills-slider-btn shills-slider-next" id="sliderNext">›</button>
+        <div class="shills-slider-dots" id="sliderDots">
+          ${banners.map((_, i) => `<div class="shills-dot ${i === 0 ? 'active' : ''}" data-slide="${i}"></div>`).join('')}
+        </div>
+      </div>
+    `;
+
+    const trustBarHtml = `
+      <div class="shills-trust-bar">
+        <div class="shills-trust-item">
+          <div class="shills-trust-icon">💅</div>
+          <div>
+            <h4 style="margin: 0; font-size: 0.9rem; font-weight: 700; color: #111827;">Salon-Grade Formulas</h4>
+            <p style="margin: 2px 0 0 0; font-size: 0.78rem; color: #6b7280;">Trusted by 5,000+ nail studios &amp; artists</p>
+          </div>
+        </div>
+        <div class="shills-trust-item">
+          <div class="shills-trust-icon">⚡</div>
+          <div>
+            <h4 style="margin: 0; font-size: 0.9rem; font-weight: 700; color: #111827;">Superfast Delivery</h4>
+            <p style="margin: 2px 0 0 0; font-size: 0.78rem; color: #6b7280;">Instant doorstep dispatch in minutes</p>
+          </div>
+        </div>
+        <div class="shills-trust-item">
+          <div class="shills-trust-icon">✓</div>
+          <div>
+            <h4 style="margin: 0; font-size: 0.9rem; font-weight: 700; color: #111827;">100% Genuine &amp; Toxin-Free</h4>
+            <p style="margin: 2px 0 0 0; font-size: 0.78rem; color: #6b7280;">Direct from official Shills inventory</p>
+          </div>
+        </div>
+        <div class="shills-trust-item">
+          <div class="shills-trust-icon">💬</div>
+          <div>
+            <h4 style="margin: 0; font-size: 0.9rem; font-weight: 700; color: #111827;">Dedicated Pro Support</h4>
+            <p style="margin: 2px 0 0 0; font-size: 0.78rem; color: #6b7280;">Expert help for artists &amp; salon owners</p>
+          </div>
         </div>
       </div>
     `;
 
     const catGridHtml = `
-      <section style="margin-bottom: 2rem;">
+      <section style="margin-bottom: 2.25rem;">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
-          <h2 style="margin: 0; font-size: 1.25rem; font-weight: 800; color: #111827;">Shop by Category</h2>
+          <div>
+            <h2 style="margin: 0; font-size: 1.35rem; font-weight: 800; color: #111827;">Shop by Category</h2>
+            <p style="margin: 3px 0 0 0; font-size: 0.82rem; color: #6b7280;">Explore salon-grade nail care, extensions, accessories &amp; beauty</p>
+          </div>
           <a href="/cn/best-selling" data-spa-nav="/cn/best-selling" style="color: #ff3269; font-weight: 700; font-size: 0.875rem; text-decoration: none;">See All ›</a>
         </div>
         <div class="shills-cat-grid">
@@ -220,16 +279,21 @@
       </section>
     `;
 
+    // Featured Product Carousels
+    const featuredSections = ['Gel Polish', 'Nail Art', 'UV/LED Nail Lamps', 'Nail Extensions', 'Skincare', 'Makeup'];
     const sectionsHtml = featuredSections.map(secName => {
       const items = state.products.filter(p => p.section === secName).slice(0, 6);
       if (items.length === 0) return '';
       const catObj = state.categories.find(c => c.name === secName);
       const secUrl = catObj ? catObj.url : `/cn/${secName.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`;
       return `
-        <section style="margin-bottom: 2.25rem;">
+        <section style="margin-bottom: 2.5rem;">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
-            <h3 style="margin: 0; font-size: 1.2rem; font-weight: 800; color: #111827;">${esc(secName)}</h3>
-            <a href="${esc(secUrl)}" data-spa-nav="${esc(secUrl)}" style="color: #ff3269; font-weight: 700; font-size: 0.875rem; text-decoration: none;">See All ›</a>
+            <div>
+              <h3 style="margin: 0; font-size: 1.25rem; font-weight: 800; color: #111827;">${esc(secName)}</h3>
+              <p style="margin: 2px 0 0 0; font-size: 0.8rem; color: #6b7280;">High-performance professional formulas</p>
+            </div>
+            <a href="${esc(secUrl)}" data-spa-nav="${esc(secUrl)}" style="color: #ff3269; font-weight: 700; font-size: 0.875rem; text-decoration: none;">View All (${state.products.filter(p => p.section === secName).length}) ›</a>
           </div>
           <div class="zp-prod-grid">
             ${items.map(renderProductCard).join('')}
@@ -238,7 +302,184 @@
       `;
     }).join('');
 
-    state.homeContainer.innerHTML = `<div style="padding: 0;">${heroHtml}${catGridHtml}${sectionsHtml}</div>`;
+    // Video Section
+    const videoSectionHtml = `
+      <section class="shills-video-section">
+        <div class="shills-video-box">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/videoseries?list=PLw-nQ4745j0zGf3_T5w6Yk1-y9k4B9g2A"
+            title="Shills Professional Nail Art Masterclasses"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+        <div>
+          <span style="background: #f3e8ff; color: #7c3aed; font-size: 0.75rem; font-weight: 700; padding: 4px 10px; border-radius: 9999px; text-transform: uppercase; letter-spacing: 0.05em;">Studio Masterclasses</span>
+          <h2 style="font-size: 1.65rem; font-weight: 900; color: #111827; margin: 0.6rem 0 0.85rem 0; line-height: 1.25;">How to Create 9D Cat Eye &amp; Builder Gel Extensions</h2>
+          <p style="font-size: 0.9rem; color: #4b5563; line-height: 1.6; margin-bottom: 1.25rem;">Watch top Indian nail educators and salon technicians demonstrate step-by-step techniques using Shills UV/LED Gel Polishes, magnetic wands, and poly gels.</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+            <button type="button" data-spa-nav="/cn/cat-eye-kit" style="background: #ff3269; color: white; border: none; padding: 0.75rem 1.4rem; border-radius: 0.5rem; font-weight: 700; cursor: pointer; box-shadow: 0 4px 12px rgba(255,50,105,0.3);">Shop Featured Kit →</button>
+            <a href="https://www.youtube.com/@ShillsProfessional.Official" target="_blank" rel="noopener" style="background: #f3f4f6; color: #111827; padding: 0.75rem 1.25rem; border-radius: 0.5rem; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">Watch on YouTube ↗</a>
+          </div>
+        </div>
+      </section>
+    `;
+
+    // Customer Reviews & Testimonials
+    const reviews = [
+      {
+        name: 'Pooja Sharma',
+        role: 'Salon Owner, Mumbai',
+        stars: 5,
+        title: 'Best Gel Polish in India!',
+        text: 'The pigmentation and consistency of Shills Gel Polish is unmatched. It lasts a full 3 weeks without chipping or peeling. My clients love the finish!'
+      },
+      {
+        name: 'Ananya Verma',
+        role: 'Certified Nail Artist, Delhi',
+        stars: 5,
+        title: 'Game changer for Cat Eye art',
+        text: 'The 9D Cat Eye kit and magnetic wand are top-tier. Creates sharp light lines within 5 seconds under the Shills UV lamp.'
+      },
+      {
+        name: 'Sneha Patel',
+        role: 'Studio Educator, Bengaluru',
+        stars: 5,
+        title: 'High-speed delivery is a lifesaver',
+        text: 'Running out of top coat or monomer during a busy wedding season booking used to be a nightmare. Now I get it delivered immediately.'
+      },
+      {
+        name: 'Ritu Kapoor',
+        role: 'Professional Makeup Artist',
+        stars: 5,
+        title: 'Thermal heat protectant & makeup',
+        text: 'Shills skincare and hair prep sprays hold up beautifully under heavy bridal studio lighting. 100% recommended for every beauty kit.'
+      }
+    ];
+
+    const reviewsHtml = `
+      <section style="margin-bottom: 2.75rem;">
+        <div style="text-align: center; max-width: 620px; margin: 0 auto 1.75rem auto;">
+          <span style="color: #7c3aed; font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em;">Artist Feedback</span>
+          <h2 style="font-size: 1.65rem; font-weight: 900; color: #111827; margin: 0.35rem 0 0.5rem 0;">Loved by 10,000+ Beauty Professionals</h2>
+          <p style="font-size: 0.88rem; color: #6b7280; margin: 0;">Real reviews from verified salon owners, nail technicians, and freelance artists across India.</p>
+        </div>
+        <div class="shills-reviews-grid">
+          ${reviews.map(r => `
+            <div class="shills-review-card">
+              <div>
+                <div style="color: #f59e0b; font-size: 1.1rem; margin-bottom: 6px;">${'★'.repeat(r.stars)}</div>
+                <h4 style="font-size: 0.95rem; font-weight: 700; color: #111827; margin: 0 0 6px 0;">"${esc(r.title)}"</h4>
+                <p style="font-size: 0.85rem; color: #4b5563; line-height: 1.5; margin: 0 0 1rem 0;">${esc(r.text)}</p>
+              </div>
+              <div style="border-top: 1px solid #f3f4f6; padding-top: 0.75rem; display: flex; align-items: center; gap: 8px;">
+                <div style="width: 34px; height: 34px; border-radius: 50%; background: #f3e8ff; color: #7c3aed; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.85rem;">${r.name[0]}</div>
+                <div>
+                  <div style="font-size: 0.82rem; font-weight: 700; color: #111827;">${esc(r.name)}</div>
+                  <div style="font-size: 0.72rem; color: #6b7280;">${esc(r.role)}</div>
+                </div>
+              </div>
+            </div>
+          `).join('')}
+        </div>
+      </section>
+    `;
+
+    // FAQ Section
+    const faqs = [
+      {
+        q: 'What makes Shills Professional products salon-grade?',
+        a: 'Shills Professional formulations use high-grade European resins and pigments engineered specifically for high adhesion, vibrant color payoff, and 21+ days of chip-resistant wear under professional UV/LED lamps.'
+      },
+      {
+        q: 'How long do Shills Gel Polishes need to be cured?',
+        a: 'Under a 48W or higher Shills UV/LED Nail Lamp, base coats cure in 30 seconds, color gel coats in 60 seconds, and no-wipe top coats in 60 seconds.'
+      },
+      {
+        q: 'Do you offer bulk/B2B pricing for salons and beauty academies?',
+        a: 'Yes! We supply beauty academies, nail bars, and salon chains across India with exclusive wholesale tiers and combo kits. You can connect via our Pro Support.'
+      },
+      {
+        q: 'How fast is delivery?',
+        a: 'We offer instant local delivery in select metro zones and 1-3 day express courier across the rest of India with live order tracking.'
+      },
+      {
+        q: 'What is your return & exchange policy?',
+        a: 'We offer easy replacements for any transit-damaged or defective electrical appliances (lamps, drills) within 7 days of delivery.'
+      }
+    ];
+
+    const faqSectionHtml = `
+      <section class="shills-faq-section">
+        <div style="margin-bottom: 1.25rem;">
+          <span style="color: #7c3aed; font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em;">Got Questions?</span>
+          <h2 style="font-size: 1.5rem; font-weight: 900; color: #111827; margin: 0.35rem 0 0 0;">Frequently Asked Questions</h2>
+        </div>
+        <div>
+          ${faqs.map((f, i) => `
+            <details class="shills-faq-item" ${i === 0 ? 'open' : ''}>
+              <summary>${esc(f.q)} <span>▾</span></summary>
+              <p>${esc(f.a)}</p>
+            </details>
+          `).join('')}
+        </div>
+      </section>
+    `;
+
+    // Partner Marketplace Channels
+    const partnersHtml = `
+      <section class="shills-partners-bar">
+        <span style="font-size: 0.85rem; font-weight: 700; color: #6b7280; text-transform: uppercase;">Official Brand Store Also On:</span>
+        <div style="display: flex; align-items: center; gap: 2.5rem; flex-wrap: wrap;">
+          <img src="https://shillsprofessional.com/cdn/shop/files/pngfind.com-flipkart-logo-png-3288902.webp?height=72&v=1765284198" alt="Flipkart" style="height: 28px; width: auto; object-fit: contain;" />
+          <img src="https://shillsprofessional.com/cdn/shop/files/pngwing.com_1.webp?height=72&v=1765284207" alt="Amazon" style="height: 28px; width: auto; object-fit: contain;" />
+          <img src="https://shillsprofessional.com/cdn/shop/files/zepto-logo.jpg?height=64&v=1786456660" alt="Zepto" style="height: 26px; width: auto; object-fit: contain; border-radius: 4px;" />
+        </div>
+      </section>
+    `;
+
+    state.homeContainer.innerHTML = `
+      <div style="padding: 0;">
+        ${bannerHtml}
+        ${trustBarHtml}
+        ${catGridHtml}
+        ${sectionsHtml}
+        ${videoSectionHtml}
+        ${reviewsHtml}
+        ${faqSectionHtml}
+        ${partnersHtml}
+      </div>
+    `;
+
+    // Initialize Banner Carousel
+    initBannerSlider(banners.length);
+  }
+
+  function initBannerSlider(totalSlides) {
+    let currentSlide = 0;
+    const track = document.getElementById('homeSlideTrack');
+    const dots = document.querySelectorAll('.shills-dot');
+    const prev = document.getElementById('sliderPrev');
+    const next = document.getElementById('sliderNext');
+    if (!track) return;
+
+    function goToSlide(idx) {
+      currentSlide = (idx + totalSlides) % totalSlides;
+      track.style.transform = `translateX(-${currentSlide * 100}%)`;
+      dots.forEach((d, i) => d.classList.toggle('active', i === currentSlide));
+    }
+
+    if (prev) prev.addEventListener('click', () => goToSlide(currentSlide - 1));
+    if (next) next.addEventListener('click', () => goToSlide(currentSlide + 1));
+    dots.forEach(d => {
+      d.addEventListener('click', () => goToSlide(Number(d.dataset.slide)));
+    });
+
+    // Auto-advance banner every 4.5 seconds
+    clearInterval(track._autoTimer);
+    track._autoTimer = setInterval(() => {
+      goToSlide(currentSlide + 1);
+    }, 4500);
   }
 
   function showHomeView() {
