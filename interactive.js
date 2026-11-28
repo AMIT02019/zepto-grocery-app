@@ -1778,6 +1778,11 @@
       const mobV = document.getElementById('pdpMobileVariant');
       if (mobP) mobP.textContent = `₹${v.price}`;
       if (mobV) mobV.textContent = v.label;
+
+      const ctaBtn = document.querySelector(`.zp-cta-slot[data-slot-url="${prod.url}"] .zp-add-btn`);
+      if (ctaBtn) {
+        ctaBtn.innerHTML = `Add to Bag • ₹${v.price}`;
+      }
     }
 
     document.querySelectorAll('.shills-swatch-btn').forEach(btn => {
