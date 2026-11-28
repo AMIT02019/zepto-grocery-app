@@ -1409,6 +1409,15 @@ a[data-testid="search-bar-icon"]:hover {
    SHILLS PROFESSIONAL LUXURY MEGA MENU STYLES
    ==================================================================== */
 
+/* Allow mega menu dropdown to render visibly outside tab strip */
+.PP02U, #outer-container {
+  overflow: visible !important;
+}
+
+.__6E3Wm {
+  z-index: 1000 !important;
+}
+
 .shills-menu-arrow {
   font-size: 0.65rem;
   margin-left: 4px;
