@@ -50,22 +50,165 @@
     return state.products.find(p => p.url === clean || clean.includes(p.url) || p.url.includes(clean));
   }
 
-  function addToCart(prod, delta) {
+  // --- Variant & Color Swatch System Helpers ---
+  function isColorVariant(label) {
+    const l = (label || '').toLowerCase();
+    if (/^(spg|spn|spc|m\d|a\d)\b|spg-\d+|spn-?\d+/i.test(l)) return true;
+    const colorWords = ['black', 'white', 'pink', 'red', 'blue', 'green', 'gold', 'silver', 'rose', 'coral', 'nude', 'coffee', 'camel', 'banana', 'smokey', 'bronze', 'lavender', 'lily', 'lemon', 'berry', 'fairy', 'bud', 'lotus', 'rosy', 'plum', 'aqua', 'charcoal', 'copper', 'aloe', 'cucumber', 'shade', 'glitter', 'sparkle'];
+    return colorWords.some(w => l.includes(w));
+  }
+
+  function getVariantColor(label) {
+    const l = (label || '').toLowerCase().trim();
+    const known = {
+      'black': '#111111',
+      'dark brown': '#3e2723',
+      'brown': '#5d4037',
+      'white': '#ffffff',
+      'white sand': '#fdfbf7',
+      'natural': '#f3d5b5',
+      'clear': 'linear-gradient(135deg, rgba(255,255,255,0.9), rgba(220,225,235,0.7))',
+      'clear coffee': '#795548',
+      'milk white': '#fffdf5',
+      'camel': '#c19a6b',
+      'clear nude': '#eec0a8',
+      'pink': '#f472b6',
+      'warm pink': '#f43f5e',
+      'pink plum': '#be185d',
+      'pink-fry': '#fb7185',
+      'bud': '#fb7185',
+      'fairy': '#f43f5e',
+      'lotus': '#e879f9',
+      'pinky': '#f9a8d4',
+      'rosy': '#9d174d',
+      'banana': '#fef08a',
+      'blue': '#2563eb',
+      'green': '#16a34a',
+      'gold': 'linear-gradient(135deg, #fef08a, #d97706, #b45309)',
+      'gold sky': 'linear-gradient(135deg, #fef08a, #eab308, #b45309)',
+      'rose gold': 'linear-gradient(135deg, #fecdd3, #fb7185, #be123c)',
+      'silver': 'linear-gradient(135deg, #f8fafc, #cbd5e1, #94a3b8)',
+      'smokey': '#475569',
+      'bronzing': 'linear-gradient(135deg, #fde68a, #b45309, #78350f)',
+      'copper': 'linear-gradient(135deg, #fed7aa, #ea580c, #9a3412)',
+      'lavender': '#c084fc',
+      'lily': '#f472b6',
+      'lemon': '#facc15',
+      'rose': '#f43f5e',
+      'aloe vera': '#4ade80',
+      'aqua': '#22d3ee',
+      'charcoal': '#334155',
+      'cucumber': '#a3e635'
+    };
+    if (known[l]) return known[l];
+
+    const spgMatch = l.match(/spg-?(\d+)/i);
+    if (spgMatch) {
+      const num = parseInt(spgMatch[1], 10);
+      if (num >= 60 && num <= 75) {
+        const reds = ['#b91c1c', '#dc2626', '#991b1b', '#7f1d1d', '#be123c', '#e11d48', '#881337', '#9f1239'];
+        return reds[(num - 60) % reds.length];
+      }
+      if (num >= 120 && num <= 132) {
+        const nudes = ['#fbcfe8', '#f472b6', '#fda4af', '#fb7185', '#f5d0b5', '#e8beac', '#e2b49a', '#fecdd3'];
+        return nudes[(num - 120) % nudes.length];
+      }
+      if (num >= 133 && num <= 216) {
+        const vibrants = ['#6b21a8', '#7c3aed', '#9333ea', '#4f46e5', '#1d4ed8', '#0284c7', '#0f766e', '#047857', '#b45309', '#c2410c', '#be185d', '#831843'];
+        return vibrants[(num - 133) % vibrants.length];
+      }
+      if (num >= 217 && num <= 240) {
+        const glitters = [
+          'linear-gradient(135deg, #fde68a, #f59e0b, #ec4899)',
+          'linear-gradient(135deg, #fbcfe8, #c084fc, #60a5fa)',
+          'linear-gradient(135deg, #fed7aa, #f43f5e, #7c3aed)',
+          'linear-gradient(135deg, #e2e8f0, #94a3b8, #cbd5e1)',
+          'linear-gradient(135deg, #fef08a, #ca8a04, #ea580c)'
+        ];
+        return glitters[(num - 217) % glitters.length];
+      }
+      const hues = [345, 350, 0, 10, 25, 330, 315, 280, 260, 220, 170, 140, 45];
+      const hue = hues[num % hues.length];
+      const sat = 70 + (num % 25);
+      const light = 38 + (num % 24);
+      return `hsl(${hue}, ${sat}%, ${light}%)`;
+    }
+
+    const spnMatch = l.match(/spn-?(\d+)/i);
+    if (spnMatch) {
+      const num = parseInt(spnMatch[1], 10);
+      const spnPalette = ['#e11d48', '#be185d', '#9333ea', '#6366f1', '#0284c7', '#0d9488', '#ea580c', '#eab308', '#ec4899', '#f43f5e'];
+      return spnPalette[num % spnPalette.length];
+    }
+
+    let hash = 0;
+    for (let i = 0; i < l.length; i++) hash = (hash << 5) - hash + l.charCodeAt(i);
+    const hue = Math.abs(hash) % 360;
+    return `hsl(${hue}, 65%, 45%)`;
+  }
+
+  function getShadeName(label) {
+    const l = (label || '').trim();
+    const descriptors = {
+      'spg-061': 'Classic Cherry Crimson',
+      'spg-062': 'Velvet Wine Burgundy',
+      'spg-063': 'Scarlet Salon Red',
+      'spg-064': 'Deep Garnet',
+      'spg-065': 'Ruby Shimmer',
+      'spg-066': 'Imperial Berry',
+      'spg-121': 'French Baby Pink',
+      'spg-122': 'Blushing Petal Nude',
+      'spg-123': 'Soft Cashmere',
+      'spg-124': 'Silk Peony',
+      'spg-125': 'Warm Nude Veil',
+      'spg-126': 'Sweet Almond Rose',
+      'spg-133': 'Royal Majestic Plum',
+      'spg-134': 'Deep Amethyst',
+      'spg-135': 'Midnight Violet',
+      'spg-136': 'Berry Sangria',
+      'spg-217': 'Champagne Gold Sparkle',
+      'spg-218': 'Rose Gold Confetti',
+      'spg-219': 'Diamond Holographic',
+      'spg-220': 'Cosmic Starlight',
+      'bud': 'Soft Coral Peach',
+      'fairy': 'Ethereal Rose Blush',
+      'lotus': 'Lotus Bloom Pink',
+      'pinky': 'Sweet Candy Pink',
+      'rosy': 'Vintage Rose Plum',
+      'banana': 'Translucent Banana Glow',
+      'warm pink': 'Soft Rose Radiance',
+      'white': 'Pure HD Translucent'
+    };
+    const key = l.toLowerCase();
+    if (descriptors[key]) return descriptors[key];
+    if (/^spg/i.test(l)) return `Shade ${l.toUpperCase()}`;
+    if (/^spn/i.test(l)) return `Design ${l.toUpperCase()}`;
+    return l;
+  }
+
+  function addToCart(prod, delta, selectedVariant) {
     if (!prod) return;
-    const id = prod.url || prod.id || prod.name;
+    const variant = selectedVariant || prod._activeVariant || (prod.variants && prod.variants[0]) || null;
+    const hasMultipleVariants = prod.variants && prod.variants.length > 1;
+    const varKey = (hasMultipleVariants && variant) ? `__${variant.label}` : '';
+    const id = (prod.url || prod.id || prod.name) + varKey;
     const cur = state.cart[id] ? state.cart[id].quantity : 0;
     const next = cur + delta;
     if (next <= 0) {
       delete state.cart[id];
     } else {
+      const vPrice = variant && variant.price ? Number(variant.price) : (Number(prod.price) || 199);
+      const vMrp = variant && variant.mrp ? Number(variant.mrp) : (Number(prod.mrp) || vPrice);
       state.cart[id] = {
         id: id,
+        prodUrl: prod.url || '',
         url: prod.url || id,
         name: prod.name,
+        variantLabel: (hasMultipleVariants && variant) ? `${variant.label} • ${getShadeName(variant.label)}` : '',
         brand: prod.brand || 'Shills Professional',
-        price: Number(prod.price) || 199,
-        mrp: Number(prod.mrp) || Number(prod.price) || 199,
-        weight: prod.weight || '1 Unit',
+        price: vPrice,
+        mrp: vMrp,
+        weight: (variant && variant.label) ? variant.label : (prod.weight || '1 Unit'),
         image: prod.image || '',
         quantity: next
       };
@@ -147,6 +290,8 @@
 
   function renderProductCard(p) {
     const discount = p.mrp > p.price ? Math.round(((p.mrp - p.price) / p.mrp) * 100) : 0;
+    const hasVars = p.variants && p.variants.length > 1;
+    const hasColorVars = hasVars && p.variants.some(v => isColorVariant(v.label));
     return `
       <div class="zp-card" data-prod-url="${esc(p.url)}">
         <div>
@@ -154,9 +299,25 @@
             ${discount > 0 ? `<span class="zp-discount-badge">${discount}% OFF</span>` : ''}
             <img src="${esc(p.image)}" alt="${esc(p.name)}" loading="lazy" />
           </div>
-          <div class="shills-pro-badge">★ SALON PRO</div>
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 4px; margin-bottom: 5px;">
+            <div class="shills-pro-badge" style="margin-bottom: 0;">★ SALON PRO</div>
+            ${hasVars ? (hasColorVars 
+              ? `<span class="shills-card-variant-badge">🎨 ${p.variants.length} Shades</span>` 
+              : `<span class="shills-card-variant-badge">${p.variants.length} Options</span>`
+            ) : ''}
+          </div>
           <h4 style="margin: 0 0 4px 0; font-size: 0.82rem; font-weight: 500; color: #18181b; line-height: 1.4; height: 36px; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; letter-spacing: -0.01em;">${esc(p.name)}</h4>
-          <p style="margin: 0 0 8px 0; font-size: 0.72rem; color: #71717a; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${esc(p.weight)}</p>
+          ${hasColorVars ? `
+            <div class="shills-card-swatches-preview">
+              <div class="shills-card-dots-row">
+                ${p.variants.slice(0, 5).map(v => `<span class="shills-card-swatch-dot" style="background: ${getVariantColor(v.label)}" title="${esc(v.label)}"></span>`).join('')}
+                ${p.variants.length > 5 ? `<span class="shills-card-more-dots">+${p.variants.length - 5}</span>` : ''}
+              </div>
+              <span style="font-size: 0.7rem; color: #71717a;">${esc(p.weight || '15ml')}</span>
+            </div>
+          ` : `
+            <p style="margin: 0 0 8px 0; font-size: 0.72rem; color: #71717a; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${esc(p.weight)}</p>
+          `}
         </div>
         <div style="display: flex; align-items: center; justify-content: space-between; margin-top: auto; padding-top: 6px;">
           <div>
@@ -1393,6 +1554,10 @@
       ? prod.variants
       : [{ label: prod.weight || '1 Unit', price: prod.price, mrp: prod.mrp }];
 
+    const hasVars = variants.length > 1;
+    const hasColorVars = variants.some(v => isColorVariant(v.label));
+    prod._activeVariant = variants[0];
+
     let similar = state.products.filter(p => p.url !== prod.url && p.section === prod.section);
     if (similar.length < 5) {
       similar = similar.concat(state.products.filter(p => p.url !== prod.url && p.section !== prod.section)).slice(0, 10);
@@ -1447,24 +1612,48 @@
             <span style="font-size: 0.8rem; color: #71717a;">(${Number(prod.reviews).toLocaleString()} verified ratings)</span>
           </div>
 
-          <p style="font-size: 0.72rem; font-weight: 600; color: #71717a; text-transform: uppercase; letter-spacing: 0.06em; margin: 0 0 8px 0;">Select Option / Variant</p>
-          <div class="zp-variant-row">
-            ${variants.map((v, idx) => `
-              <button type="button" class="zp-variant-pill ${idx === 0 ? 'active' : ''}" data-v-price="${v.price}" data-v-mrp="${v.mrp}">
-                <div style="font-size: 0.78rem; font-weight: 600; color: #111111;">${esc(v.label)}</div>
-                <div style="font-size: 0.74rem; color: #52525b; margin-top: 2px;">
-                  <strong>₹${v.price}</strong>
-                  ${v.mrp > v.price ? `<span style="text-decoration: line-through; color: #a1a1aa; margin-left: 4px;">₹${v.mrp}</span>` : ''}
-                </div>
-              </button>
-            `).join('')}
+          <div class="shills-pdp-variants-wrapper">
+            <div class="shills-variant-header">
+              <div class="shills-variant-type-label">
+                ${hasColorVars ? 'SHADE / COLOR' : 'OPTION / VARIANT'}:
+                <span id="pdpActiveVariantName" class="shills-active-variant-chip">${esc(variants[0].label)}${hasColorVars ? ` • ${getShadeName(variants[0].label)}` : ''}</span>
+              </div>
+              ${hasVars ? `<span class="shills-variant-count">(${variants.length} available)</span>` : ''}
+            </div>
+
+            ${hasColorVars ? `
+              <div class="shills-swatches-grid">
+                ${variants.map((v, idx) => `
+                  <button type="button" class="shills-swatch-btn ${idx === 0 ? 'active' : ''}" data-v-idx="${idx}" title="${esc(v.label)} - ${getShadeName(v.label)}">
+                    <span class="shills-swatch-color" style="background: ${getVariantColor(v.label)}"></span>
+                  </button>
+                `).join('')}
+              </div>
+            ` : ''}
+
+            <div class="zp-variant-row" style="margin-top: ${hasColorVars ? '10px' : '0'};">
+              ${variants.map((v, idx) => `
+                <button type="button" class="zp-variant-pill ${idx === 0 ? 'active' : ''}" data-v-idx="${idx}" data-v-price="${v.price}" data-v-mrp="${v.mrp}">
+                  ${hasColorVars ? `<span class="zp-pill-swatch-dot" style="background: ${getVariantColor(v.label)};"></span>` : ''}
+                  <div>
+                    <div style="font-size: 0.78rem; font-weight: 600; color: #111111;">${esc(v.label)}</div>
+                    <div style="font-size: 0.72rem; color: #52525b; margin-top: 1px;">
+                      <strong>₹${v.price}</strong>
+                      ${v.mrp > v.price ? `<span style="text-decoration: line-through; color: #a1a1aa; margin-left: 3px;">₹${v.mrp}</span>` : ''}
+                    </div>
+                  </div>
+                </button>
+              `).join('')}
+            </div>
           </div>
 
           <div style="border-top: 1px solid #f3f4f6; border-bottom: 1px solid #f3f4f6; padding: 0.9rem 0; margin-bottom: 1.25rem;">
             <div style="display: flex; align-items: baseline; gap: 10px;">
-              <span id="pdpPriceDisplay" style="font-size: 1.55rem; font-weight: 700; color: #111111; letter-spacing: -0.01em;">₹${prod.price}</span>
-              <span id="pdpMrpDisplay" style="font-size: 0.9rem; color: #a1a1aa; text-decoration: line-through; ${prod.mrp > prod.price ? '' : 'display:none;'}">MRP ₹${prod.mrp}</span>
-              ${savings > 0 ? `<span style="background: #dcfce7; color: #15803d; font-weight: 600; font-size: 0.76rem; padding: 2px 8px; border-radius: 4px;">Save ₹${savings} (${discount}% OFF)</span>` : ''}
+              <span id="pdpPriceDisplay" style="font-size: 1.55rem; font-weight: 700; color: #111111; letter-spacing: -0.01em;">₹${variants[0].price}</span>
+              <span id="pdpMrpDisplay" style="font-size: 0.9rem; color: #a1a1aa; text-decoration: line-through; ${variants[0].mrp > variants[0].price ? '' : 'display:none;'}">MRP ₹${variants[0].mrp}</span>
+              <span id="pdpSavingsDisplay" style="background: #dcfce7; color: #15803d; font-weight: 600; font-size: 0.76rem; padding: 2px 8px; border-radius: 4px; ${variants[0].mrp > variants[0].price ? '' : 'display:none;'}">
+                Save ₹${Math.max(0, variants[0].mrp - variants[0].price)} (${variants[0].mrp > variants[0].price ? Math.round(((variants[0].mrp - variants[0].price) / variants[0].mrp) * 100) : 0}% OFF)
+              </span>
             </div>
             <p style="margin: 4px 0 0 0; font-size: 0.72rem; color: #71717a;">(Inclusive of all taxes)</p>
           </div>
@@ -1507,8 +1696,8 @@
 
       <div class="zp-pdp-mobile-bar">
         <div>
-          <div style="font-size: 1rem; font-weight: 700; color: #111111;">₹${prod.price}</div>
-          <div style="font-size: 0.72rem; color: #71717a;">${esc(prod.weight)}</div>
+          <div id="pdpMobilePrice" style="font-size: 1rem; font-weight: 700; color: #111111;">₹${variants[0].price}</div>
+          <div id="pdpMobileVariant" style="font-size: 0.72rem; color: #71717a;">${esc(variants[0].label)}</div>
         </div>
         <div class="zp-cta-slot" data-slot-url="${esc(prod.url)}" data-full="1" style="flex: 1; display: flex; max-width: 220px;">
           ${renderCtaControl(prod, true)}
@@ -1545,21 +1734,61 @@
       });
     });
 
+    function selectVariant(idx) {
+      const v = variants[idx];
+      if (!v) return;
+      prod._activeVariant = v;
+
+      document.querySelectorAll('.shills-swatch-btn').forEach(b => {
+        b.classList.toggle('active', parseInt(b.dataset.vIdx, 10) === idx);
+      });
+      document.querySelectorAll('.zp-variant-pill').forEach(p => {
+        p.classList.toggle('active', parseInt(p.dataset.vIdx, 10) === idx);
+      });
+
+      const chip = document.getElementById('pdpActiveVariantName');
+      if (chip) {
+        chip.textContent = `${v.label}${hasColorVars ? ` • ${getShadeName(v.label)}` : ''}`;
+      }
+
+      const vp = document.getElementById('pdpPriceDisplay');
+      const vm = document.getElementById('pdpMrpDisplay');
+      const vs = document.getElementById('pdpSavingsDisplay');
+      if (vp) vp.textContent = `₹${v.price}`;
+      if (vm) {
+        if (Number(v.mrp) > Number(v.price)) {
+          vm.style.display = '';
+          vm.textContent = `MRP ₹${v.mrp}`;
+        } else {
+          vm.style.display = 'none';
+        }
+      }
+      if (vs) {
+        if (Number(v.mrp) > Number(v.price)) {
+          const sav = Number(v.mrp) - Number(v.price);
+          const pct = Math.round((sav / Number(v.mrp)) * 100);
+          vs.style.display = '';
+          vs.textContent = `Save ₹${sav} (${pct}% OFF)`;
+        } else {
+          vs.style.display = 'none';
+        }
+      }
+
+      const mobP = document.getElementById('pdpMobilePrice');
+      const mobV = document.getElementById('pdpMobileVariant');
+      if (mobP) mobP.textContent = `₹${v.price}`;
+      if (mobV) mobV.textContent = v.label;
+    }
+
+    document.querySelectorAll('.shills-swatch-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        selectVariant(parseInt(btn.dataset.vIdx, 10));
+      });
+    });
+
     document.querySelectorAll('.zp-variant-pill').forEach(pill => {
       pill.addEventListener('click', () => {
-        document.querySelectorAll('.zp-variant-pill').forEach(p => p.classList.remove('active'));
-        pill.classList.add('active');
-        const vp = document.getElementById('pdpPriceDisplay');
-        const vm = document.getElementById('pdpMrpDisplay');
-        if (vp) vp.textContent = `₹${pill.dataset.vPrice}`;
-        if (vm) {
-          if (Number(pill.dataset.vMrp) > Number(pill.dataset.vPrice)) {
-            vm.style.display = '';
-            vm.textContent = `MRP ₹${pill.dataset.vMrp}`;
-          } else {
-            vm.style.display = 'none';
-          }
-        }
+        selectVariant(parseInt(pill.dataset.vIdx, 10));
       });
     });
   }
@@ -1768,7 +1997,7 @@
                   <img src="${esc(it.image)}" alt="${esc(it.name)}" style="width: 52px; height: 52px; object-fit: contain; border-radius: 0.375rem; border: 1px solid #e5e7eb; background: #f9fafb;" />
                   <div style="flex: 1; min-width: 0;">
                     <h4 style="font-size: 0.82rem; font-weight: 500; color: #18181b; margin: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; line-height: 1.35;">${esc(it.name)}</h4>
-                    <p style="font-size: 0.72rem; color: #71717a; margin: 2px 0 0 0;">${esc(it.weight || '')}</p>
+                    ${it.variantLabel ? `<div class="cart-item-variant">Variant: ${esc(it.variantLabel)}</div>` : `<p style="font-size: 0.72rem; color: #71717a; margin: 2px 0 0 0;">${esc(it.weight || '')}</p>`}
                     <p style="font-size: 0.85rem; color: #111111; margin: 3px 0 0 0; font-weight: 700;">₹${it.price}</p>
                   </div>
                   <div class="qty-stepper">
@@ -2095,7 +2324,8 @@
         e.stopPropagation();
         const url = addBtn.dataset.addUrl;
         const prod = findProductByUrl(url);
-        addToCart(prod, 1);
+        const activeVar = prod ? prod._activeVariant : null;
+        addToCart(prod, 1, activeVar);
         showToast(`Added ${prod ? prod.name.slice(0, 26) : 'item'} to cart`);
         syncInlineCartButtons(url);
         return;

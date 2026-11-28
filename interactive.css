@@ -319,24 +319,186 @@ footer.RuYse {
   max-height: 100%;
   object-fit: contain;
 }
+/* ====================================================================
+   LUXURY SHADE & COLOR VARIANT SYSTEM
+   ==================================================================== */
+
+/* Product Card Swatches Preview */
+.shills-card-variant-badge {
+  font-family: 'Manrope', sans-serif !important;
+  font-size: 8px !important;
+  font-weight: 600 !important;
+  color: #701a75 !important;
+  background: #fdf4ff !important;
+  border: 1px solid #f5d0fe !important;
+  padding: 1.5px 6px !important;
+  border-radius: 9999px !important;
+  letter-spacing: 0.02em !important;
+  white-space: nowrap !important;
+}
+
+.shills-card-swatches-preview {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 6px !important;
+  margin: 0 0 8px 0 !important;
+  height: 18px !important;
+}
+
+.shills-card-dots-row {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 3.5px !important;
+}
+
+.shills-card-swatch-dot {
+  width: 11px !important;
+  height: 11px !important;
+  border-radius: 50% !important;
+  border: 1px solid rgba(0, 0, 0, 0.12) !important;
+  display: inline-block !important;
+  flex-shrink: 0 !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04) !important;
+}
+
+.shills-card-more-dots {
+  font-family: 'Manrope', sans-serif !important;
+  font-size: 8.5px !important;
+  font-weight: 600 !important;
+  color: #a1a1aa !important;
+  margin-left: 1px !important;
+}
+
+/* PDP Variant Container & Header */
+.shills-pdp-variants-wrapper {
+  margin-bottom: 1.25rem !important;
+}
+
+.shills-variant-header {
+  display: flex !important;
+  align-items: center !important;
+  flex-wrap: wrap !important;
+  gap: 8px !important;
+  margin-bottom: 0.65rem !important;
+}
+
+.shills-variant-type-label {
+  font-family: 'Manrope', sans-serif !important;
+  font-size: 0.72rem !important;
+  font-weight: 600 !important;
+  color: #71717a !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.08em !important;
+}
+
+.shills-active-variant-chip {
+  font-family: 'Manrope', sans-serif !important;
+  font-size: 0.76rem !important;
+  font-weight: 600 !important;
+  color: #111111 !important;
+  background: #f4f4f5 !important;
+  padding: 3px 9px !important;
+  border-radius: 6px !important;
+  letter-spacing: 0.01em !important;
+  border: 1px solid #e4e4e7 !important;
+}
+
+.shills-variant-count {
+  font-family: 'Manrope', sans-serif !important;
+  font-size: 0.72rem !important;
+  color: #a1a1aa !important;
+}
+
+/* PDP Circular Color Swatches */
+.shills-swatches-grid {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 8px !important;
+  margin-bottom: 0.85rem !important;
+}
+
+.shills-swatch-btn {
+  width: 36px !important;
+  height: 36px !important;
+  border-radius: 50% !important;
+  border: 2px solid transparent !important;
+  padding: 2px !important;
+  background: transparent !important;
+  cursor: pointer !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease !important;
+  position: relative !important;
+}
+
+.shills-swatch-btn:hover {
+  transform: scale(1.14) !important;
+}
+
+.shills-swatch-btn.active {
+  border-color: #3c006b !important;
+  box-shadow: 0 0 0 1px #ffffff, 0 0 0 3px #3c006b !important;
+  transform: scale(1.1) !important;
+}
+
+.shills-swatch-color {
+  width: 100% !important;
+  height: 100% !important;
+  border-radius: 50% !important;
+  display: block !important;
+  border: 1px solid rgba(0, 0, 0, 0.14) !important;
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.4) !important;
+}
+
+/* Variant Option Pills (Refined) */
 .zp-variant-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.6rem;
-  margin-bottom: 1.25rem;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 8px !important;
+  margin-bottom: 0 !important;
 }
+
 .zp-variant-pill {
-  border: 1.5px solid #e5e7eb;
-  background: #ffffff;
-  border-radius: 0.6rem;
-  padding: 0.5rem 0.9rem;
-  cursor: pointer;
-  text-align: left;
-  transition: border-color 0.15s, background 0.15s;
+  border: 1px solid #e4e4e7 !important;
+  background: #ffffff !important;
+  border-radius: 8px !important;
+  padding: 7px 12px !important;
+  cursor: pointer !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  transition: all 0.18s ease !important;
+  text-align: left !important;
 }
+
+.zp-variant-pill:hover {
+  border-color: #a1a1aa !important;
+  background: #fafafa !important;
+  transform: translateY(-1px) !important;
+}
+
 .zp-variant-pill.active {
-  border-color: #111111;
-  background: #fff1f4;
+  background: #fdf4ff !important;
+  border-color: #3c006b !important;
+  box-shadow: 0 0 0 1px #3c006b !important;
+}
+
+.zp-pill-swatch-dot {
+  width: 14px !important;
+  height: 14px !important;
+  border-radius: 50% !important;
+  border: 1px solid rgba(0, 0, 0, 0.15) !important;
+  display: inline-block !important;
+  flex-shrink: 0 !important;
+}
+
+.cart-item-variant {
+  font-size: 0.72rem !important;
+  color: #701a75 !important;
+  font-weight: 500 !important;
+  margin-top: 2px !important;
 }
 .zp-offers-box {
   background: #f5f3ff;
