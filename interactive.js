@@ -738,6 +738,602 @@
     }
   }
 
+
+  // --- Shills Professional Mega Menu Data & Interactions ---
+  const megaMenuData = {
+    'gel-polish': {
+      title: 'Gel Polish Systems',
+      categoryUrl: '/cn/gel-polish',
+      columns: [
+        {
+          heading: 'By Finish & Effect',
+          links: [
+            { text: '9D Silk Cat Eye Gel Polish', url: '/pn/silk-9d-cat-eye-gel-polish-7-5ml', badge: 'HOT' },
+            { text: '120+ Solid Gel Color Shades', url: '/cn/gel-polish', badge: '120+ SHADES' },
+            { text: 'Laser Glitter & Shimmer', url: '/cn/cat-eye-kit' },
+            { text: 'Jelly & Transparent Glass Gel', url: '/cn/gel-polish' },
+            { text: 'Platinum & Metallic Foil Gel', url: '/cn/gel-polish' },
+            { text: 'Red Wine & Deep Autumn Collection', url: '/cn/gel-polish' }
+          ]
+        },
+        {
+          heading: 'Top & Base Systems',
+          links: [
+            { text: 'Diamond No-Wipe Top Coat', url: '/cn/top-coat', badge: 'POPULAR' },
+            { text: 'Russian Glass Base Coat', url: '/cn/top-coat' },
+            { text: 'Rubber Base Gel for Soft Nails', url: '/cn/top-coat' },
+            { text: 'Velvet Matte Top Coat', url: '/cn/top-coat' },
+            { text: '3D Water Drop Emboss Gel', url: '/pn/water-drop-top-coat' },
+            { text: 'Hard Gel Peel-Off Base', url: '/cn/top-coat' }
+          ]
+        },
+        {
+          heading: 'Prep, Remover & Care',
+          links: [
+            { text: 'Dehydrator & Acid-Free Primer', url: '/cn/nail-prep', badge: 'MUST-HAVE' },
+            { text: '12-in-1 Nail Therapy Polish', url: '/pn/12-in-1-nail-therapy' },
+            { text: 'Cuticle Revitalizer Oil Pens', url: '/cn/nail-prep' },
+            { text: 'Fast Gel Soak-Off Remover', url: '/cn/nail-prep' },
+            { text: '401 Rapid Tip Bond Glue', url: '/cn/nail-prep' }
+          ]
+        }
+      ],
+      spotlight: {
+        tag: 'BESTSELLER',
+        title: '9D Silk Cat Eye Gel Polish (7.5ml)',
+        price: '569',
+        mrp: '749',
+        image: 'https://cdn.shopify.com/s/files/1/0696/6476/8172/files/357.jpg?v=1771414507',
+        url: '/pn/silk-9d-cat-eye-gel-polish-7-5ml'
+      },
+      promo: {
+        badge: 'SALON FORMULA',
+        title: 'Chip-Free 21-Day Wear',
+        desc: 'Engineered with premium European resins for maximum adhesion, self-leveling glide, and salon gloss.',
+        cta: 'Shop Gel Polish →',
+        url: '/cn/gel-polish'
+      }
+    },
+
+    'nail-art': {
+      title: 'Nail Art Studio',
+      categoryUrl: '/cn/nail-art',
+      columns: [
+        {
+          heading: '3D Art & Textures',
+          links: [
+            { text: '3D Water Droplet Top Coat', url: '/pn/water-drop-top-coat', badge: 'TRENDING' },
+            { text: 'Embossing Texture Gels', url: '/cn/nail-art' },
+            { text: 'Chrome & Holographic Pigments', url: '/cn/nail-art' },
+            { text: 'Gold & Silver Metallic Foils', url: '/cn/nail-art' },
+            { text: 'Spider Gel Line Art', url: '/cn/nail-art' }
+          ]
+        },
+        {
+          heading: 'Pro Brushes & Tools',
+          links: [
+            { text: '14-Piece Precision Brush Kit', url: '/cn/nail-brush', badge: 'PRO CHOICE' },
+            { text: 'Ultra-Fine Liner Art Brushes', url: '/cn/nail-brush' },
+            { text: 'Ombre & Gradient Sponge Tools', url: '/cn/nail-brush' },
+            { text: 'Double-Ended Dotting Tools', url: '/cn/nail-tool' },
+            { text: 'Glass Color Mixing Palettes', url: '/cn/nail-tool' }
+          ]
+        },
+        {
+          heading: 'Glitters & Accessories',
+          links: [
+            { text: 'Laser Shimmer Powders', url: '/cn/cat-eye-kit' },
+            { text: 'Crystal Rhinestones & Charms', url: '/cn/nail-art' },
+            { text: 'French Manicure Guide Tapes', url: '/cn/nail-art' },
+            { text: 'Magnetic Cat Eye Wands', url: '/cn/cat-eye-kit' }
+          ]
+        }
+      ],
+      spotlight: {
+        tag: 'NEW LAUNCH',
+        title: 'Water Drop Top Coat for 3D Art',
+        price: '539',
+        mrp: '699',
+        image: 'https://cdn.shopify.com/s/files/1/0696/6476/8172/files/Enlarged_pastel-blue_water-drop_nail_art.png?v=1795687422',
+        url: '/pn/water-drop-top-coat'
+      },
+      promo: {
+        badge: 'PRO MASTERCLASS',
+        title: 'Master Modern 3D Nail Art',
+        desc: 'Elevate your salon services with embossed gel techniques and velvet magnetic reflections.',
+        cta: 'Explore Nail Art →',
+        url: '/cn/nail-art'
+      }
+    },
+
+    'nail-tips': {
+      title: 'Extensions & Full Cover Tips',
+      categoryUrl: '/cn/nail-tips',
+      columns: [
+        {
+          heading: 'Soft Gel & Press-On Tips',
+          links: [
+            { text: 'Full Cover Coffin & Almond Tips', url: '/cn/nail-tips', badge: 'HOT' },
+            { text: 'C-Curve Square Pro Extensions', url: '/cn/nail-tips' },
+            { text: 'Press On Nails Collection', url: '/cn/press-on-nails-1' },
+            { text: 'Pre-Buffed Fast Application Tips', url: '/cn/nail-tips' }
+          ]
+        },
+        {
+          heading: 'Poly & Builder Systems',
+          links: [
+            { text: 'Poly Gel Natural Nail Overlays Kit', url: '/pn/poly-gel-kit-spn-21096', badge: 'TOP SELLER' },
+            { text: 'Hard Builder Gel in a Bottle', url: '/cn/nail-extension' },
+            { text: 'Acrylic Powder & Monomer Liquid', url: '/cn/nail-extension' },
+            { text: 'Dual Forms Extension Moulds', url: '/cn/nail-extension' }
+          ]
+        },
+        {
+          heading: 'Adhesives & Solutions',
+          links: [
+            { text: 'Solid Tip Bond Gel (Spn-21045)', url: '/pn/shills-solid-tip-bond-spn-21045', badge: 'POPULAR' },
+            { text: 'Anti-Stick Slip Solution 100ml', url: '/cn/nail-extension' },
+            { text: 'Ultra Strong 401 Tip Glue', url: '/cn/nail-prep' }
+          ]
+        }
+      ],
+      spotlight: {
+        tag: 'MASTER KIT',
+        title: 'Poly Gel Extension Master Kit',
+        price: '3,134',
+        mrp: '3,999',
+        image: 'https://cdn.shopify.com/s/files/1/0696/6476/8172/files/SPN-21096_6.jpg?v=1766482254',
+        url: '/pn/poly-gel-kit-spn-21096'
+      },
+      promo: {
+        badge: 'ZERO LIFTING',
+        title: 'Seamless 4-Week Extensions',
+        desc: 'Lightweight, unbreakable poly gels that cure in just 60 seconds with zero odor.',
+        cta: 'Shop Extensions →',
+        url: '/cn/nail-extension'
+      }
+    },
+
+    'nail-lamp': {
+      title: 'UV/LED Lamps & Salon Electricals',
+      categoryUrl: '/cn/nail-lamp',
+      columns: [
+        {
+          heading: 'UV/LED Curing Lamps',
+          links: [
+            { text: 'High-Power 48W/72W Smart Lamps', url: '/cn/nail-lamp', badge: 'PRO' },
+            { text: 'Blush Beam Smart UV Lamp', url: '/cn/nail-lamp', badge: 'FEATURED' },
+            { text: 'Portable Cordless Flash Cure Torch', url: '/cn/nail-lamp' },
+            { text: 'Low-Heat Sensor Preset Lamps', url: '/cn/nail-lamp' }
+          ]
+        },
+        {
+          heading: 'Electric Drills (E-Files)',
+          links: [
+            { text: '35,000 RPM Professional Drill', url: '/cn/nail-tool', badge: 'MUST-HAVE' },
+            { text: 'Carbide & Ceramic Drill Bits', url: '/cn/nail-tool' },
+            { text: 'Sanding Bands & Mandrels', url: '/cn/nail-tool' },
+            { text: 'Desktop Dust Vacuum Collector', url: '/cn/nail-tool' }
+          ]
+        },
+        {
+          heading: 'Hand Tools & Sanitization',
+          links: [
+            { text: 'Surgical Steel Cuticle Nippers', url: '/cn/nail-tool' },
+            { text: 'Double-Ended Cuticle Pushers', url: '/cn/nail-tool' },
+            { text: '100/180 Grit Salon Emery Boards', url: '/cn/nail-tool' },
+            { text: 'Four-Way High Shine Buffers', url: '/cn/nail-tool' }
+          ]
+        }
+      ],
+      spotlight: {
+        tag: 'WARRANTY INCLUDED',
+        title: 'Manicure Hand Rest UV Lamp SPN-2105',
+        price: '1,899',
+        mrp: '2,499',
+        image: 'https://cdn.shopify.com/s/files/1/0696/6476/8172/files/SPN-21056.jpg?v=1766498171',
+        url: '/cn/nail-lamp'
+      },
+      promo: {
+        badge: '7-DAY WARRANTY',
+        title: 'Even 360° Flash Curing',
+        desc: 'Engineered with dual optical wavelengths (365nm+405nm) to eliminate dead curing zones.',
+        cta: 'View All Lamps →',
+        url: '/cn/nail-lamp'
+      }
+    },
+
+    'nail-tool': {
+      title: 'Precision Tools & Salon Hardware',
+      categoryUrl: '/cn/nail-tool',
+      columns: [
+        {
+          heading: 'Precision Hand Tools',
+          links: [
+            { text: 'Cuticle Nippers & Clippers', url: '/cn/nail-tool', badge: 'PRO' },
+            { text: 'Double-Ended Scrapers', url: '/cn/nail-tool' },
+            { text: 'Precision Tweezers for Rhinestones', url: '/cn/nail-tool' },
+            { text: 'Glass Cuticle Pushers', url: '/cn/nail-tool' }
+          ]
+        },
+        {
+          heading: 'Files & Buffers',
+          links: [
+            { text: '100/180 Grit Zebra Files', url: '/cn/nail-tool', badge: 'BULK PACK' },
+            { text: 'High-Shine Diamond Buffers', url: '/cn/nail-tool' },
+            { text: 'Sponge Buffers for Prep', url: '/cn/nail-tool' }
+          ]
+        },
+        {
+          heading: 'Sanitation & Safety',
+          links: [
+            { text: 'Sterilization Trays & Jars', url: '/cn/nail-tool' },
+            { text: 'Lint-Free Nail Wipes', url: '/cn/nail-tool' },
+            { text: 'Pump Dispenser Bottles', url: '/cn/nail-tool' }
+          ]
+        }
+      ],
+      spotlight: {
+        tag: 'SALON GRADE',
+        title: 'Stainless Steel Cuticle Nipper Pro',
+        price: '449',
+        mrp: '599',
+        image: 'https://cdn.shopify.com/s/files/1/0696/6476/8172/files/357.jpg?v=1771414507',
+        url: '/cn/nail-tool'
+      },
+      promo: {
+        badge: 'PRO HARDWARE',
+        title: 'Surgical Grade Stainless Steel',
+        desc: 'Autoclave-safe instruments engineered for high durability in busy salon environments.',
+        cta: 'Shop Tools →',
+        url: '/cn/nail-tool'
+      }
+    },
+
+    'skin-care': {
+      title: 'Skincare & Pro Facial Care',
+      categoryUrl: '/cn/skin-care',
+      columns: [
+        {
+          heading: 'Salon 6-Step Facial Kits',
+          links: [
+            { text: 'Retinol Skin Renewal Facial Kit', url: '/pn/retinol-facial-kit', badge: 'BESTSELLER' },
+            { text: 'Vitamin C Brightening Facial Kit', url: '/pn/vitamin-c-facial-kit', badge: 'GLOW' },
+            { text: 'Bridal Radiance Multi-Step Facial', url: '/cn/skin-care' },
+            { text: 'Charcoal Deep Pore Detox Kit', url: '/cn/skin-care' }
+          ]
+        },
+        {
+          heading: 'Serums & Facial Prep',
+          links: [
+            { text: 'Hyaluronic Acid Hydrating Serum', url: '/cn/face' },
+            { text: 'Niacinamide Pore Refining Elixir', url: '/cn/face' },
+            { text: 'Thermal Soothing Rose Mist', url: '/cn/face' },
+            { text: 'Gentle Cleansing Milks & Toners', url: '/cn/face' }
+          ]
+        },
+        {
+          heading: 'Masks & Treatments',
+          links: [
+            { text: 'Snail Mucin Collagen Sheet Masks', url: '/cn/skin-care' },
+            { text: 'Peel-Off Gold Firming Mask', url: '/cn/skin-care' },
+            { text: 'Deep Hydration Under Eye Patches', url: '/cn/skin-care' }
+          ]
+        }
+      ],
+      spotlight: {
+        tag: 'TOP RATED',
+        title: 'Vitamin C Brightening Facial Kit',
+        price: '1,079',
+        mrp: '1,399',
+        image: 'https://cdn.shopify.com/s/files/1/0696/6476/8172/files/1_fa5a3cf5-3cc3-4cf8-9cae-67349e9bb0c9.jpg?v=1795069704',
+        url: '/pn/vitamin-c-facial-kit'
+      },
+      promo: {
+        badge: 'STUDIO GLOW',
+        title: 'Dermatologically Tested',
+        desc: 'Active botanicals and clinical actives for radiant, glass skin results.',
+        cta: 'Shop Skincare →',
+        url: '/cn/skin-care'
+      }
+    },
+
+    'make-up': {
+      title: 'Makeup & Cosmetics',
+      categoryUrl: '/cn/make-up',
+      columns: [
+        {
+          heading: 'Velvet Lip Collection',
+          links: [
+            { text: 'Non-Transfer Waterproof Lip Gloss', url: '/pn/non-transfer-lip-gloss', badge: 'VIRAL' },
+            { text: 'Amore Matte Long-Wear Lipstick', url: '/cn/make-up' },
+            { text: 'Precision Lip Definer Liners', url: '/cn/make-up' },
+            { text: 'Hydrating Peptide Lip Treatment', url: '/cn/make-up' }
+          ]
+        },
+        {
+          heading: 'Base & Face Artistry',
+          links: [
+            { text: 'Amore Matte Full Coverage Foundation', url: '/cn/make-up', badge: 'PRO' },
+            { text: 'HD Highlighter Glow Palette', url: '/cn/make-up' },
+            { text: 'Stainless Steel Mixing Palette', url: '/cn/make-up' },
+            { text: 'All-Day Makeup Fixer Spray', url: '/cn/make-up' }
+          ]
+        },
+        {
+          heading: 'Eye Artistry & Lashes',
+          links: [
+            { text: 'Aqua Resist Waterproof Bold Kajal', url: '/cn/make-up' },
+            { text: 'Liquid Glitter Sparkle Eyeshadow', url: '/cn/make-up' },
+            { text: 'Lash Luxury Glue & Remover Set', url: '/cn/make-up' }
+          ]
+        }
+      ],
+      spotlight: {
+        tag: 'FAN FAVORITE',
+        title: 'Non-Transfer Lip Gloss (All Day)',
+        price: '404',
+        mrp: '449',
+        image: 'https://cdn.shopify.com/s/files/1/0696/6476/8172/files/1_8f60779d-24ae-4bc5-9a41-87133278dd33.jpg?v=1766489125',
+        url: '/pn/non-transfer-lip-gloss'
+      },
+      promo: {
+        badge: 'REFINED BEAUTY',
+        title: 'Timeless Elegance Collection',
+        desc: 'Weightless high-pigment formulas engineered for high-definition photography and bridal wear.',
+        cta: 'Shop Makeup →',
+        url: '/cn/make-up'
+      }
+    },
+
+    'hair': {
+      title: 'Hair Care & Studio Styling',
+      categoryUrl: '/cn/hair',
+      columns: [
+        {
+          heading: 'Salon Treatments',
+          links: [
+            { text: 'Keratin Deep Repair Hair Mask', url: '/cn/hair', badge: 'POPULAR' },
+            { text: 'Argan Oil Anti-Frizz Serum', url: '/cn/hair' },
+            { text: 'Intensive Scalp Tonic', url: '/cn/hair' }
+          ]
+        },
+        {
+          heading: 'Styling & Protection',
+          links: [
+            { text: 'Thermal Heat Protectant Spray', url: '/cn/hair', badge: 'MUST-HAVE' },
+            { text: 'Extra Strong Hold Hair Lacquer', url: '/cn/hair' },
+            { text: 'Volumizing Blowout Mousse', url: '/cn/hair' }
+          ]
+        },
+        {
+          heading: 'Pro Accessories',
+          links: [
+            { text: 'Sectioning Carbon Clips', url: '/cn/hair' },
+            { text: 'Ceramic Round Blowout Brushes', url: '/cn/hair' }
+          ]
+        }
+      ],
+      spotlight: {
+        tag: 'SALON ESSENTIAL',
+        title: 'Hair Fibre Powder with Pump',
+        price: '499',
+        mrp: '699',
+        image: 'https://cdn.shopify.com/s/files/1/0696/6476/8172/files/Hair_Fiber_With_Pump_Black_1.jpg?v=1774593056',
+        url: '/cn/hair'
+      },
+      promo: {
+        badge: 'HEAT DEFENSE',
+        title: 'Protection Up to 450°F',
+        desc: 'Shield hair from thermal styling damage while adding brilliant mirror gloss.',
+        cta: 'Shop Hair Care →',
+        url: '/cn/hair'
+      }
+    },
+
+    'best-selling': {
+      title: 'Curated Best Sellers & Offers',
+      categoryUrl: '/cn/best-selling',
+      columns: [
+        {
+          heading: 'Top Rated Essentials',
+          links: [
+            { text: '9D Silk Cat Eye Gel Polish', url: '/pn/silk-9d-cat-eye-gel-polish-7-5ml', badge: '★ 4.9' },
+            { text: 'Poly Gel Nail Extension Kit', url: '/pn/poly-gel-kit-spn-21096', badge: '★ 4.9' },
+            { text: 'Solid Tip Bond Gel 15ml', url: '/pn/shills-solid-tip-bond-spn-21045' },
+            { text: '12-in-1 Nail Therapy', url: '/pn/12-in-1-nail-therapy' }
+          ]
+        },
+        {
+          heading: 'Promotions & Combos',
+          links: [
+            { text: 'Black Friday Deals (Up to 25% OFF)', url: '/cn/best-selling', badge: 'SALE' },
+            { text: 'Pro Starter Combos for Academies', url: '/cn/best-selling' },
+            { text: 'Free Shipping on Orders ₹999+', url: '/cn/best-selling' }
+          ]
+        },
+        {
+          heading: 'Salon Guarantees',
+          links: [
+            { text: '100% Genuine Certified Stock', url: '/cn/best-selling' },
+            { text: 'Bulk Salon Pricing Orders', url: '/cn/best-selling' },
+            { text: '7-Day Replacement Guarantee', url: '/cn/best-selling' }
+          ]
+        }
+      ],
+      spotlight: {
+        tag: '#1 BESTSELLER',
+        title: 'Cat Eye Gel Polish Kit',
+        price: '4,499',
+        mrp: '5,999',
+        image: 'https://cdn.shopify.com/s/files/1/0696/6476/8172/files/preview_images/190be95f8b55417ea0aa79af136773da.thumbnail.0000000000.jpg?v=1772784326',
+        url: '/pn/cat-eye-gel-polish-kit'
+      },
+      promo: {
+        badge: 'VIP BUNDLE',
+        title: 'Mega Beauty Discounts',
+        desc: 'Save more when you bundle professional UV lamps, top coats and gel polishes.',
+        cta: 'View All Deals →',
+        url: '/cn/best-selling'
+      }
+    }
+  };
+
+  function initMegaMenu() {
+    const root = document.getElementById('shillsMegaMenuRoot');
+    if (!root) return;
+
+    let activeMenuId = null;
+    let closeTimer = null;
+    let openTimer = null;
+
+    function renderMegaMenu(id) {
+      const data = megaMenuData[id];
+      if (!data) {
+        closeMegaMenu();
+        return;
+      }
+
+      root.innerHTML = `
+        <div class="shills-mega-menu-panel">
+          <div class="shills-mega-grid">
+            ${data.columns.map(col => `
+              <div class="shills-mega-col">
+                <div class="shills-mega-heading">${esc(col.heading)}</div>
+                <ul class="shills-mega-list">
+                  ${col.links.map(link => `
+                    <li>
+                      <a href="${esc(link.url)}" data-spa-nav="${esc(link.url)}" class="shills-mega-link">
+                        <span>${esc(link.text)}</span>
+                        ${link.badge ? `<span class="shills-mega-tag ${link.badge.toLowerCase().includes('sale') || link.badge.includes('%') ? 'sale' : (link.badge.toLowerCase().includes('hot') ? 'hot' : '')}">${esc(link.badge)}</span>` : ''}
+                      </a>
+                    </li>
+                  `).join('')}
+                </ul>
+              </div>
+            `).join('')}
+
+            ${data.spotlight ? `
+              <div class="shills-mega-spotlight-card" data-spa-nav="${esc(data.spotlight.url)}">
+                <div>
+                  <div class="shills-spotlight-badge">★ ${esc(data.spotlight.tag)}</div>
+                  <div class="shills-spotlight-img-wrap">
+                    <img src="${esc(data.spotlight.image)}" alt="${esc(data.spotlight.title)}" loading="lazy" />
+                  </div>
+                  <div class="shills-spotlight-title" title="${esc(data.spotlight.title)}">${esc(data.spotlight.title)}</div>
+                </div>
+                <div class="shills-spotlight-footer">
+                  <div>
+                    <span class="shills-spotlight-price">₹${esc(data.spotlight.price)}</span>
+                    ${data.spotlight.mrp ? `<span class="shills-spotlight-mrp">₹${esc(data.spotlight.mrp)}</span>` : ''}
+                  </div>
+                  <button type="button" class="shills-spotlight-btn">Shop Now</button>
+                </div>
+              </div>
+            ` : ''}
+
+            ${data.promo ? `
+              <div class="shills-mega-promo-card" data-spa-nav="${esc(data.promo.url)}">
+                <div>
+                  <span class="shills-mega-promo-badge">${esc(data.promo.badge)}</span>
+                  <div class="shills-mega-promo-title">${esc(data.promo.title)}</div>
+                  <div class="shills-mega-promo-desc">${esc(data.promo.desc)}</div>
+                </div>
+                <button type="button" class="shills-mega-promo-btn">${esc(data.promo.cta)}</button>
+              </div>
+            ` : ''}
+          </div>
+
+          <div class="shills-mega-bottom-bar">
+            <span>⚡ Salon Grade Formulations • 100% Genuine • Fast Express Dispatch</span>
+            <a href="${esc(data.categoryUrl)}" data-spa-nav="${esc(data.categoryUrl)}" class="shills-mega-view-all-btn">
+              View All ${esc(data.title)} (${state.products.filter(p => p.section === data.title || p.section.toLowerCase().includes(id.replace('-',' '))).length || '25+'}) →
+            </a>
+          </div>
+        </div>
+      `;
+
+      root.classList.add('is-open');
+    }
+
+    function openMegaMenu(id) {
+      clearTimeout(closeTimer);
+      clearTimeout(openTimer);
+      activeMenuId = id;
+
+      document.querySelectorAll('.__8pvtm').forEach(b => {
+        b.classList.toggle('has-mega-open', b.getAttribute('data-mega-id') === id);
+      });
+
+      renderMegaMenu(id);
+    }
+
+    function closeMegaMenu() {
+      clearTimeout(closeTimer);
+      clearTimeout(openTimer);
+      activeMenuId = null;
+      root.classList.remove('is-open');
+      document.querySelectorAll('.__8pvtm').forEach(b => {
+        b.classList.remove('has-mega-open');
+      });
+    }
+
+    function queueClose() {
+      clearTimeout(closeTimer);
+      closeTimer = setTimeout(() => {
+        closeMegaMenu();
+      }, 160);
+    }
+
+    // Attach hover listeners to tab buttons
+    document.querySelectorAll('.__8pvtm[data-mega-id]').forEach(btn => {
+      const megaId = btn.getAttribute('data-mega-id');
+
+      btn.addEventListener('mouseenter', () => {
+        clearTimeout(closeTimer);
+        if (activeMenuId && activeMenuId !== megaId) {
+          openMegaMenu(megaId);
+        } else {
+          openTimer = setTimeout(() => {
+            openMegaMenu(megaId);
+          }, 80);
+        }
+      });
+
+      btn.addEventListener('mouseleave', () => {
+        clearTimeout(openTimer);
+        queueClose();
+      });
+
+      // Clicking tab navigates to category & closes mega menu
+      btn.addEventListener('click', () => {
+        closeMegaMenu();
+      });
+    });
+
+    // Keep mega menu open while hovering root panel
+    root.addEventListener('mouseenter', () => {
+      clearTimeout(closeTimer);
+    });
+
+    root.addEventListener('mouseleave', () => {
+      queueClose();
+    });
+
+    // Close on any outside click
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('#shillsMegaMenuRoot') && !e.target.closest('.__8pvtm')) {
+        closeMegaMenu();
+      }
+    });
+
+    // Close on escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeMegaMenu();
+    });
+  }
+
+
   function showHomeView() {
     if (state.spaContainer) {
       state.spaContainer.style.display = 'none';
@@ -1551,6 +2147,7 @@
     updateUserUI();
     updateCartUI();
     bindGlobalEvents();
+    initMegaMenu();
     handleRoute();
   });
 })();

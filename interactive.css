@@ -1404,3 +1404,343 @@ a[data-testid="search-bar-icon"]:hover {
   background: #3c006b !important;
   box-shadow: 0 6px 20px rgba(60, 0, 107, 0.3) !important;
 }
+
+/* ====================================================================
+   SHILLS PROFESSIONAL LUXURY MEGA MENU STYLES
+   ==================================================================== */
+
+.shills-menu-arrow {
+  font-size: 0.65rem;
+  margin-left: 4px;
+  color: #9ca3af;
+  transition: transform 0.2s ease, color 0.2s ease;
+  display: inline-block;
+  vertical-align: middle;
+}
+.__8pvtm:hover .shills-menu-arrow,
+.__8pvtm.has-mega-open .shills-menu-arrow {
+  transform: rotate(180deg);
+  color: #111111;
+}
+
+.shills-mega-menu-root {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 99999;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-8px);
+  transition: opacity 0.22s cubic-bezier(0.16, 1, 0.3, 1), transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.22s;
+  pointer-events: none;
+}
+
+.shills-mega-menu-root.is-open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.shills-mega-menu-panel {
+  background: #ffffff;
+  border-radius: 0 0 18px 18px;
+  border: 1px solid #ebe8f2;
+  border-top: 2px solid #111111;
+  padding: 2.25rem 2.5rem 1.75rem 2.5rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.18), 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.shills-mega-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(180px, 1fr)) 250px 240px;
+  gap: 2rem;
+  align-items: stretch;
+}
+
+@media (max-width: 1300px) {
+  .shills-mega-grid {
+    grid-template-columns: repeat(3, 1fr) 240px;
+  }
+  .shills-mega-promo-card {
+    display: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .shills-mega-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .shills-mega-spotlight-card,
+  .shills-mega-promo-card {
+    display: none;
+  }
+}
+
+.shills-mega-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.shills-mega-heading {
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: #111111;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin: 0 0 0.9rem 0;
+  padding-bottom: 0.5rem;
+  border-bottom: 1.5px solid #f1eff5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.shills-mega-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.shills-mega-link {
+  font-size: 0.84rem;
+  font-weight: 500;
+  color: #4b5563;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: color 0.15s ease, transform 0.15s ease;
+  line-height: 1.35;
+}
+
+.shills-mega-link:hover {
+  color: #3c006b;
+  font-weight: 700;
+  transform: translateX(4px);
+}
+
+.shills-mega-tag {
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  padding: 2px 6px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  background: #f3e8ff;
+  color: #6b21a8;
+  border: 1px solid #e9d5ff;
+}
+
+.shills-mega-tag.sale {
+  background: #fee2e2;
+  color: #991b1b;
+  border-color: #fecaca;
+}
+
+.shills-mega-tag.hot {
+  background: #fef3c7;
+  color: #92400e;
+  border-color: #fde68a;
+}
+
+/* Spotlight Card in Mega Menu */
+.shills-mega-spotlight-card {
+  background: #faf8fc;
+  border: 1px solid #ede8f5;
+  border-radius: 14px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.2s;
+}
+
+.shills-mega-spotlight-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(60, 0, 107, 0.1);
+  border-color: #ddd6fe;
+}
+
+.shills-spotlight-badge {
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #7c3aed;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.shills-spotlight-img-wrap {
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 8px 0;
+  overflow: hidden;
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.shills-spotlight-img-wrap img {
+  max-height: 110px;
+  max-width: 100%;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.shills-mega-spotlight-card:hover .shills-spotlight-img-wrap img {
+  transform: scale(1.06);
+}
+
+.shills-spotlight-title {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #111827;
+  line-height: 1.3;
+  margin: 0 0 6px 0;
+  height: 34px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.shills-spotlight-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 6px;
+  padding-top: 6px;
+  border-top: 1px solid #ede8f5;
+}
+
+.shills-spotlight-price {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #111827;
+}
+
+.shills-spotlight-mrp {
+  font-size: 0.76rem;
+  color: #9ca3af;
+  text-decoration: line-through;
+  margin-left: 4px;
+}
+
+.shills-spotlight-btn {
+  background: #111111;
+  color: #ffffff;
+  border: none;
+  border-radius: 9999px;
+  padding: 5px 12px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.shills-spotlight-btn:hover {
+  background: #3c006b;
+}
+
+/* Promo Card in Mega Menu */
+.shills-mega-promo-card {
+  background: linear-gradient(135deg, #180924 0%, #350849 50%, #150921 100%);
+  border-radius: 14px;
+  padding: 18px;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(197, 160, 89, 0.3);
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.shills-mega-promo-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.3);
+}
+
+.shills-mega-promo-badge {
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #c5a059;
+  text-transform: uppercase;
+}
+
+.shills-mega-promo-title {
+  font-size: 1.15rem;
+  font-weight: 900;
+  line-height: 1.25;
+  color: #ffffff;
+  margin: 6px 0 8px 0;
+}
+
+.shills-mega-promo-desc {
+  font-size: 0.78rem;
+  color: #d4d4d8;
+  line-height: 1.45;
+  margin: 0 0 14px 0;
+}
+
+.shills-mega-promo-btn {
+  background: #ffffff;
+  color: #111111;
+  border: none;
+  border-radius: 9999px;
+  padding: 7px 14px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  width: fit-content;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.shills-mega-promo-btn:hover {
+  background: #c5a059;
+  color: #000000;
+}
+
+/* Bottom Bar in Mega Menu */
+.shills-mega-bottom-bar {
+  border-top: 1px solid #f1edf5;
+  margin-top: 1.75rem;
+  padding-top: 1.15rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.82rem;
+  color: #6b7280;
+}
+
+.shills-mega-view-all-btn {
+  color: #3c006b;
+  font-weight: 800;
+  text-decoration: none;
+  font-size: 0.85rem;
+  letter-spacing: 0.02em;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: transform 0.15s;
+}
+
+.shills-mega-view-all-btn:hover {
+  transform: translateX(4px);
+  text-decoration: underline;
+}
